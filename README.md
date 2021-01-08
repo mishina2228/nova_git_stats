@@ -1,4 +1,4 @@
-# GitStats [![Build Status](https://secure.travis-ci.org/tomgi/git_stats.svg)](https://secure.travis-ci.org/tomgi/git_stats) [![Build Status](https://codeclimate.com/badge.png)](https://codeclimate.com/github/tomgi/git_stats)
+# GitStats [![Build Status](https://travis-ci.org/mishina2228/git_stats.svg?branch=master)](https://travis-ci.org/mishina2228/git_stats) [![Maintainability](https://api.codeclimate.com/v1/badges/118cce63cc58fef4ae47/maintainability)](https://codeclimate.com/github/mishina2228/git_stats/maintainability)
 
 GitStats is a git repository statistics generator.
 It browses the repository and outputs html page with statistics.
