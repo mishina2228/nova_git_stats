@@ -1,6 +1,9 @@
-# -*- encoding : utf-8 -*-
 require 'simplecov'
 SimpleCov.start
+if ENV['CI']
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 require 'git_stats'
 
@@ -10,4 +13,3 @@ FactoryGirl.find_definitions
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 end
-
