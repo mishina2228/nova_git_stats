@@ -8,21 +8,11 @@ module GitStats
           @authors = authors
         end
 
-        def commits_sum_by_author_by_date(authors = nil)
-          Chart.new do |f|
-            f.multi_date_chart(
-              data: (authors || @authors.sort_by { |author| -author.commits.size }[0..AUTHORS_ON_CHART_LIMIT]).map { |author| {name: author.name, data: author.commits_sum_by_date} },
-              title: :lines_by_date.t,
-              y_text: :lines.t
-            )
-          end
-        end
-
-        [:insertions, :deletions, :changed_lines].each do |method|
+        [:insertions, :deletions, :changed_lines, :commits_sum].each do |method|
           define_method "#{method}_by_author_by_date" do |authors = nil|
             Chart.new do |f|
               f.multi_date_chart(
-                data: (authors || @authors.sort_by { |author| -author.send(method) }[0..AUTHORS_ON_CHART_LIMIT]).map { |author| {name: author.name, data: author.send("#{method}_by_date")} },
+                data: (authors || @authors.sort_by { |a| -a.send(method) }[0..AUTHORS_ON_CHART_LIMIT]).map { |a| {name: a.name, data: a.send("#{method}_by_date")} },
                 title: :lines_by_date.t,
                 y_text: :lines.t
               )

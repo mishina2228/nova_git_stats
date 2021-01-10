@@ -11,6 +11,10 @@ module GitStats
         @commits ||= repo.commits.select { |commit| commit.author == self }
       end
 
+      def commits_sum
+        commits.size
+      end
+
       def changed_lines
         insertions + deletions
       end
