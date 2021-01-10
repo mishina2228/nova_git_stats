@@ -16,7 +16,7 @@ bg:
   comments: Коментари
   files_by_date: Файлове за период
   lines_by_date: Редове за период
-  comments_by_date:Коментари за период
+  comments_by_date: Коментари за период
   files_by_extension: Файлове по разширения
   lines_by_extension: Редове по разширения
   hour_of_day: Час на ден
@@ -30,7 +30,7 @@ bg:
   year_month: Година и месец
   commits_by_wday: Качвания по ден от седмицата
   commits_by_month: Качвания по месеци
-  commits_by_year_month:Качвания по месеци и година
+  commits_by_year_month: Качвания по месеци и година
   commits_by_month_of_year: Качвания по месеци от тази година
   year: Година
   commits_by_year: Качвания на година
