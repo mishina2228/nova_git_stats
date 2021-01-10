@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 FactoryGirl.define do
   initialize_with { new(attributes) }
 
@@ -29,5 +28,4 @@ FactoryGirl.define do
   factory :tree, class: GitStats::GitData::Tree do
     association :repo, strategy: :build
   end
-
 end

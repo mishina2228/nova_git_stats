@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 describe GitStats::GitData::Blob do
@@ -21,5 +20,4 @@ describe GitStats::GitData::Blob do
     repo.should_receive(:run).with("git cat-file blob hash_png | grep -m 1 '^'").and_return "Binary file matches"
     png_blob.should be_binary
   end
-
 end

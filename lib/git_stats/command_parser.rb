@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module GitStats
   class CommandParser
     def parse(command, result)
@@ -26,6 +25,5 @@ module GitStats
         {sha: sha, stamp: stamp, date: date, author_email: author_email}
       end
     end
-
   end
 end

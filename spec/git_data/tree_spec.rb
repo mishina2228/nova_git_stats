@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 describe GitStats::GitData::Tree do
@@ -24,7 +23,7 @@ describe GitStats::GitData::Tree do
       end
 
       it 'should parse git shortlog output to authors hash' do
-        repo_tree.authors.should == [ build(:author, repo: repo_tree, name: "Israel Revert", email:"israelrevert@gmail.com") ]
+        repo_tree.authors.should == [ build(:author, repo: repo_tree, name: "Israel Revert", email: "israelrevert@gmail.com") ]
       end
 
       it 'should parse git revlist output to date sorted commits array' do

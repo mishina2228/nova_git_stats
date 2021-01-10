@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 describe GitStats::GitData::Repo do
@@ -43,5 +42,4 @@ describe GitStats::GitData::Repo do
       end
     end
   end
-
 end

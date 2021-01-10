@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'git_stats/hash_initializable'
 
 module GitStats
@@ -48,11 +47,11 @@ module GitStats
       def commits
         @commits ||= run_and_parse("git rev-list --pretty=format:'%H|%at|%ai|%aE' #{commit_range} #{tree_path} | grep -v commit").map do |commit_line|
           Commit.new(
-              repo: self,
-              sha: commit_line[:sha],
-              stamp: commit_line[:stamp],
-              date: DateTime.parse(commit_line[:date]),
-              author: authors.first! { |a| a.email == commit_line[:author_email] }
+            repo: self,
+            sha: commit_line[:sha],
+            stamp: commit_line[:stamp],
+            date: DateTime.parse(commit_line[:date]),
+            author: authors.first! { |a| a.email == commit_line[:author_email] }
           )
         end.sort_by! { |e| e.date }
       end
@@ -100,7 +99,7 @@ module GitStats
       end
 
       def commit_range
-        @first_commit_sha.blank? ? last_commit_sha : "#@first_commit_sha..#{last_commit_sha}"
+        @first_commit_sha.blank? ? last_commit_sha : "#{@first_commit_sha}..#{last_commit_sha}"
       end
 
       def short_stats
@@ -120,7 +119,7 @@ module GitStats
       end
 
       def project_name
-        @project_name ||= (File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path))+File::SEPARATOR,"") || File.basename(path))
+        @project_name ||= (File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path))+File::SEPARATOR, "") || File.basename(path))
       end
 
       def run(command)
@@ -148,14 +147,15 @@ module GitStats
       end
 
       def to_s
-        "#{self.class} #@path"
+        "#{self.class} #{@path}"
       end
 
       def ==(other)
-        self.path == other.path
+        path == other.path
       end
 
       private
+
       def command_observers
         @command_observers ||= []
       end
@@ -163,8 +163,6 @@ module GitStats
       def invoke_command_observers(command, result)
         command_observers.each { |o| o.call(command, result) }
       end
-
-
     end
   end
 end

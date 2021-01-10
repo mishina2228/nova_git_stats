@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'integration/shared'
 
 describe GitStats::GitData::Activity do

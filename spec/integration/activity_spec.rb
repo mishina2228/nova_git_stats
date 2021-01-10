@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'integration/shared'
 
 describe GitStats::GitData::Activity do
@@ -29,5 +28,4 @@ describe GitStats::GitData::Activity do
   it 'should count commits by year and month' do
     activity.by_year_month.should == {2012 => {10 => 10}}
   end
-
 end

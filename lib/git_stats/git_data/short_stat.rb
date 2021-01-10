@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module GitStats
   module GitData
     class ShortStat
@@ -14,10 +13,11 @@ module GitStats
       end
 
       def to_s
-        "#{self.class} #@commit"
+        "#{self.class} #{@commit}"
       end
 
       private
+
       def calculate_stat
         stat_line = commit.repo.run("git show --shortstat --oneline --no-renames #{commit.sha} -- #{commit.repo.tree_path}").lines.to_a[1]
         if stat_line.blank?

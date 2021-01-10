@@ -6,32 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 1
-# Configuration parameters: Include.
-# Include: **/*.gemspec
-Gemspec/RequiredRubyVersion:
-  Exclude:
-    - 'git_stats.gemspec'
-
-# Offense count: 22
-# Cop supports --auto-correct.
-Layout/BlockEndNewline:
-  Exclude:
-    - 'spec/git_data/activity_spec.rb'
-    - 'spec/git_data/commit_spec.rb'
-    - 'spec/integration/shared.rb'
-
-# Offense count: 18
-# Cop supports --auto-correct.
-Layout/ClosingParenthesisIndentation:
-  Exclude:
-    - 'lib/git_stats/git_data/repo.rb'
-    - 'lib/git_stats/stats_view/charts/activity_charts.rb'
-    - 'lib/git_stats/stats_view/charts/authors_charts.rb'
-    - 'lib/git_stats/stats_view/charts/chart.rb'
-    - 'lib/git_stats/stats_view/charts/repo_charts.rb'
-    - 'spec/git_data/commit_spec.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
@@ -39,198 +13,6 @@ Layout/ClosingParenthesisIndentation:
 Layout/DotPosition:
   Exclude:
     - 'spec/git_data/tree_spec.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-Layout/EmptyLineAfterGuardClause:
-  Exclude:
-    - 'lib/git_stats/core_extensions/hash.rb'
-    - 'lib/git_stats/hash_initializable.rb'
-    - 'lib/git_stats/stats_view/view.rb'
-
-# Offense count: 45
-# Cop supports --auto-correct.
-Layout/EmptyLineAfterMagicComment:
-  Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EmptyLineBetweenMethodDefs, EmptyLineBetweenClassDefs, EmptyLineBetweenModuleDefs, AllowAdjacentOneLineDefs, NumberOfEmptyLines.
-Layout/EmptyLineBetweenDefs:
-  Exclude:
-    - 'lib/git_stats/generator.rb'
-
-# Offense count: 8
-# Cop supports --auto-correct.
-Layout/EmptyLines:
-  Exclude:
-    - 'lib/git_stats/generator.rb'
-    - 'lib/git_stats/git_data/repo.rb'
-    - 'spec/git_data/short_stat_spec.rb'
-    - 'spec/integration/file_spec.rb'
-    - 'spec/integration/shared.rb'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: around, only_before
-Layout/EmptyLinesAroundAccessModifier:
-  Exclude:
-    - 'lib/git_stats/command_runner.rb'
-    - 'lib/git_stats/git_data/activity.rb'
-    - 'lib/git_stats/git_data/comment_stat.rb'
-    - 'lib/git_stats/git_data/repo.rb'
-    - 'lib/git_stats/git_data/short_stat.rb'
-    - 'lib/git_stats/stats_view/charts/chart.rb'
-
-# Offense count: 11
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: empty_lines, no_empty_lines
-Layout/EmptyLinesAroundBlockBody:
-  Exclude:
-    - 'spec/factories.rb'
-    - 'spec/git_data/author_spec.rb'
-    - 'spec/git_data/blob_spec.rb'
-    - 'spec/git_data/command_observer_spec.rb'
-    - 'spec/git_data/commit_range_spec.rb'
-    - 'spec/integration/activity_spec.rb'
-    - 'spec/integration/file_spec.rb'
-    - 'spec/integration/repo_spec.rb'
-    - 'spec/integration/tree_spec.rb'
-
-# Offense count: 16
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines, beginning_only, ending_only
-Layout/EmptyLinesAroundClassBody:
-  Exclude:
-    - 'lib/git_stats/cli.rb'
-    - 'lib/git_stats/command_parser.rb'
-    - 'lib/git_stats/generator.rb'
-    - 'lib/git_stats/git_data/activity.rb'
-    - 'lib/git_stats/git_data/author.rb'
-    - 'lib/git_stats/git_data/blob.rb'
-    - 'lib/git_stats/git_data/repo.rb'
-    - 'lib/git_stats/git_data/tree.rb'
-    - 'lib/git_stats/stats_view/charts/authors_charts.rb'
-    - 'lib/git_stats/stats_view/charts/chart.rb'
-    - 'lib/git_stats/stats_view/charts/charts.rb'
-    - 'lib/git_stats/stats_view/charts/repo_charts.rb'
-    - 'lib/git_stats/stats_view/view.rb'
-    - 'lib/git_stats/stats_view/view_data.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines
-Layout/EmptyLinesAroundModuleBody:
-  Exclude:
-    - 'lib/git_stats/generator.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment, AllowBeforeTrailingComments, ForceEqualSignAlignment.
-Layout/ExtraSpacing:
-  Exclude:
-    - 'lib/git_stats/git_data/comment_stat.rb'
-
-# Offense count: 22
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: consistent, consistent_relative_to_receiver, special_for_inner_method_call, special_for_inner_method_call_in_parentheses
-Layout/FirstArgumentIndentation:
-  Exclude:
-    - 'lib/git_stats/git_data/repo.rb'
-    - 'lib/git_stats/stats_view/charts/activity_charts.rb'
-    - 'lib/git_stats/stats_view/charts/authors_charts.rb'
-    - 'lib/git_stats/stats_view/charts/chart.rb'
-    - 'lib/git_stats/stats_view/charts/repo_charts.rb'
-    - 'spec/git_data/commit_spec.rb'
-    - 'spec/git_data/repo_spec.rb'
-
-# Offense count: 28
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: special_inside_parentheses, consistent, align_brackets
-Layout/FirstArrayElementIndentation:
-  Exclude:
-    - 'spec/git_data/activity_spec.rb'
-    - 'spec/git_data/commit_spec.rb'
-    - 'spec/git_data/repo_spec.rb'
-    - 'spec/git_data/short_stat_spec.rb'
-    - 'spec/integration/shared.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: special_inside_parentheses, consistent, align_braces
-Layout/FirstHashElementIndentation:
-  Exclude:
-    - 'lib/git_stats/stats_view/charts/chart.rb'
-    - 'lib/git_stats/stats_view/view.rb'
-
-# Offense count: 10
-# Cop supports --auto-correct.
-# Configuration parameters: IndentationWidth, EnforcedStyle.
-# SupportedStyles: spaces, tabs
-Layout/IndentationStyle:
-  Exclude:
-    - 'lib/git_stats/core_extensions/enumerable.rb'
-    - 'lib/git_stats/git_data/comment_stat.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: Width, IgnoredPatterns.
-Layout/IndentationWidth:
-  Exclude:
-    - 'lib/git_stats/core_extensions/enumerable.rb'
-    - 'lib/git_stats/git_data/comment_stat.rb'
-
-# Offense count: 22
-# Cop supports --auto-correct.
-Layout/MultilineBlockLayout:
-  Exclude:
-    - 'lib/git_stats/stats_view/view.rb'
-    - 'spec/git_data/activity_spec.rb'
-    - 'spec/integration/shared.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: symmetrical, new_line, same_line
-Layout/MultilineHashBraceLayout:
-  Exclude:
-    - 'spec/git_data/commit_spec.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: symmetrical, new_line, same_line
-Layout/MultilineMethodCallBraceLayout:
-  Exclude:
-    - 'lib/git_stats/stats_view/charts/chart.rb'
-    - 'spec/git_data/repo_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: aligned, indented
-Layout/MultilineOperationIndentation:
-  Exclude:
-    - 'lib/git_stats/git_data/commit.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/SpaceAfterColon:
-  Exclude:
-    - 'spec/git_data/tree_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/SpaceAfterComma:
-  Exclude:
-    - 'lib/git_stats/git_data/repo.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -322,33 +104,6 @@ Layout/SpaceInsideParens:
   Exclude:
     - 'spec/git_data/tree_spec.rb'
 
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: final_newline, final_blank_line
-Layout/TrailingEmptyLines:
-  Exclude:
-    - 'Rakefile'
-    - 'lib/git_stats/base.rb'
-    - 'lib/git_stats/core_extensions/enumerable.rb'
-    - 'lib/git_stats/i18n.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: AllowInHeredoc.
-Layout/TrailingWhitespace:
-  Exclude:
-    - 'lib/git_stats/cli.rb'
-    - 'lib/git_stats/git_data/comment_stat.rb'
-    - 'lib/git_stats/git_data/tree.rb'
-
-# Offense count: 4
-# Cop supports --auto-correct.
-Lint/DeprecatedClassMethods:
-  Exclude:
-    - 'lib/git_stats/generator.rb'
-    - 'lib/git_stats/stats_view/view.rb'
-
 # Offense count: 17
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
@@ -366,16 +121,6 @@ Lint/UnusedBlockArgument:
 Lint/UnusedMethodArgument:
   Exclude:
     - 'lib/git_stats/command_parser.rb'
-
-# Offense count: 31
-# Configuration parameters: CheckForMethodsWithNoSideEffects.
-Lint/Void:
-  Exclude:
-    - 'spec/git_data/short_stat_spec.rb'
-    - 'spec/git_data/tree_spec.rb'
-    - 'spec/integration/author_spec.rb'
-    - 'spec/integration/repo_spec.rb'
-    - 'spec/integration/tree_spec.rb'
 
 # Offense count: 4
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
@@ -452,36 +197,17 @@ Style/EachWithObject:
     - 'lib/git_stats/core_extensions/hash.rb'
     - 'lib/git_stats/git_data/commit.rb'
 
-# Offense count: 47
-# Cop supports --auto-correct.
-Style/Encoding:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/ExpandPathArguments:
   Exclude:
     - 'git_stats.gemspec'
 
-# Offense count: 52
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, always_true, never
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
 # Offense count: 1
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:
   Exclude:
     - 'lib/git_stats/core_extensions/enumerable.rb'
-
-# Offense count: 30
-# Cop supports --auto-correct.
-# Configuration parameters: UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
-# SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-Style/HashSyntax:
-  EnforcedStyle: hash_rockets
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -578,32 +304,6 @@ Style/RedundantPercentQ:
   Exclude:
     - 'git_stats.gemspec'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-Style/RedundantRegexpEscape:
-  Exclude:
-    - 'lib/git_stats/git_data/comment_stat.rb'
-
-# Offense count: 29
-# Cop supports --auto-correct.
-Style/RedundantSelf:
-  Exclude:
-    - 'lib/git_stats/core_extensions/hash.rb'
-    - 'lib/git_stats/git_data/activity.rb'
-    - 'lib/git_stats/git_data/author.rb'
-    - 'lib/git_stats/git_data/blob.rb'
-    - 'lib/git_stats/git_data/commit.rb'
-    - 'lib/git_stats/git_data/repo.rb'
-    - 'lib/git_stats/git_data/tree.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, AllowInnerSlashes.
-# SupportedStyles: slashes, percent_r, mixed
-Style/RegexpLiteral:
-  Exclude:
-    - 'lib/git_stats/git_data/comment_stat.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: AllowAsExpressionSeparator.
@@ -619,21 +319,6 @@ Style/SlicingWithRange:
     - 'lib/git_stats/git_data/activity.rb'
     - 'lib/git_stats/stats_view/charts/activity_charts.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: use_perl_names, use_english_names
-Style/SpecialGlobalVars:
-  Exclude:
-    - 'git_stats.gemspec'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/StringConcatenation:
-  Exclude:
-    - 'bin/git_stats'
-    - 'lib/git_stats/git_data/comment_stat.rb'
-
 # Offense count: 89
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
@@ -648,33 +333,6 @@ Style/StringLiterals:
 Style/SymbolArray:
   EnforcedStyle: brackets
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: IgnoredMethods.
-# IgnoredMethods: respond_to, define_method
-Style/SymbolProc:
-  Exclude:
-    - 'lib/git_stats/git_data/commit.rb'
-    - 'lib/git_stats/git_data/repo.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'spec/git_data/commit_spec.rb'
-
-# Offense count: 22
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArrayLiteral:
-  Exclude:
-    - 'spec/git_data/commit_spec.rb'
-    - 'spec/git_data/short_stat_spec.rb'
-    - 'spec/integration/shared.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: ExactNameMatch, AllowPredicates, AllowDSLWriters, IgnoreClassMethods, AllowedMethods.
@@ -682,19 +340,6 @@ Style/TrailingCommaInArrayLiteral:
 Style/TrivialAccessors:
   Exclude:
     - 'lib/git_stats/git_data/repo.rb'
-
-# Offense count: 12
-# Cop supports --auto-correct.
-Style/VariableInterpolation:
-  Exclude:
-    - 'lib/git_stats/git_data/author.rb'
-    - 'lib/git_stats/git_data/blob.rb'
-    - 'lib/git_stats/git_data/comment_stat.rb'
-    - 'lib/git_stats/git_data/commit.rb'
-    - 'lib/git_stats/git_data/repo.rb'
-    - 'lib/git_stats/git_data/short_stat.rb'
-    - 'lib/git_stats/stats_view/template.rb'
-    - 'lib/git_stats/stats_view/view.rb'
 
 # Offense count: 32
 # Cop supports --auto-correct.

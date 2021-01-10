@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'git_stats/hash_initializable'
 
 module GitStats
@@ -13,11 +12,10 @@ module GitStats
           Author.new(repo: self, name: author[:name], email: author[:email])
         end
       end
-      
-      def ==(other)
-        ((self.repo == other.repo) && (self.relative_path == other.relative_path))
-      end
 
+      def ==(other)
+        ((repo == other.repo) && (relative_path == other.relative_path))
+      end
     end
   end
 end

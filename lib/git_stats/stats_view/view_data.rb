@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module GitStats
   module StatsView
     class ViewData
@@ -25,7 +24,6 @@ module GitStats
       def link_to(href, active_page)
         Pathname.new("/#{href}").relative_path_from(Pathname.new("/#{active_page}").dirname)
       end
-
     end
   end
 end

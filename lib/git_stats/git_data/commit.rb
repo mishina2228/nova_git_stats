@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'git_stats/hash_initializable'
 
 module GitStats
@@ -9,7 +8,7 @@ module GitStats
       attr_reader :repo, :sha, :stamp, :date, :author
 
       def files
-        @files ||= repo.run_and_parse("git ls-tree -r #{self.sha} -- #{repo.tree_path}").map do |file|
+        @files ||= repo.run_and_parse("git ls-tree -r #{sha} -- #{repo.tree_path}").map do |file|
           Blob.new(repo: repo, filename: file[:filename], sha: file[:sha])
         end
       end
@@ -37,11 +36,11 @@ module GitStats
       end
 
       def files_count
-        @files_count ||= repo.run("git ls-tree -r --name-only #{self.sha} -- #{repo.tree_path}| wc -l").to_i
+        @files_count ||= repo.run("git ls-tree -r --name-only #{sha} -- #{repo.tree_path}| wc -l").to_i
       end
 
       def lines_count
-        @lines_count ||= repo.run("git diff --shortstat --no-renames `git hash-object -t tree /dev/null` #{self.sha} -- #{repo.tree_path}").lines.map do |line|
+        @lines_count ||= repo.run("git diff --shortstat --no-renames `git hash-object -t tree /dev/null` #{sha} -- #{repo.tree_path}").lines.map do |line|
           line[/(\d+) insertions?/, 1].to_i
         end.sum
       end
@@ -55,12 +54,12 @@ module GitStats
       end
 
       def to_s
-        "#{self.class} #@sha"
+        "#{self.class} #{@sha}"
       end
 
       def ==(other)
-        [self.repo, self.sha, self.stamp, self.date, self.author] ==
-            [other.repo, other.sha, other.stamp, other.date, other.author]
+        [repo, sha, stamp, date, author] ==
+          [other.repo, other.sha, other.stamp, other.date, other.author]
       end
     end
   end

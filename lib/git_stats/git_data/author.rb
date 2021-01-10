@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'git_stats/hash_initializable'
 
 module GitStats
@@ -55,13 +54,12 @@ module GitStats
       end
 
       def to_s
-        "#{self.class} #@name <#@email>"
+        "#{self.class} #{@name} <#{@email}>"
       end
 
       def ==(other)
-        [self.repo, self.name, self.email] == [other.repo, other.name, other.email]
+        [repo, name, email] == [other.repo, other.name, other.email]
       end
-
     end
   end
 end

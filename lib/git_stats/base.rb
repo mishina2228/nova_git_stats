@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'git_stats/core_extensions/hash'
 require 'git_stats/core_extensions/string'
 require 'git_stats/core_extensions/symbol'
@@ -29,4 +28,3 @@ require 'git_stats/stats_view/charts/authors_charts'
 require 'git_stats/stats_view/charts/chart'
 require 'git_stats/stats_view/charts/charts'
 require 'git_stats/stats_view/charts/repo_charts'
-

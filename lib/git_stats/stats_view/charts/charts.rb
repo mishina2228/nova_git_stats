@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module GitStats
   module StatsView
     module Charts
@@ -28,7 +27,6 @@ module GitStats
         def activity_charts
           @activity_charts ||= Charts::ActivityCharts.new(repo)
         end
-
       end
     end
   end

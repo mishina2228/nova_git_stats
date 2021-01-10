@@ -1,15 +1,16 @@
-# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 describe GitStats::GitData::Activity do
-  let(:dates) { [
+  let(:dates) {
+    [
       '10.05.2012 12:37',
       '10.05.2012 13:53',
       '06.05.2012 13:23',
       '15.06.2011 15:02',
       '27.09.2011 15:34'
-  ] }
-  let(:commits) { dates.map { |d| GitStats::GitData::Commit.new(:date => DateTime.parse(d)) } }
+    ]
+  }
+  let(:commits) { dates.map { |d| GitStats::GitData::Commit.new(date: DateTime.parse(d)) } }
   let(:activity) { GitStats::GitData::Activity.new(commits) }
 
   it 'by_hour should count commits by hour' do

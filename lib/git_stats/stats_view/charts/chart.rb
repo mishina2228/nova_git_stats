@@ -1,9 +1,7 @@
-# -*- encoding : utf-8 -*-
 module GitStats
   module StatsView
     module Charts
       class Chart
-
         def method_missing(name, *args, &block)
           @chart.send(name, *args, &block)
         end
@@ -27,10 +25,9 @@ module GitStats
 
         def column_hash_chart(params)
           simple_column_chart(params.merge(
-                                  data_x: params[:data].keys,
-                                  data_y: params[:data].values
-                              )
-          )
+                                data_x: params[:data].keys,
+                                data_y: params[:data].values
+                              ))
         end
 
         def date_chart(params)
@@ -49,30 +46,30 @@ module GitStats
         def date_column_chart(params)
           common_options(params)
           series(date_series({name: params[:title], data: params[:data]}, false).merge(
-            {
-              type: 'column',
-              dataGrouping: {units: [['day', [1]], ['week', [1]]], forced: true}
-            }
-          ))
+                   {
+                     type: 'column',
+                     dataGrouping: {units: [['day', [1]], ['week', [1]]], forced: true}
+                   }
+                 ))
         end
 
         def default_legend
           legend(
-              enabled: true,
-              layout: 'vertical',
-              backgroundColor: '#FFFFFF',
-              align: 'left',
-              verticalAlign: 'top',
-              x: 100,
-              y: 70,
-              floating: true,
-              shadow: true
+            enabled: true,
+            layout: 'vertical',
+            backgroundColor: '#FFFFFF',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: 70,
+            floating: true,
+            shadow: true
           )
         end
 
         def no_legend
           legend(
-              enabled: false
+            enabled: false
           )
         end
 
@@ -97,6 +94,7 @@ module GitStats
         end
 
         private
+
         def common_options(params)
           no_legend
           title ""
@@ -106,9 +104,9 @@ module GitStats
 
         def date_series(params, aggregated = true)
           {
-              name: params[:name],
-              type: "spline",
-              data: Hash[params[:data]].fill_empty_days!(aggregated: aggregated).map { |date, value| [date.to_datetime.to_i * 1000, value] }.sort_by { |d| d[0] }
+            name: params[:name],
+            type: "spline",
+            data: Hash[params[:data]].fill_empty_days!(aggregated: aggregated).map { |date, value| [date.to_datetime.to_i * 1000, value] }.sort_by { |d| d[0] }
           }
         end
 
@@ -117,7 +115,6 @@ module GitStats
           type "column"
           x_categories params[:data_x]
         end
-
       end
     end
   end

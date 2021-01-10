@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'integration/shared'
 
 describe GitStats::GitData::Repo do
@@ -73,5 +72,4 @@ describe GitStats::GitData::Repo do
     repo.deletions_by_author.keys.should == expected_authors
     repo.deletions_by_author.values.should == [10, 0]
   end
-
 end

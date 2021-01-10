@@ -1,8 +1,6 @@
-# -*- encoding : utf-8 -*-
 module GitStats
   module GitData
     class Activity
-
       def initialize(commits)
         add_commits(commits)
       end
@@ -48,6 +46,7 @@ module GitStats
       end
 
       private
+
       def add_commits(commits)
         commits = commits.values if commits.is_a? Hash
         commits.each do |commit|
@@ -56,13 +55,13 @@ module GitStats
       end
 
       def add_commit_at(date)
-        self.by_date[date] += 1
-        self.by_hour[date.hour] += 1
-        self.by_wday[date.wday] += 1
-        self.by_wday_hour[date.wday][date.hour] += 1
-        self.by_month[date.month] += 1
-        self.by_year[date.year] += 1
-        self.by_year_month[date.year][date.month] += 1
+        by_date[date] += 1
+        by_hour[date.hour] += 1
+        by_wday[date.wday] += 1
+        by_wday_hour[date.wday][date.hour] += 1
+        by_month[date.month] += 1
+        by_year[date.year] += 1
+        by_year_month[date.year][date.month] += 1
       end
 
       def default_hash
@@ -72,7 +71,6 @@ module GitStats
       def default_double_hash
         Hash.new { |h, k| h[k] = Hash.new(0) }
       end
-
     end
   end
 end

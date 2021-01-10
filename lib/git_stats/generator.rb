@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module GitStats
   class Generator
     delegate :add_command_observer, to: :@repo
@@ -16,16 +15,12 @@ module GitStats
 
     private
 
-
     def validate_repo_path(repo_path)
       raise ArgumentError, "#{repo_path} is not a git repository" unless valid_repo_path?(repo_path)
     end
 
-
     def valid_repo_path?(repo_path)
-      Dir.exists?("#{repo_path}/.git") || File.exists?("#{repo_path}/.git") || File.exists?("#{repo_path}/HEAD")
+      Dir.exist?("#{repo_path}/.git") || File.exist?("#{repo_path}/.git") || File.exist?("#{repo_path}/HEAD")
     end
-
   end
-
 end

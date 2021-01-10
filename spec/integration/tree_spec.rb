@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'integration/shared'
 
 describe GitStats::GitData::Tree do
@@ -67,7 +66,6 @@ describe GitStats::GitData::Tree do
     repo.deletions_by_author.keys.should == expected_authors
     repo.deletions_by_author.values.should == [0]
   end
-
 end
 
 describe GitStats::GitData::Tree do
@@ -132,7 +130,6 @@ describe GitStats::GitData::Tree do
     repo.deletions_by_author.keys.should == expected_authors
     repo.deletions_by_author.values.should == [0]
   end
-
 end
 
 describe GitStats::GitData::Tree do
@@ -200,5 +197,4 @@ describe GitStats::GitData::Tree do
     repo.deletions_by_author.keys.should == expected_authors
     repo.deletions_by_author.values.should == [0]
   end
-
 end

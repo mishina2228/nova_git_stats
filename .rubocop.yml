@@ -1,1 +1,8 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.5
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 inherit_from: .rubocop_todo.yml

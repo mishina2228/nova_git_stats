@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module GitStats
   module GitData
     class CommentStat
@@ -14,15 +13,16 @@ module GitStats
       end
 
       def to_s
-        "#{self.class} #@commit"
+        "#{self.class} #{@commit}"
       end
 
       def escape_characters_in_string(string)
-      	pattern = /(\'|\"|\.|\*|\/|\-|\\)/
-      	string.gsub(pattern){|match|"\\"  + match}
+        pattern = %r{('|"|\.|\*|/|-|\\)}
+        string.gsub(pattern){|match|"\\" + match}
       end
-      
+
       private
+
       def calculate_stat
         escaped_string = escape_characters_in_string(commit.repo.comment_string)
         stat_line = commit.repo.run("git show #{commit.sha} | awk 'BEGIN {adds=0; dels=0} {if ($0 ~ /^\\+#{escaped_string}/) adds++; if ($0 ~ /^\-#{escaped_string}/) dels++} END {print adds \" insertions \" dels \" deletes\"}'").lines.to_a[0]
