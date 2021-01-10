@@ -37,10 +37,9 @@ module GitStats
 
       def all_templates(root = '')
         (Dir["../../../../templates/#{root}**/[^_]*.haml".absolute_path].map do |f|
-          Pathname.new(f)
-        end.map do |f|
-          f.relative_path_from(Pathname.new('../../../../templates'.absolute_path)).sub_ext('')
-        end.map(&:to_s) - %w(layout))
+          path = Pathname.new(f)
+          path.relative_path_from(Pathname.new('../../../../templates'.absolute_path)).sub_ext('').to_s
+        end - %w(layout))
       end
 
       private

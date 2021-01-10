@@ -34,8 +34,10 @@ module GitStats
 
       def lines_by_extension
         @lines_by_extension ||= Hash[files_by_extension.map do |ext, files|
-          [ext, files.map(&:lines_count).sum]
-        end.delete_if { |_ext, lines_count| lines_count == 0 }]
+          next if (lines_count = files.map(&:lines_count).sum) == 0
+
+          [ext, lines_count]
+        end.compact]
       end
 
       def files_count

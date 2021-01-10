@@ -49,7 +49,7 @@ module GitStats
 
         def date_column_chart(params)
           common_options(params)
-          series(date_series({name: params[:title], data: params[:data]}, false).merge(
+          series(date_series({name: params[:title], data: params[:data]}, aggregated: false).merge(
                    {
                      type: 'column',
                      dataGrouping: {units: [['day', [1]], ['week', [1]]], forced: true}
@@ -106,7 +106,7 @@ module GitStats
           x_text params[:x_text]
         end
 
-        def date_series(params, aggregated = true)
+        def date_series(params, aggregated: true)
           {
             name: params[:name],
             type: "spline",
