@@ -18,7 +18,7 @@ module GitStats
 
       def escape_characters_in_string(string)
         pattern = %r{('|"|\.|\*|/|-|\\)}
-        string.gsub(pattern){|match|"\\" + match}
+        string.gsub(pattern) {|match| "\\#{match}"}
       end
 
       private

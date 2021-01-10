@@ -22,11 +22,14 @@ module GitStats
       end
 
       def files_by_extension
-        @files_by_extension ||= files.each_with_object({}) { |f, acc| acc[f.extension] ||= []; acc[f.extension] << f }
+        @files_by_extension ||= files.each_with_object({}) do |f, acc|
+          acc[f.extension] ||= []
+          acc[f.extension] << f
+        end
       end
 
       def files_by_extension_count
-        @files_by_extension_count ||= Hash[files_by_extension.map { |ext, files| [ext, files.count] }]
+        @files_by_extension_count ||= files_by_extension.transform_values(&:count)
       end
 
       def lines_by_extension

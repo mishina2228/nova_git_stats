@@ -16,7 +16,7 @@ module GitStats
       end
 
       def extension
-        @ext ||= File.extname(filename)
+        @extension ||= File.extname(filename)
       end
 
       def binary?

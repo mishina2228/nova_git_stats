@@ -6,24 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleInsidePipes.
-# SupportedStylesInsidePipes: space, no_space
-Layout/SpaceAroundBlockParameters:
-  Exclude:
-    - 'lib/git_stats/git_data/comment_stat.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces.
-# SupportedStyles: space, no_space
-# SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceBeforeBlockBraces:
-  Exclude:
-    - 'git_stats.gemspec'
-    - 'lib/git_stats/git_data/comment_stat.rb'
-
 # Offense count: 8
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
@@ -75,13 +57,6 @@ Metrics/ClassLength:
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 Metrics/MethodLength:
   Max: 12
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/SlicingWithRange:
-  Exclude:
-    - 'lib/git_stats/git_data/activity.rb'
-    - 'lib/git_stats/stats_view/charts/activity_charts.rb'
 
 # Offense count: 32
 # Cop supports --auto-correct.

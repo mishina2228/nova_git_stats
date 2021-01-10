@@ -10,7 +10,7 @@ class Hash
   def fill_empty_days!(params = {aggregated: true})
     return self if empty?
 
-    self_with_date_keys = Hash[map { |k, v| [k.to_date, v] }]
+    self_with_date_keys = transform_keys(&:to_date)
     days_with_data = self_with_date_keys.keys.sort.uniq
     prev = 0
 

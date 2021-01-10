@@ -6,6 +6,10 @@ module GitStats
           @chart.send(name, *args, &block)
         end
 
+        def respond_to_missing?(name, include_private = false)
+          @chart.respond_to?(name, include_private)
+        end
+
         def initialize
           @chart = LazyHighCharts::HighChart.new('graph')
           yield self if block_given?
@@ -32,7 +36,7 @@ module GitStats
 
         def date_chart(params)
           common_options(params)
-          series(date_series(name: params[:title], data: params[:data]))
+          series(date_series({name: params[:title], data: params[:data]}))
         end
 
         def multi_date_chart(params)
