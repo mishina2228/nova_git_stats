@@ -1,10 +1,10 @@
 class Hash
   def to_key_indexed_array(params = {})
-    raise ArgumentError, 'all the keys must be numbers to convert to key indexed array' unless all? { |k, v| k.is_a? Numeric }
+    raise ArgumentError, 'all the keys must be numbers to convert to key indexed array' unless all? { |k, _v| k.is_a? Numeric }
 
     min_size = params[:min_size] || 0
     default = params[:default]
-    each_with_object(Array.new(min_size, default)) { |(k, v), acc| acc[k] = v; }.map { |e| e || default }
+    each_with_object(Array.new(min_size, default)) { |(k, v), acc| acc[k] = v }.map { |e| e || default }
   end
 
   def fill_empty_days!(params = {aggregated: true})

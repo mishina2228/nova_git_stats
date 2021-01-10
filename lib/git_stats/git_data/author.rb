@@ -25,19 +25,19 @@ module GitStats
 
       def commits_sum_by_date
         sum = 0
-        commits.map { |commit|
+        commits.map do |commit|
           sum += 1
           [commit.date, sum]
-        }
+        end
       end
 
       [:insertions, :deletions, :changed_lines].each do |method|
         define_method "#{method}_by_date" do
           sum = 0
-          commits.map { |commit|
+          commits.map do |commit|
             sum += commit.short_stat.send(method)
             [commit.date, sum]
-          }
+          end
         end
       end
 

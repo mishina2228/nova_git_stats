@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe GitStats::GitData::Activity do
-  let(:dates) {
+  let(:dates) do
     [
       '10.05.2012 12:37',
       '10.05.2012 13:53',
@@ -9,7 +9,7 @@ describe GitStats::GitData::Activity do
       '15.06.2011 15:02',
       '27.09.2011 15:34'
     ]
-  }
+  end
   let(:commits) { dates.map { |d| GitStats::GitData::Commit.new(date: DateTime.parse(d)) } }
   let(:activity) { GitStats::GitData::Activity.new(commits) }
 

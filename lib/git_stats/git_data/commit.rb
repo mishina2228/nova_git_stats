@@ -14,7 +14,7 @@ module GitStats
       end
 
       def binary_files
-        @binary_files ||= files.select { |f| f.binary? }
+        @binary_files ||= files.select(&:binary?)
       end
 
       def text_files
@@ -22,7 +22,7 @@ module GitStats
       end
 
       def files_by_extension
-        @files_by_extension ||= files.each_with_object({}) { |f, acc| acc[f.extension] ||= []; acc[f.extension] << f; }
+        @files_by_extension ||= files.each_with_object({}) { |f, acc| acc[f.extension] ||= []; acc[f.extension] << f }
       end
 
       def files_by_extension_count
@@ -30,9 +30,9 @@ module GitStats
       end
 
       def lines_by_extension
-        @lines_by_extension ||= Hash[files_by_extension.map { |ext, files|
+        @lines_by_extension ||= Hash[files_by_extension.map do |ext, files|
           [ext, files.map(&:lines_count).sum]
-        }.delete_if { |ext, lines_count| lines_count == 0 }]
+        end.delete_if { |_ext, lines_count| lines_count == 0 }]
       end
 
       def files_count

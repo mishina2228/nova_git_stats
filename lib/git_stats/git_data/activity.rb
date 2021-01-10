@@ -42,7 +42,7 @@ module GitStats
       end
 
       def by_year_month
-        @by_year_week ||= default_double_hash
+        @by_year_month ||= default_double_hash
       end
 
       private

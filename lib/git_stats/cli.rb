@@ -14,8 +14,8 @@ class GitStats::CLI < Thor
   desc 'generate', 'Generates the statistics of a repository'
   def generate
     I18n.locale = options[:language]
-    GitStats::Generator.new(options) { |g|
-      g.add_command_observer { |command, result| puts command.to_s } unless options[:silent]
-    }.render_all
+    GitStats::Generator.new(options) do |g|
+      g.add_command_observer { |command, _result| puts command.to_s } unless options[:silent]
+    end.render_all
   end
 end

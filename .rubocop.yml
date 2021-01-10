@@ -11,6 +11,8 @@ Style/NumericPredicate:
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     '%w': '()'
+Style/StringLiterals:
+  Enabled: false
 Style/SymbolArray:
   EnforcedStyle: brackets
 

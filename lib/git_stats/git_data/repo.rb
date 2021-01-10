@@ -18,9 +18,7 @@ module GitStats
         @path ||= '.'
       end
 
-      def first_commit_sha
-        @first_commit_sha
-      end
+      attr_reader :first_commit_sha
 
       def last_commit_sha
         @last_commit_sha ||= 'HEAD'
@@ -53,7 +51,7 @@ module GitStats
             date: DateTime.parse(commit_line[:date]),
             author: authors.first! { |a| a.email == commit_line[:author_email] }
           )
-        end.sort_by! { |e| e.date }
+        end.sort_by!(&:date)
       end
 
       def commits_period
@@ -61,37 +59,37 @@ module GitStats
       end
 
       def commits_count_by_author(limit = 4)
-        Hash[authors.map { |author| [author, author.commits.size] }.sort_by { |author, commits| -commits }[0..limit]]
+        Hash[authors.map { |author| [author, author.commits.size] }.sort_by { |_author, commits| -commits }[0..limit]]
       end
 
       [:insertions, :deletions, :changed_lines].each do |method|
         define_method "#{method}_by_author" do |limit = 4|
-          Hash[authors.map { |author| [author, author.send(method)] }.sort_by { |author, lines| -lines }[0..limit]]
+          Hash[authors.map { |author| [author, author.send(method)] }.sort_by { |_author, lines| -lines }[0..limit]]
         end
       end
 
       def files_count_by_date
-        @files_count_each_day ||= Hash[commits.map { |commit|
+        @files_count_by_date ||= Hash[commits.map do |commit|
           [commit.date.to_date, commit.files_count]
-        }]
+        end]
       end
 
       def lines_count_by_date
         sum = 0
-        @lines_count_each_day ||= Hash[commits.map { |commit|
+        @lines_count_by_date ||= Hash[commits.map do |commit|
           sum += commit.short_stat.insertions
           sum -= commit.short_stat.deletions
           [commit.date.to_date, sum]
-        }]
+        end]
       end
 
       def comments_count_by_date
         sum = 0
-        @comment_count_each_day ||= Hash[commits.map { |commit|
+        @comments_count_by_date ||= Hash[commits.map do |commit|
           sum += commit.comment_stat.insertions
           sum -= commit.comment_stat.deletions
           [commit.date.to_date, sum]
-        }].fill_empty_days!(aggregated: true)
+        end].fill_empty_days!(aggregated: true)
       end
 
       def last_commit
