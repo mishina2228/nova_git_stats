@@ -23,7 +23,7 @@ describe GitStats::GitData::Tree do
       end
 
       it 'should parse git shortlog output to authors hash' do
-        repo_tree.authors.should == [ build(:author, repo: repo_tree, name: "Israel Revert", email: "israelrevert@gmail.com") ]
+        repo_tree.authors.should == [build(:author, repo: repo_tree, name: "Israel Revert", email: "israelrevert@gmail.com")]
       end
 
       it 'should parse git revlist output to date sorted commits array' do
@@ -31,9 +31,9 @@ describe GitStats::GitData::Tree do
           with("git rev-list --pretty=format:'%H|%at|%ai|%aE' HEAD ./subdir_with_1_commit | grep -v commit").
           and_return("10d1814|1395407506|2014-03-21 14:11:46 +0100|israelrevert@gmail.com")
         repo_tree.commits.should ==
-          [ GitStats::GitData::Commit.new( repo: repo, sha: "10d1814", stamp: "1395407506",
-                                           date: DateTime.parse("2014-03-21 14:11:46 +0100"),
-                                           author: repo.authors.first! { |a| a.email == "israelrevert@gmail.com" })]
+          [GitStats::GitData::Commit.new(repo: repo, sha: "10d1814", stamp: "1395407506",
+                                         date: DateTime.parse("2014-03-21 14:11:46 +0100"),
+                                         author: repo.authors.first! { |a| a.email == "israelrevert@gmail.com" })]
       end
     end
   end

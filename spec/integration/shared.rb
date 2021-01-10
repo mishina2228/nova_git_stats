@@ -65,9 +65,9 @@ shared_context "tree_subdir_with_1_commit" do
   }
   let(:commit_dates_with_empty) {
     [
-      Date.new(2014, 03, 21),
-      Date.new(2014, 03, 21),
-      Date.new(2014, 03, 21)
+      Date.new(2014, 3, 21),
+      Date.new(2014, 3, 21),
+      Date.new(2014, 3, 21)
     ]
   }
   let(:tg_commit_dates) {
@@ -103,9 +103,9 @@ shared_context "tree_subdir_with_2_commit" do
   }
   let(:commit_dates_with_empty) {
     [
-      Date.new(2014, 03, 21),
-      Date.new(2014, 03, 21),
-      Date.new(2014, 03, 21)
+      Date.new(2014, 3, 21),
+      Date.new(2014, 3, 21),
+      Date.new(2014, 3, 21)
     ]
   }
   let(:tg_commit_dates) {
@@ -145,9 +145,9 @@ shared_context "tree" do
   }
   let(:commit_dates_with_empty) {
     [
-      Date.new(2014, 03, 21),
-      Date.new(2014, 03, 21),
-      Date.new(2014, 03, 21)
+      Date.new(2014, 3, 21),
+      Date.new(2014, 3, 21),
+      Date.new(2014, 3, 21)
     ]
   }
   let(:tg_commit_dates) {

@@ -119,7 +119,7 @@ module GitStats
       end
 
       def project_name
-        @project_name ||= (File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path))+File::SEPARATOR, "") || File.basename(path))
+        @project_name ||= (File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path)) + File::SEPARATOR, "") || File.basename(path))
       end
 
       def run(command)
@@ -141,7 +141,7 @@ module GitStats
         @command_parser ||= CommandParser.new
       end
 
-      def add_command_observer(proc=nil, &block)
+      def add_command_observer(proc = nil, &block)
         command_observers << block if block_given?
         command_observers << proc if proc
       end

@@ -1,4 +1,4 @@
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'git_stats/version'
 
@@ -7,8 +7,8 @@ Gem::Specification.new do |gem|
   gem.version       = GitStats::VERSION
   gem.authors       = ["Tomasz Gieniusz"]
   gem.email         = ["tomasz.gieniusz@gmail.com"]
-  gem.description   = %q{Git history statistics generator}
-  gem.summary       = %q{HTML statistics generator from git repository}
+  gem.description   = 'Git history statistics generator'
+  gem.summary       = 'HTML statistics generator from git repository'
   gem.homepage      = "https://github.com/tomgi/git_stats"
 
   gem.files         = `git ls-files`.split($/)

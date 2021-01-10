@@ -7,7 +7,7 @@ module GitStats
     private
 
     def execute(command, path)
-      Dir.chdir(path) { %x[#{command}] }
+      Dir.chdir(path) { `#{command}` }
     end
   end
 end

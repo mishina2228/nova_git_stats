@@ -2,7 +2,16 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.5
 
+Style/Documentation:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
+Style/NumericPredicate:
+  EnforcedStyle: comparison
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%w': '()'
+Style/SymbolArray:
+  EnforcedStyle: brackets
 
 inherit_from: .rubocop_todo.yml

@@ -22,24 +22,6 @@ Layout/SpaceAroundBlockParameters:
   Exclude:
     - 'lib/git_stats/git_data/comment_stat.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: space, no_space
-Layout/SpaceAroundEqualsInParameterDefault:
-  Exclude:
-    - 'lib/git_stats/git_data/repo.rb'
-    - 'lib/git_stats/stats_view/template.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment, EnforcedStyleForExponentOperator.
-# SupportedStylesForExponentOperator: space, no_space
-Layout/SpaceAroundOperators:
-  Exclude:
-    - 'lib/git_stats/git_data/comment_stat.rb'
-    - 'lib/git_stats/git_data/repo.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces.
@@ -49,21 +31,6 @@ Layout/SpaceBeforeBlockBraces:
   Exclude:
     - 'git_stats.gemspec'
     - 'lib/git_stats/git_data/comment_stat.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBrackets.
-# SupportedStyles: space, no_space, compact
-# SupportedStylesForEmptyBrackets: space, no_space
-Layout/SpaceInsideArrayLiteralBrackets:
-  Exclude:
-    - 'spec/git_data/tree_spec.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-Layout/SpaceInsideArrayPercentLiteral:
-  Exclude:
-    - 'spec/integration/file_spec.rb'
 
 # Offense count: 8
 # Cop supports --auto-correct.
@@ -95,14 +62,6 @@ Layout/SpaceInsideHashLiteralBraces:
     - 'spec/integration/author_spec.rb'
     - 'spec/integration/repo_spec.rb'
     - 'spec/integration/tree_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: space, no_space
-Layout/SpaceInsideParens:
-  Exclude:
-    - 'spec/git_data/tree_spec.rb'
 
 # Offense count: 17
 # Cop supports --auto-correct.
@@ -143,15 +102,6 @@ Metrics/ClassLength:
 Metrics/MethodLength:
   Max: 12
 
-# Offense count: 5
-# Configuration parameters: EnforcedStyleForLeadingUnderscores.
-# SupportedStylesForLeadingUnderscores: disallowed, required, optional
-Naming/MemoizedInstanceVariableName:
-  Exclude:
-    - 'lib/git_stats/git_data/activity.rb'
-    - 'lib/git_stats/git_data/blob.rb'
-    - 'lib/git_stats/git_data/repo.rb'
-
 # Offense count: 31
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, ProceduralMethods, FunctionalMethods, IgnoredMethods, AllowBracesOnProceduralOneLiners, BracesRequiredMethods.
@@ -179,31 +129,6 @@ Style/ClassAndModuleChildren:
     - 'lib/git_stats/cli.rb'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, AllowInnerBackticks.
-# SupportedStyles: backticks, percent_x, mixed
-Style/CommandLiteral:
-  Exclude:
-    - 'lib/git_stats/command_runner.rb'
-
-# Offense count: 26
-Style/Documentation:
-  Enabled: false
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/EachWithObject:
-  Exclude:
-    - 'lib/git_stats/core_extensions/hash.rb'
-    - 'lib/git_stats/git_data/commit.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/ExpandPathArguments:
-  Exclude:
-    - 'git_stats.gemspec'
-
-# Offense count: 1
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:
   Exclude:
@@ -221,11 +146,6 @@ Style/HashTransformValues:
   Exclude:
     - 'lib/git_stats/git_data/commit.rb'
 
-# Offense count: 1
-Style/MissingRespondToMissing:
-  Exclude:
-    - 'lib/git_stats/stats_view/charts/chart.rb'
-
 # Offense count: 3
 Style/MultilineBlockChain:
   Exclude:
@@ -234,83 +154,12 @@ Style/MultilineBlockChain:
     - 'lib/git_stats/stats_view/view.rb'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: literals, strict
-Style/MutableConstant:
-  Exclude:
-    - 'lib/git_stats/version.rb'
-
-# Offense count: 9
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedOctalStyle.
-# SupportedOctalStyles: zero_with_o, zero_only
-Style/NumericLiteralPrefix:
-  Exclude:
-    - 'spec/integration/shared.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IgnoredMethods.
-# SupportedStyles: predicate, comparison
-Style/NumericPredicate:
-  Exclude:
-    - 'spec/**/*'
-    - 'lib/git_stats/git_data/commit.rb'
-
-# Offense count: 1
 # Configuration parameters: AllowedMethods.
 # AllowedMethods: respond_to_missing?
 Style/OptionalBooleanParameter:
   Exclude:
     - 'lib/git_stats/stats_view/charts/chart.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/ParallelAssignment:
-  Exclude:
-    - 'lib/git_stats/stats_view/view.rb'
-
-# Offense count: 11
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'git_stats.gemspec'
-    - 'lib/git_stats/command_runner.rb'
-    - 'lib/git_stats/stats_view/view.rb'
-    - 'spec/integration/author_spec.rb'
-    - 'spec/integration/file_spec.rb'
-    - 'spec/integration/repo_spec.rb'
-    - 'spec/integration/tree_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, AllowedCompactTypes.
-# SupportedStyles: compact, exploded
-Style/RaiseArgs:
-  Exclude:
-    - 'lib/git_stats/core_extensions/hash.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/RedundantInterpolation:
-  Exclude:
-    - 'lib/git_stats/cli.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/RedundantPercentQ:
-  Exclude:
-    - 'git_stats.gemspec'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: AllowAsExpressionSeparator.
-Style/Semicolon:
-  Exclude:
-    - 'lib/git_stats/core_extensions/hash.rb'
-    - 'lib/git_stats/git_data/commit.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -325,13 +174,6 @@ Style/SlicingWithRange:
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiterals:
   Enabled: false
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: MinSize.
-# SupportedStyles: percent, brackets
-Style/SymbolArray:
-  EnforcedStyle: brackets
 
 # Offense count: 1
 # Cop supports --auto-correct.

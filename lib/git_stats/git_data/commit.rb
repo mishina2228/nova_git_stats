@@ -22,7 +22,7 @@ module GitStats
       end
 
       def files_by_extension
-        @files_by_extension ||= files.inject({}) { |acc, f| acc[f.extension] ||= []; acc[f.extension] << f; acc }
+        @files_by_extension ||= files.each_with_object({}) { |f, acc| acc[f.extension] ||= []; acc[f.extension] << f; }
       end
 
       def files_by_extension_count

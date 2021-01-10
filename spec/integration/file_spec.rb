@@ -4,7 +4,7 @@ describe GitStats::GitData::Repo do
   include_context "shared"
 
   it 'should gather all files in repo' do
-    repo.files.map(&:filename).should =~ %w(long_second.haml  long.txt  second.txt  test2.rb  test.rb  test.txt)
+    repo.files.map(&:filename).should =~ %w(long_second.haml long.txt second.txt test2.rb test.rb test.txt)
   end
 
   it 'should retrieve correct file content for old file' do

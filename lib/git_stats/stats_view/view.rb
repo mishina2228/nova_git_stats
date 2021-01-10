@@ -2,7 +2,8 @@ module GitStats
   module StatsView
     class View
       def initialize(view_data, out_path)
-        @view_data, @out_path = view_data, out_path
+        @view_data = view_data
+        @out_path = out_path
         @layout = Tilt.new("../../../../templates/layout.haml".absolute_path)
       end
 
