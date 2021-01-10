@@ -19,5 +19,11 @@ module GitStats
         g.add_command_observer { |command, _result| puts command.to_s } unless options[:silent]
       end.render_all
     end
+
+    desc 'version', 'Show Gitstats version number and quit'
+    def version
+      puts "GitStats #{GitStats::VERSION}"
+    end
+    map %w(-v --version) => :version
   end
 end
