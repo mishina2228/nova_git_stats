@@ -1,4 +1,4 @@
 # -*- encoding : utf-8 -*-
 module GitStats
-  VERSION = "1.0.17"
+  VERSION = "2.0.0.alpha"
 end
