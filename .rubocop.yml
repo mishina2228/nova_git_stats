@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
   NewCops: enable
   TargetRubyVersion: 2.5
@@ -15,5 +17,3 @@ Style/StringLiterals:
   Enabled: false
 Style/SymbolArray:
   EnforcedStyle: brackets
-
-inherit_from: .rubocop_todo.yml
