@@ -30,7 +30,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('tilt', '~> 2.0')
 
   gem.add_development_dependency('codecov', '~> 0.2')
-  gem.add_development_dependency('factory_girl', '~> 4.7')
+  gem.add_development_dependency('factory_bot', '~> 4.9')
   gem.add_development_dependency('pry', '~> 0.11')
   gem.add_development_dependency('rake', '~> 12.0')
   gem.add_development_dependency('rspec', '~> 3.4')

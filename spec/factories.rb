@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   initialize_with { new(attributes) }
 
   factory :repo, class: GitStats::GitData::Repo do
