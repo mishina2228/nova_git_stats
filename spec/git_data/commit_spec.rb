@@ -15,7 +15,7 @@ describe GitStats::GitData::Commit do
         commit.repo.should_receive(:run).with('git ls-tree -r abc -- .').and_return(expected)
       end
 
-      it 'should be parsed to files' do
+      it 'is parsed to files' do
         commit.files.should == [
           GitStats::GitData::Blob.new(repo: commit.repo, sha: "5ade7ad51a75ee7db4eb06cecd3918d38134087d", filename: "lib/git_stats/git_data/commit.rb"),
           GitStats::GitData::Blob.new(repo: commit.repo, sha: "db01e94677a8f72289848e507a52a43de2ea109a", filename: "lib/git_stats/git_data/repo.rb"),
@@ -24,7 +24,7 @@ describe GitStats::GitData::Commit do
         ]
       end
 
-      it 'should group files by extension' do
+      it 'groups files by extension' do
         commit.files_by_extension.should == {'.rb' => [
           GitStats::GitData::Blob.new(repo: commit.repo, sha: "5ade7ad51a75ee7db4eb06cecd3918d38134087d", filename: "lib/git_stats/git_data/commit.rb"),
           GitStats::GitData::Blob.new(repo: commit.repo, sha: "db01e94677a8f72289848e507a52a43de2ea109a", filename: "lib/git_stats/git_data/repo.rb")
@@ -35,7 +35,7 @@ describe GitStats::GitData::Commit do
         ]}
       end
 
-      it 'should count lines by extension excluding empty or binary files' do
+      it 'counts lines by extension excluding empty or binary files' do
         GitStats::GitData::Blob.should_receive(:new).and_return(
           double(lines_count: 40, extension: '.rb'),
           double(lines_count: 60, extension: '.rb'),

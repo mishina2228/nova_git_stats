@@ -5,7 +5,7 @@ describe GitStats::GitData::Repo do
 
   describe 'command observers' do
     context 'should be invoked after every command' do
-      it 'should accept block' do
+      it 'accepts block' do
         command_runner = double('command_runner')
         repo = build(:repo, command_runner: command_runner)
 
@@ -17,7 +17,7 @@ describe GitStats::GitData::Repo do
         repo.run('aa')
       end
 
-      it 'should accept Proc' do
+      it 'accepts Proc' do
         command_runner = double('command_runner')
         repo = build(:repo, command_runner: command_runner)
 

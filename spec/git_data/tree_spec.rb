@@ -6,11 +6,11 @@ describe GitStats::GitData::Tree do
   let(:tree) { build(:tree, repo: repo_tree, relative_path: './subdir_with_1_commit') }
 
   describe 'tree git output parsing' do
-    it 'should return . by default' do
+    it 'returns . by default' do
       repo.tree.should == GitStats::GitData::Tree.new(repo: repo, relative_path: '.')
     end
 
-    it 'should return relative_path given by parameter' do
+    it 'returns relative_path given by parameter' do
       repo_tree.tree.should == GitStats::GitData::Tree.new(repo: repo, relative_path: './subdir_with_1_commit')
       repo_tree.tree.relative_path.should == './subdir_with_1_commit'
       tree.relative_path.should == './subdir_with_1_commit'
@@ -22,11 +22,11 @@ describe GitStats::GitData::Tree do
 ")
       end
 
-      it 'should parse git shortlog output to authors hash' do
+      it 'parses git shortlog output to authors hash' do
         repo_tree.authors.should == [build(:author, repo: repo_tree, name: "Israel Revert", email: "israelrevert@gmail.com")]
       end
 
-      it 'should parse git revlist output to date sorted commits array' do
+      it 'parses git revlist output to date sorted commits array' do
         repo_tree.should_receive(:run)
                  .with("git rev-list --pretty=format:'%H|%at|%ai|%aE' HEAD ./subdir_with_1_commit | grep -v commit")
                  .and_return("10d1814|1395407506|2014-03-21 14:11:46 +0100|israelrevert@gmail.com")

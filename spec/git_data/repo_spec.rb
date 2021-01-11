@@ -10,14 +10,15 @@ describe GitStats::GitData::Repo do
     53	Joe Doe <joe.doe@gmail.com>
 ")
       end
-      it 'should parse git shortlog output to authors hash' do
+
+      it 'parses git shortlog output to authors hash' do
         repo.authors.should == [
           build(:author, repo: repo, name: "John Doe", email: "john.doe@gmail.com"),
           build(:author, repo: repo, name: "Joe Doe", email: "joe.doe@gmail.com")
         ]
       end
 
-      it 'should parse git revlist output to date sorted commits array' do
+      it 'parses git revlist output to date sorted commits array' do
         repo.should_receive(:run).with("git rev-list --pretty=format:'%H|%at|%ai|%aE' HEAD . | grep -v commit").and_return(
           "e4412c3|1348603824|2012-09-25 22:10:24 +0200|john.doe@gmail.com
 ce34874|1347482927|2012-09-12 22:48:47 +0200|joe.doe@gmail.com
@@ -41,7 +42,8 @@ ce34874|1347482927|2012-09-12 22:48:47 +0200|joe.doe@gmail.com
         ]
       end
     end
-    it 'should parse git rev-parse command to project version' do
+
+    it 'parses git rev-parse command to project version' do
       repo.should_receive(:run).with('git rev-parse HEAD').and_return('xyz')
       repo.project_version.should == 'xyz'
     end
