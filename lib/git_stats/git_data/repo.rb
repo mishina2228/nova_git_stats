@@ -140,7 +140,7 @@ module GitStats
       end
 
       def add_command_observer(proc = nil, &block)
-        command_observers << block if block_given?
+        command_observers << block if block
         command_observers << proc if proc
       end
 

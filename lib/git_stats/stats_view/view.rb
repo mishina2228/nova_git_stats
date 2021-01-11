@@ -11,7 +11,7 @@ module GitStats
         prepare_static_content
         prepare_assets
 
-        all_templates.reject {|t| t =~ /author_details/}.each do |template|
+        all_templates.reject {|t| t.include?('author_details')}.each do |template|
           output = Template.new(template, @layout).render(@view_data, author: @view_data.repo, links: links)
           write(output, "#{@out_path}/#{template}.html")
         end

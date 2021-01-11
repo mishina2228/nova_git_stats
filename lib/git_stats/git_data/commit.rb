@@ -34,7 +34,7 @@ module GitStats
 
       def lines_by_extension
         @lines_by_extension ||= Hash[files_by_extension.map do |ext, files|
-          next if (lines_count = files.map(&:lines_count).sum) == 0
+          next if (lines_count = files.sum(&:lines_count)) == 0
 
           [ext, lines_count]
         end.compact]
@@ -45,9 +45,9 @@ module GitStats
       end
 
       def lines_count
-        @lines_count ||= repo.run("git diff --shortstat --no-renames `git hash-object -t tree /dev/null` #{sha} -- #{repo.tree_path}").lines.map do |line|
+        @lines_count ||= repo.run("git diff --shortstat --no-renames `git hash-object -t tree /dev/null` #{sha} -- #{repo.tree_path}").lines.sum do |line|
           line[/(\d+) insertions?/, 1].to_i
-        end.sum
+        end
       end
 
       def short_stat
