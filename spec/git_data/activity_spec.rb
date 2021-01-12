@@ -11,7 +11,7 @@ describe GitStats::GitData::Activity do
     ]
   end
   let(:commits) { dates.map { |d| GitStats::GitData::Commit.new(date: DateTime.parse(d)) } }
-  let(:activity) { GitStats::GitData::Activity.new(commits) }
+  let(:activity) { described_class.new(commits) }
 
   it 'by_hour should count commits by hour' do
     expect(activity.by_hour).to eq({12 => 1, 13 => 2, 15 => 2})

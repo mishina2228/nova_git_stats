@@ -12,10 +12,11 @@ describe GitStats::GitData::Repo do
       end
 
       it 'parses git shortlog output to authors hash' do
-        expect(repo.authors).to eq([
+        expected = [
           build(:author, repo: repo, name: "John Doe", email: "john.doe@gmail.com"),
           build(:author, repo: repo, name: "Joe Doe", email: "joe.doe@gmail.com")
-        ])
+        ]
+        expect(repo.authors).to eq(expected)
       end
 
       it 'parses git revlist output to date sorted commits array' do
@@ -26,7 +27,7 @@ ce34874|1347482927|2012-09-12 22:48:47 +0200|joe.doe@gmail.com
 "
         )
 
-        expect(repo.commits).to eq([
+        expected_commits = [
           GitStats::GitData::Commit.new(
             repo: repo, sha: "5eab339", stamp: "1345835073", date: DateTime.parse("2012-08-24 21:04:33 +0200"),
             author: repo.authors.first! { |a| a.email == "john.doe@gmail.com" }
@@ -39,7 +40,8 @@ ce34874|1347482927|2012-09-12 22:48:47 +0200|joe.doe@gmail.com
             repo: repo, sha: "e4412c3", stamp: "1348603824", date: DateTime.parse("2012-09-25 22:10:24 +0200"),
             author: repo.authors.first! { |a| a.email == "john.doe@gmail.com" }
           )
-        ])
+        ]
+        expect(repo.commits).to eq(expected_commits)
       end
     end
 

@@ -12,7 +12,7 @@ describe GitStats::GitData::Repo do
   end
 
   it 'gathers all commits sorted by date' do
-    expect(repo.commits.map(&:sha)).to match_array(%w(
+    expected = %w(
       2c11f5e5224dd7d2fab27de0fca2a9a1d0ca4038
       4e7d0e9e58e27e33d47f94faf4079a49a75931da
       81e8bef75eaa93d772f2ce11d2a266ada1292741
@@ -23,7 +23,8 @@ describe GitStats::GitData::Repo do
       c87ecf9c0bbdca29d73def8ed442cebf48178d92
       d60b5eccf4513621bdbd65f408a0d28ff6fa9f5b
       fd66657521139b1af6fde2927c4a383ecd6508fa
-    ))
+    )
+    expect(repo.commits.map(&:sha)).to match_array(expected)
   end
 
   it 'returns project name from dir' do

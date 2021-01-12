@@ -9,15 +9,16 @@ describe GitStats::GitData::Tree do
 
   it 'calculates correct commits period' do
     expect(repo.commits_period).to eq([DateTime.parse('2014-03-21 14:11:46 +0100'),
-                                   DateTime.parse('2014-03-21 14:12:47 +0100')])
+                                       DateTime.parse('2014-03-21 14:12:47 +0100')])
   end
 
   it 'gathers all commits sorted by date' do
-    expect(repo.commits.map(&:sha)).to match_array(%w(
+    expected = %w(
       10d1814b1c4acf1496ba76d40ee4954a2e3908fb
       435e0ef41e7c4917e4ba635bb44c7d36c5c7b7ad
       5fd0f5ea90e0ef34a0214ec9c170728913525ff4
-    ))
+    )
+    expect(repo.commits.map(&:sha)).to match_array(expected)
   end
 
   it 'returns project name from dir' do
@@ -145,10 +146,11 @@ describe GitStats::GitData::Tree do
   end
 
   it 'gathers all commits sorted by date' do
-    expect(repo.commits.map(&:sha)).to match_array(%w(
+    expected = %w(
       435e0ef41e7c4917e4ba635bb44c7d36c5c7b7ad
       5fd0f5ea90e0ef34a0214ec9c170728913525ff4
-    ))
+    )
+    expect(repo.commits.map(&:sha)).to match_array(expected)
   end
 
   it 'returns project name from dir' do

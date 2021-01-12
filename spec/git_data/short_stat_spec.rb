@@ -15,7 +15,7 @@ describe GitStats::GitData::ShortStat do
         it "#{test[:content]} parsing" do
           expect(commit.repo).to receive(:run).with("git show --shortstat --oneline --no-renames abc -- .").and_return("abc some commit\n#{test[:content]}")
 
-          expect(commit.short_stat).to be_a(GitStats::GitData::ShortStat)
+          expect(commit.short_stat).to be_a(described_class)
           expect(commit.short_stat.files_changed).to eq(test[:expect][0])
           expect(commit.short_stat.insertions).to eq(test[:expect][1])
           expect(commit.short_stat.deletions).to eq(test[:expect][2])

@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe GitStats::GitData::Blob do
   let(:repo) { double }
-  let(:png_blob) { GitStats::GitData::Blob.new(filename: 'abc.png', sha: 'hash_png', repo: repo) }
-  let(:txt_blob) { GitStats::GitData::Blob.new(filename: 'abc.txt', sha: 'hash_txt', repo: repo) }
+  let(:png_blob) { described_class.new(filename: 'abc.png', sha: 'hash_png', repo: repo) }
+  let(:txt_blob) { described_class.new(filename: 'abc.txt', sha: 'hash_txt', repo: repo) }
 
   it 'returns 0 as lines count when files is binary' do
     expect(png_blob).to receive(:binary?).and_return true
