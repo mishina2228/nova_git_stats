@@ -13,12 +13,12 @@ describe GitStats::GitData::ShortStat do
         {content: '', expect: [0, 0, 0]}
       ].each do |test|
         it "#{test[:content]} parsing" do
-          commit.repo.should_receive(:run).with("git show --shortstat --oneline --no-renames abc -- .").and_return("abc some commit\n#{test[:content]}")
+          expect(commit.repo).to receive(:run).with("git show --shortstat --oneline --no-renames abc -- .").and_return("abc some commit\n#{test[:content]}")
 
-          commit.short_stat.should be_a(GitStats::GitData::ShortStat)
-          commit.short_stat.files_changed.should == test[:expect][0]
-          commit.short_stat.insertions.should == test[:expect][1]
-          commit.short_stat.deletions.should == test[:expect][2]
+          expect(commit.short_stat).to be_a(GitStats::GitData::ShortStat)
+          expect(commit.short_stat.files_changed).to eq(test[:expect][0])
+          expect(commit.short_stat.insertions).to eq(test[:expect][1])
+          expect(commit.short_stat.deletions).to eq(test[:expect][2])
         end
       end
     end

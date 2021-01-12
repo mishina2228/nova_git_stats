@@ -11,8 +11,8 @@ describe GitStats::GitData::Repo do
 
         observer = double('observer')
         repo.add_command_observer { |command, result| observer.invoked(command, result) }
-        command_runner.should_receive(:run).with(repo.path, 'aa').and_return('bb')
-        observer.should_receive(:invoked).with('aa', 'bb')
+        expect(command_runner).to receive(:run).with(repo.path, 'aa').and_return('bb')
+        expect(observer).to receive(:invoked).with('aa', 'bb')
 
         repo.run('aa')
       end
@@ -23,8 +23,8 @@ describe GitStats::GitData::Repo do
 
         observer = double('observer')
         repo.add_command_observer(observer)
-        command_runner.should_receive(:run).with(repo.path, 'aa').and_return('bb')
-        observer.should_receive(:call).with('aa', 'bb')
+        expect(command_runner).to receive(:run).with(repo.path, 'aa').and_return('bb')
+        expect(observer).to receive(:call).with('aa', 'bb')
 
         repo.run('aa')
       end

@@ -6,27 +6,27 @@ describe GitStats::GitData::Repo do
   describe 'git output parsing' do
     context 'invoking authors command' do
       before do
-        repo.should_receive(:run).with('git shortlog -se HEAD .').and_return("   156	John Doe <john.doe@gmail.com>
+        expect(repo).to receive(:run).with('git shortlog -se HEAD .').and_return("   156	John Doe <john.doe@gmail.com>
     53	Joe Doe <joe.doe@gmail.com>
 ")
       end
 
       it 'parses git shortlog output to authors hash' do
-        repo.authors.should == [
+        expect(repo.authors).to eq([
           build(:author, repo: repo, name: "John Doe", email: "john.doe@gmail.com"),
           build(:author, repo: repo, name: "Joe Doe", email: "joe.doe@gmail.com")
-        ]
+        ])
       end
 
       it 'parses git revlist output to date sorted commits array' do
-        repo.should_receive(:run).with("git rev-list --pretty=format:'%H|%at|%ai|%aE' HEAD . | grep -v commit").and_return(
+        expect(repo).to receive(:run).with("git rev-list --pretty=format:'%H|%at|%ai|%aE' HEAD . | grep -v commit").and_return(
           "e4412c3|1348603824|2012-09-25 22:10:24 +0200|john.doe@gmail.com
 ce34874|1347482927|2012-09-12 22:48:47 +0200|joe.doe@gmail.com
 5eab339|1345835073|2012-08-24 21:04:33 +0200|john.doe@gmail.com
 "
         )
 
-        repo.commits.should == [
+        expect(repo.commits).to eq([
           GitStats::GitData::Commit.new(
             repo: repo, sha: "5eab339", stamp: "1345835073", date: DateTime.parse("2012-08-24 21:04:33 +0200"),
             author: repo.authors.first! { |a| a.email == "john.doe@gmail.com" }
@@ -39,13 +39,13 @@ ce34874|1347482927|2012-09-12 22:48:47 +0200|joe.doe@gmail.com
             repo: repo, sha: "e4412c3", stamp: "1348603824", date: DateTime.parse("2012-09-25 22:10:24 +0200"),
             author: repo.authors.first! { |a| a.email == "john.doe@gmail.com" }
           )
-        ]
+        ])
       end
     end
 
     it 'parses git rev-parse command to project version' do
-      repo.should_receive(:run).with('git rev-parse HEAD').and_return('xyz')
-      repo.project_version.should == 'xyz'
+      expect(repo).to receive(:run).with('git rev-parse HEAD').and_return('xyz')
+      expect(repo.project_version).to eq('xyz')
     end
   end
 end

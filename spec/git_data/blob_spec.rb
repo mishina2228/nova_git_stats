@@ -6,18 +6,18 @@ describe GitStats::GitData::Blob do
   let(:txt_blob) { GitStats::GitData::Blob.new(filename: 'abc.txt', sha: 'hash_txt', repo: repo) }
 
   it 'returns 0 as lines count when files is binary' do
-    png_blob.should_receive(:binary?).and_return true
-    png_blob.lines_count.should == 0
+    expect(png_blob).to receive(:binary?).and_return true
+    expect(png_blob.lines_count).to eq(0)
   end
 
   it 'returns actual lines count when files is not binary' do
-    txt_blob.should_receive(:binary?).and_return false
-    repo.should_receive(:run).with("git cat-file blob hash_txt | wc -l").and_return 42
-    txt_blob.lines_count.should == 42
+    expect(txt_blob).to receive(:binary?).and_return false
+    expect(repo).to receive(:run).with("git cat-file blob hash_txt | wc -l").and_return 42
+    expect(txt_blob.lines_count).to eq(42)
   end
 
   it 'invokes grep to check if file is binary' do
-    repo.should_receive(:run).with("git cat-file blob hash_png | grep -m 1 '^'").and_return "Binary file matches"
-    png_blob.should be_binary
+    expect(repo).to receive(:run).with("git cat-file blob hash_png | grep -m 1 '^'").and_return "Binary file matches"
+    expect(png_blob).to be_binary
   end
 end

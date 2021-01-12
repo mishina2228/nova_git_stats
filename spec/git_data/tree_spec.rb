@@ -7,33 +7,34 @@ describe GitStats::GitData::Tree do
 
   describe 'tree git output parsing' do
     it 'returns . by default' do
-      repo.tree.should == GitStats::GitData::Tree.new(repo: repo, relative_path: '.')
+      expect(repo.tree).to eq(GitStats::GitData::Tree.new(repo: repo, relative_path: '.'))
     end
 
     it 'returns relative_path given by parameter' do
-      repo_tree.tree.should == GitStats::GitData::Tree.new(repo: repo, relative_path: './subdir_with_1_commit')
-      repo_tree.tree.relative_path.should == './subdir_with_1_commit'
-      tree.relative_path.should == './subdir_with_1_commit'
+      expect(repo_tree.tree).to eq(GitStats::GitData::Tree.new(repo: repo, relative_path: './subdir_with_1_commit'))
+      expect(repo_tree.tree.relative_path).to eq('./subdir_with_1_commit')
+      expect(tree.relative_path).to eq('./subdir_with_1_commit')
     end
 
     context 'invoking authors command' do
       before do
-        repo_tree.should_receive(:run).with('git shortlog -se HEAD ./subdir_with_1_commit').and_return("	3	Israel Revert <israelrevert@gmail.com>
+        expect(repo_tree).to receive(:run).with('git shortlog -se HEAD ./subdir_with_1_commit').and_return("	3	Israel Revert <israelrevert@gmail.com>
 ")
       end
 
       it 'parses git shortlog output to authors hash' do
-        repo_tree.authors.should == [build(:author, repo: repo_tree, name: "Israel Revert", email: "israelrevert@gmail.com")]
+        expect(repo_tree.authors).to eq([build(:author, repo: repo_tree, name: "Israel Revert", email: "israelrevert@gmail.com")])
       end
 
       it 'parses git revlist output to date sorted commits array' do
-        repo_tree.should_receive(:run)
+        expect(repo_tree).to receive(:run)
                  .with("git rev-list --pretty=format:'%H|%at|%ai|%aE' HEAD ./subdir_with_1_commit | grep -v commit")
                  .and_return("10d1814|1395407506|2014-03-21 14:11:46 +0100|israelrevert@gmail.com")
-        repo_tree.commits.should ==
+        expect(repo_tree.commits).to eq(
           [GitStats::GitData::Commit.new(repo: repo, sha: "10d1814", stamp: "1395407506",
                                          date: DateTime.parse("2014-03-21 14:11:46 +0100"),
                                          author: repo.authors.first! { |a| a.email == "israelrevert@gmail.com" })]
+        )
       end
     end
   end

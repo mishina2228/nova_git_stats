@@ -4,25 +4,25 @@ describe GitStats::GitData::Repo do
   include_context "shared"
 
   it 'gathers all files in repo' do
-    repo.files.map(&:filename).should =~ %w(long_second.haml long.txt second.txt test2.rb test.rb test.txt)
+    expect(repo.files.map(&:filename)).to match_array(%w(long_second.haml long.txt second.txt test2.rb test.rb test.txt))
   end
 
   it 'retrieves correct file content for old file' do
-    repo.commits.first! { |c| c.sha == 'c87ecf9c0bbdca29d73def8ed442cebf48178d92' }.files.first! { |f| f.filename == 'test.txt' }.content.should == "bb
+    expect(repo.commits.first! { |c| c.sha == 'c87ecf9c0bbdca29d73def8ed442cebf48178d92' }.files.first! { |f| f.filename == 'test.txt' }.content).to eq("bb
 
 
 
 test
-"
+")
   end
 
   it 'retrieves correct file content for the newest file' do
     file = repo.files.first! { |f| f.filename == 'test.txt' }
-    file.content.should == "bb
+    expect(file.content).to eq("bb
 
 testtest
 
 test
-"
+")
   end
 end
