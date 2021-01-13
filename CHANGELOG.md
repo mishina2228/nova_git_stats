@@ -14,8 +14,12 @@
   * `bg.yml`
 
 ### Enhancements
-* Introduced RuboCop, RuboCop Performance and RuboCop RSpec
+* Introduced RuboCop and following extensions
+  * RuboCop Performance
+  * RuboCop Rake
+  * RuboCop RSpec
 * Replace FactoryGirl with FactoryBot
+* Updated dependency gems
 
 ## Earlier than 2.0.0
  * See original project [tomgi/git_stats](https://github.com/tomgi/git_stats)
