@@ -20,13 +20,13 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
-  gem.add_dependency('actionpack', '~> 6.0')
-  gem.add_dependency('activesupport', '~> 6.0')
+  gem.add_dependency('actionpack', '~> 6.1')
+  gem.add_dependency('activesupport', '~> 6.1')
   gem.add_dependency('haml', '~> 5.0')
-  gem.add_dependency('i18n', '~> 0.8')
+  gem.add_dependency('i18n', '~> 1.8')
   gem.add_dependency('json_pure', '~> 2.1')
   gem.add_dependency('lazy_high_charts', '~> 1.5')
-  gem.add_dependency('thor', '~> 0.20')
+  gem.add_dependency('thor', '~> 1.0')
   gem.add_dependency('tilt', '~> 2.0')
 
   gem.add_development_dependency('codecov', '~> 0.2')
