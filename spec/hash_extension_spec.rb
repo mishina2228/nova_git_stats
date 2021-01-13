@@ -9,7 +9,7 @@ describe Hash do
 
     it 'throws exception if not all of the keys are numbers' do
       hash = {1 => 'x', 'b' => 2}
-      expect { hash.to_key_indexed_array }.to raise_error(ArgumentError)
+      expect { hash.to_key_indexed_array }.to raise_error('all the keys must be numbers to convert to key indexed array')
     end
 
     context 'should take optional min_size and default parameters' do
