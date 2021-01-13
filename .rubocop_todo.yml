@@ -6,37 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 8
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
-# SupportedStyles: space, no_space
-# SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideBlockBraces:
-  Exclude:
-    - 'lib/git_stats/git_data/comment_stat.rb'
-    - 'lib/git_stats/stats_view/view.rb'
-    - 'spec/integration/shared.rb'
-
-# Offense count: 133
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces.
-# SupportedStyles: space, no_space, compact
-# SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideHashLiteralBraces:
-  Exclude:
-    - 'lib/git_stats/command_parser.rb'
-    - 'lib/git_stats/core_extensions/hash.rb'
-    - 'lib/git_stats/stats_view/charts/authors_charts.rb'
-    - 'lib/git_stats/stats_view/charts/chart.rb'
-    - 'spec/git_data/activity_spec.rb'
-    - 'spec/git_data/commit_spec.rb'
-    - 'spec/git_data/short_stat_spec.rb'
-    - 'spec/hash_extension_spec.rb'
-    - 'spec/integration/activity_spec.rb'
-    - 'spec/integration/author_spec.rb'
-    - 'spec/integration/repo_spec.rb'
-    - 'spec/integration/tree_spec.rb'
-
 # Offense count: 4
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
 Metrics/AbcSize:

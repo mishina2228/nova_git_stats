@@ -12,6 +12,9 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.5
 
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
 Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
