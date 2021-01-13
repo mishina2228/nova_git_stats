@@ -4,7 +4,7 @@ describe GitStats::GitData::Commit do
   let(:commit) { build(:commit, sha: 'abc') }
 
   describe 'git output parsing' do
-    context 'parsing git ls-tree output' do
+    context 'when parse git ls-tree output' do
       before do
         expected = <<~STDOUT
           100644 blob 5ade7ad51a75ee7db4eb06cecd3918d38134087d	lib/git_stats/git_data/commit.rb

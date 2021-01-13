@@ -4,7 +4,7 @@ describe GitStats::GitData::ShortStat do
   let(:commit) { build(:commit, sha: 'abc') }
 
   describe 'git output parsing' do
-    context 'parsing git show output' do
+    context 'when parse git show output' do
       [
         {content: '2 files changed, 17 insertions(+), 3 deletions(-)', expect: [2, 17, 3]},
         {content: '1 file changed, 1 insertion(+), 1 deletion(-)', expect: [1, 1, 1]},

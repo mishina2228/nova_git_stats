@@ -4,7 +4,7 @@ describe GitStats::GitData::Repo do
   let(:repo) { build(:repo) }
 
   describe 'git output parsing' do
-    context 'invoking authors command' do
+    context 'when invoke authors command' do
       before do
         expect(repo).to receive(:run).with('git shortlog -se HEAD .').and_return("   156	John Doe <john.doe@gmail.com>
     53	Joe Doe <joe.doe@gmail.com>
