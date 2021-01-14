@@ -1,6 +1,7 @@
 de:
   project_name: Projektname
   project_version: Generiert aus commit
+  tree_path: Tree path
   generated_at: Generiert am
   generator: Generiert durch
   report_period: Berichtsperiode

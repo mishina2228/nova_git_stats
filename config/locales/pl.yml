@@ -1,6 +1,7 @@
 pl:
   project_name: Nazwa projektu
   project_version: Wersja projektu
+  tree_path: Tree path
   generated_at: Wygenerowano
   generator: Generator
   report_period: Okres raportu
@@ -12,8 +13,10 @@ pl:
   commits_by_hour: Commity po godzinie
   files: Pliki
   lines: Linie
+  comments: Comments
   files_by_date: Pliki po dacie
   lines_by_date: Linie po dacie
+  comments_by_date: Comments by date
   files_by_extension: Pliki po rozszerzeniu
   lines_by_extension: Linie po rozszerzeniu
   hour_of_day: Godzina dnia
@@ -54,3 +57,7 @@ pl:
   binary: Binarne
   text: Tekstowe
   general: Ogólne
+  details: Details
+  insertions_by_date: Lines added by date
+  deletions_by_date: Lines deleted by date
+  changed_lines_by_date: Changed lines by date
