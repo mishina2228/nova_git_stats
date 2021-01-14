@@ -1,0 +1,2 @@
+inherits_from:
+  - .haml-lint_todo.yml

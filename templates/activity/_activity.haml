@@ -24,7 +24,7 @@
       = high_stock("charts.activity_by_date", charts.activity_by_date(author))
 
     - elsif page == :hour_of_day
-      %table{:class => "table table-bordered table-condensed"}
+      %table{class: "table table-bordered table-condensed"}
         %tr
           %th= :hour.t
           - (0..23).each do |h|
@@ -40,7 +40,7 @@
       = high_chart("charts.activity_by_hour", charts.activity_by_hour(author))
 
     - elsif page == :day_of_week
-      %table{:class => "table table-bordered table-condensed"}
+      %table{class: "table table-bordered table-condensed"}
         %tr
           %th= :day.t
           - I18n.t('date.abbr_day_names').each do |d|
@@ -56,7 +56,7 @@
       = high_chart("charts.activity_by_wday", charts.activity_by_wday(author))
 
     - elsif page == :hour_of_week
-      %table{:class => "table table-bordered table-condensed"}
+      %table{class: "table table-bordered table-condensed"}
         %tr
           %th
           - (0..23).each do |h|
@@ -70,7 +70,7 @@
               %td{style: "background-color: ##{color}#{color}#{color};"}= author.activity.by_wday_hour[day][hour]
 
     - elsif page == :month_of_year
-      %table{:class => "table table-bordered table-condensed"}
+      %table{class: "table table-bordered table-condensed"}
         %tr
           %th= :month.t
           - I18n.t('date.abbr_month_names')[1..-1].each do |m|
@@ -89,7 +89,7 @@
       = high_chart("charts.activity_by_year", charts.activity_by_year(author))
 
     - elsif page == :year_month
-      %table{:class => "table table-bordered table-condensed"}
+      %table{class: "table table-bordered table-condensed"}
         %tr
           %th
           - I18n.t('date.abbr_month_names')[1..-1].each do |h|
