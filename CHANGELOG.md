@@ -18,6 +18,7 @@
   * tr
   * zh_cn
   * zh_tw
+* Returns exit 1 when a required argument is not provided
 
 ### Enhancements
 * Introduced RuboCop and following extensions
