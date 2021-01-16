@@ -36,8 +36,10 @@
               %td= author.commits.size
               %td= author.insertions
               %td= author.deletions
-              %td= I18n.localize(author.commits.first.try(:date), format: :long) rescue ""
-              %td= I18n.localize(author.commits.last.try(:date), format: :long) rescue ""
+              - commit_first_date = author.commits.first&.date
+              %td= I18n.l(commit_first_date, format: :long) if commit_first_date
+              - commit_last_date = author.commits.last&.date
+              %td= I18n.l(commit_last_date, format: :long) if commit_last_date
               %td
                 %a.btn{href: "#{author.dirname}/activity/by_date.html"}= :activity.t
               %td

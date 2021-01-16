@@ -10,13 +10,13 @@
     %td= repo.tree_path
   %tr
     %td= :generated_at.t
-    %td= I18n.localize(DateTime.now, format: :long)
+    %td= I18n.l(DateTime.now, format: :long)
   %tr
     %td= :generator.t
     %td GitStats #{GitStats::VERSION}
   %tr
     %td= :report_period.t
-    %td= repo.commits_period.map { |d| I18n.localize(d, format: :long) }.join(" .. ")
+    %td= repo.commits_period.map { |d| I18n.l(d, format: :long) }.join(" .. ")
   %tr
     %td= :total_files.t
     %td #{repo.files_count} (#{:binary.t}: #{repo.binary_files.size}, #{:text.t}: #{repo.text_files.size})
