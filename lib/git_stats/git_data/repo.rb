@@ -58,6 +58,7 @@ module GitStats
         commits.map(&:date).minmax
       end
 
+      # TODO: This method is called from nowhere
       def commits_count_by_author(limit = 4)
         Hash[authors.map { |author| [author, author.commits.size] }.sort_by { |_author, commits| -commits }[0..limit]]
       end
