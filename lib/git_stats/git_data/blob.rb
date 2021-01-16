@@ -20,8 +20,9 @@ module GitStats
       end
 
       def binary?
-        content = repo.run("git cat-file blob #{sha} | grep -m 1 '^'").force_encoding('ISO-8859-1').encode('utf-8', replace: nil)
-        content.include?('Binary file')
+        repo.run("git cat-file blob #{sha} | grep -m 1 '^'").dup
+            .force_encoding('ISO-8859-1').encode('utf-8', replace: nil)
+            .include?('Binary file')
       end
 
       def to_s
