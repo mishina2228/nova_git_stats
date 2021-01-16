@@ -63,6 +63,7 @@ module GitStats
         Hash[authors.map { |author| [author, author.commits.size] }.sort_by { |_author, commits| -commits }[0..limit]]
       end
 
+      # TODO: These methods are called from nowhere
       [:insertions, :deletions, :changed_lines].each do |method|
         define_method "#{method}_by_author" do |limit = 4|
           Hash[authors.map { |author| [author, author.send(method)] }.sort_by { |_author, lines| -lines }[0..limit]]
