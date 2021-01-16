@@ -13,16 +13,16 @@
     %td= I18n.localize(DateTime.now, format: :long)
   %tr
     %td= :generator.t
-    %td= "GitStats #{GitStats::VERSION}"
+    %td GitStats #{GitStats::VERSION}
   %tr
     %td= :report_period.t
     %td= repo.commits_period.map { |d| I18n.localize(d, format: :long) }.join(" .. ")
   %tr
     %td= :total_files.t
-    %td= "#{repo.files_count} (#{:binary.t}: #{repo.binary_files.size}, #{:text.t}: #{repo.text_files.size})"
+    %td #{repo.files_count} (#{:binary.t}: #{repo.binary_files.size}, #{:text.t}: #{repo.text_files.size})
   %tr
     %td= :total_lines.t
-    %td= "#{repo.lines_count} #{:lines.t} (#{repo.short_stats.sum(&:insertions)} #{:insertions.t}, #{repo.short_stats.sum(&:deletions)} #{:deletions.t})"
+    %td #{repo.lines_count} #{:lines.t} (#{repo.short_stats.sum(&:insertions)} #{:insertions.t}, #{repo.short_stats.sum(&:deletions)} #{:deletions.t})
   %tr
     %td= :total_commits.t
     %td= repo.commits.size

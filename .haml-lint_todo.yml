@@ -15,15 +15,6 @@ linters:
       - "templates/general.haml"
       - "templates/layout.haml"
 
-  # Offense count: 16
-  UnnecessaryStringOutput:
-    exclude:
-      - "templates/activity/_activity.haml"
-      - "templates/author_details/_author_details.haml"
-      - "templates/authors/_authors.haml"
-      - "templates/general.haml"
-      - "templates/layout.haml"
-
   # Offense count: 1
   ViewLength:
     exclude:

@@ -2,7 +2,7 @@
 !!!
 %html
   %head
-    %title= "GitStats - #{repo.project_name}"
+    %title GitStats - #{repo.project_name}
     %meta{charset: "utf-8"}
     %link{rel: "stylesheet", href: asset_path('bootstrap/css/bootstrap.min.css', active_page), type: "text/css"}
     %style
@@ -22,7 +22,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{href: link_to("index.html", active_page)}= "GitStats - #{repo.project_name}"
+          %a.brand{href: link_to("index.html", active_page)} GitStats - #{repo.project_name}
           .nav-collapse.collapse
             %ul.nav
               - links.each do |name, href|
