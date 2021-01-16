@@ -3,6 +3,12 @@ require "thor"
 
 module GitStats
   class CLI < Thor
+    class << self
+      def exit_on_failure?
+        true
+      end
+    end
+
     option :path, aliases: :p, default: '.', desc: 'Path to repository from which statistics should be generated.'
     option :out_path, aliases: :o, default: './git_stats', desc: 'Output path where statistics should be written.'
     option :language, aliases: :l, default: 'en', desc: 'Language of written statistics.'
