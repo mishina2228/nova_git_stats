@@ -17,6 +17,8 @@ Layout/SpaceInsideHashLiteralBraces:
 
 Style/Documentation:
   Enabled: false
+Style/FormatString:
+  EnforcedStyle: percent
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/NumericPredicate:
@@ -26,5 +28,7 @@ Style/PercentLiteralDelimiters:
     '%w': '()'
 Style/StringLiterals:
   Enabled: false
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
 Style/SymbolArray:
   EnforcedStyle: brackets

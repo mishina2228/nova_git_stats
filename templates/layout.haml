@@ -15,18 +15,18 @@
     %script{src: asset_path('exporting.js', active_page), type: "text/javascript"}
     %script{src: asset_path('export-csv.js', active_page), type: "text/javascript"}
   %body
-    %div.navbar.navbar-fixed-top
-      %div.navbar-inner
-        %div.container
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
           %a.btn.btn-navbar{'data-toggle' => "collapse", 'data-target' => ".nav-collapse"}
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
           %a.brand{href: link_to("index.html", active_page)}= "GitStats - #{repo.project_name}"
-          %div.nav-collapse.collapse
+          .nav-collapse.collapse
             %ul.nav
               - links.each do |name, href|
                 %li{class: active_page[name.to_s.underscore] ? "active" : ""}
                   %a{href: link_to(href, active_page)}= name.t
-    %div.container
+    .container
       = yield

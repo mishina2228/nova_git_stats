@@ -1,18 +1,18 @@
 .tabbable.tabs-left
   %ul.nav.nav-tabs
-    %li{class: page == :activity_by_date ? "active" : "" }
+    %li{class: page == :activity_by_date ? "active" : ""}
       %a{href: "by_date.html"}= :activity_by_date.t
-    %li{class: page == :hour_of_day ? "active" : "" }
+    %li{class: page == :hour_of_day ? "active" : ""}
       %a{href: "hour_of_day.html"}= :hour_of_day.t
-    %li{class: page == :day_of_week ? "active" : "" }
+    %li{class: page == :day_of_week ? "active" : ""}
       %a{href: "day_of_week.html"}= :day_of_week.t
-    %li{class: page == :hour_of_week ? "active" : "" }
+    %li{class: page == :hour_of_week ? "active" : ""}
       %a{href: "hour_of_week.html"}= :hour_of_week.t
-    %li{class: page == :month_of_year ? "active" : "" }
+    %li{class: page == :month_of_year ? "active" : ""}
       %a{href: "month_of_year.html"}= :month_of_year.t
-    %li{class: page == :year ? "active" : "" }
+    %li{class: page == :year ? "active" : ""}
       %a{href: "year.html"}= :year.t
-    %li{class: page == :year_month ? "active" : "" }
+    %li{class: page == :year_month ? "active" : ""}
       %a{href: "year_month.html"}= :year_month.t
 
   .tab-content
@@ -20,10 +20,11 @@
       .page-header.pagination-centered
         %h1= page.t
         %h3= "#{author.respond_to?(:name) ? author.name : ""} #{author.respond_to?(:email) ? "&lt;#{author.email}&gt;" : ""}"
-    - if page == :activity_by_date
+    - case page
+    - when :activity_by_date
       = high_stock("charts.activity_by_date", charts.activity_by_date(author))
 
-    - elsif page == :hour_of_day
+    - when :hour_of_day
       %table{class: "table table-bordered table-condensed"}
         %tr
           %th= :hour.t
@@ -39,7 +40,7 @@
             %td= (commits * 100.0 / author.activity.by_hour_array.sum).round(1)
       = high_chart("charts.activity_by_hour", charts.activity_by_hour(author))
 
-    - elsif page == :day_of_week
+    - when :day_of_week
       %table{class: "table table-bordered table-condensed"}
         %tr
           %th= :day.t
@@ -55,13 +56,13 @@
             %td= (commits * 100.0 / author.activity.by_wday_array.sum).round(1)
       = high_chart("charts.activity_by_wday", charts.activity_by_wday(author))
 
-    - elsif page == :hour_of_week
+    - when :hour_of_week
       %table{class: "table table-bordered table-condensed"}
         %tr
           %th
           - (0..23).each do |h|
             %th= h
-        - max = author.activity.by_wday_hour.values.map {|h| h.values.empty? ? 0 : h.values.max }.max
+        - max = author.activity.by_wday_hour.values.map { |h| h.values.empty? ? 0 : h.values.max }.max
         - (0..6).each do |day|
           %tr
             %th= I18n.t('date.abbr_day_names')[day]
@@ -69,7 +70,7 @@
               - color = max ? "%02x" % (255 - author.activity.by_wday_hour[day][hour] * 100 / max) : "FF"
               %td{style: "background-color: ##{color}#{color}#{color};"}= author.activity.by_wday_hour[day][hour]
 
-    - elsif page == :month_of_year
+    - when :month_of_year
       %table{class: "table table-bordered table-condensed"}
         %tr
           %th= :month.t
@@ -85,10 +86,10 @@
             %td= (commits * 100.0 / author.activity.by_month_array.sum).round(1)
       = high_chart("charts.activity_by_month", charts.activity_by_month(author))
 
-    - elsif page == :year
+    - when :year
       = high_chart("charts.activity_by_year", charts.activity_by_year(author))
 
-    - elsif page == :year_month
+    - when :year_month
       %table{class: "table table-bordered table-condensed"}
         %tr
           %th

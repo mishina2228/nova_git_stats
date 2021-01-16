@@ -16,7 +16,8 @@
       .page-header
         %h1.pagination-centered= page.t
 
-      - if page == :best_authors
+      - case page
+      - when :best_authors
         %table{class: "table table-bordered table-condensed table-hover"}
           %tr
             %th #
@@ -27,10 +28,10 @@
             %th= :first_commit.t
             %th= :last_commit.t
             %th
-          - sorted_authors = repo.authors.sort_by { |a| -a.commits.size}
+          - sorted_authors = repo.authors.sort_by { |a| -a.commits.size }
           - sorted_authors.each_with_index do |author, i|
             %tr
-              %th= i+1
+              %th= i + 1
               %th= "#{author.name} &lt;#{author.email}&gt;"
               %td= author.commits.size
               %td= author.insertions
@@ -42,27 +43,27 @@
               %td
                 %a.btn{href: "#{author.dirname}/author_details/commits_by_date.html"}= :details.t
 
-      -elsif page == :commits_count_by_author
+      - when :commits_count_by_author
         = high_chart("charts.commits_count_by_author", charts.commits_count_by_author)
         %small
           %center= "5 #{:best_authors_shown.t}"
 
-      -elsif page == :commits_sum_by_author_by_date
+      - when :commits_sum_by_author_by_date
         = high_stock("charts.commits_sum_by_author_by_date", charts.commits_sum_by_author_by_date)
         %small
           %center= "5 #{:best_authors_shown.t}"
 
-      -elsif page == :changed_lines_by_author_by_date
+      - when :changed_lines_by_author_by_date
         = high_stock("charts.changed_lines_by_author_by_date", charts.changed_lines_by_author_by_date)
         %small
           %center= "5 #{:best_authors_shown.t}"
 
-      -elsif page == :insertions_by_author_by_date
+      - when :insertions_by_author_by_date
         = high_stock("charts.insertions_by_author_by_date", charts.insertions_by_author_by_date)
         %small
           %center= "5 #{:best_authors_shown.t}"
 
-      -elsif page == :deletions_by_author_by_date
+      - when :deletions_by_author_by_date
         = high_stock("charts.deletions_by_author_by_date", charts.deletions_by_author_by_date)
         %small
           %center= "5 #{:best_authors_shown.t}"
