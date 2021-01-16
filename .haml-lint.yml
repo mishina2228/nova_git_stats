@@ -2,6 +2,9 @@ inherits_from:
   - .haml-lint_todo.yml
 
 linters:
+  InlineStyles:
+    exclude:
+      - "templates/activity/_activity.haml"
   LineLength:
     max: 120
   SpaceInsideHashAttributes:
