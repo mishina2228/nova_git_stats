@@ -1,6 +1,8 @@
 class Hash
   def to_key_indexed_array(params = {})
-    raise ArgumentError, 'all the keys must be numbers to convert to key indexed array' unless all? { |k, _v| k.is_a? Numeric }
+    unless all? { |k, _v| k.is_a? Numeric }
+      raise ArgumentError, 'all the keys must be numbers to convert to key indexed array'
+    end
 
     min_size = params[:min_size] || 0
     default = params[:default]

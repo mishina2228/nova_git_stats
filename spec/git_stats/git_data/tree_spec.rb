@@ -18,7 +18,8 @@ describe GitStats::GitData::Tree do
 
     context 'when invoke authors command' do
       before do
-        expect(repo_tree).to receive(:run).with('git shortlog -se HEAD ./subdir_with_1_commit').and_return("	3	Israel Revert <israelrevert@gmail.com>
+        expect(repo_tree).to receive(:run).with('git shortlog -se HEAD ./subdir_with_1_commit')
+                                          .and_return("	3	Israel Revert <israelrevert@gmail.com>
 ")
       end
 

@@ -21,7 +21,8 @@ describe GitStats::GitData::Commit do
                                       filename: "lib/git_stats/git_data/commit.rb"),
           GitStats::GitData::Blob.new(repo: commit.repo, sha: "db01e94677a8f72289848e507a52a43de2ea109a",
                                       filename: "lib/git_stats/git_data/repo.rb"),
-          GitStats::GitData::Blob.new(repo: commit.repo, sha: "1463eacb3ac9f95f21f360f1eb935a84a9ee0895", filename: "templates/index.haml"),
+          GitStats::GitData::Blob.new(repo: commit.repo, sha: "1463eacb3ac9f95f21f360f1eb935a84a9ee0895",
+                                      filename: "templates/index.haml"),
           GitStats::GitData::Blob.new(repo: commit.repo, sha: "31d8b960a67f195bdedaaf9e7aa70b2389f3f1a8",
                                       filename: "templates/assets/bootstrap/css/bootstrap.min.css")
         ]
@@ -35,9 +36,11 @@ describe GitStats::GitData::Commit do
           GitStats::GitData::Blob.new(repo: commit.repo, sha: "db01e94677a8f72289848e507a52a43de2ea109a",
                                       filename: "lib/git_stats/git_data/repo.rb")
         ], '.haml' => [
-          GitStats::GitData::Blob.new(repo: commit.repo, sha: "1463eacb3ac9f95f21f360f1eb935a84a9ee0895", filename: "templates/index.haml")
+          GitStats::GitData::Blob.new(repo: commit.repo, sha: "1463eacb3ac9f95f21f360f1eb935a84a9ee0895",
+                                      filename: "templates/index.haml")
         ], '.css' => [
-          GitStats::GitData::Blob.new(repo: commit.repo, sha: "31d8b960a67f195bdedaaf9e7aa70b2389f3f1a8", filename: "templates/assets/bootstrap/css/bootstrap.min.css")
+          GitStats::GitData::Blob.new(repo: commit.repo, sha: "31d8b960a67f195bdedaaf9e7aa70b2389f3f1a8",
+                                      filename: "templates/assets/bootstrap/css/bootstrap.min.css")
         ]}
         expect(commit.files_by_extension).to eq(expected)
       end
