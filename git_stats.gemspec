@@ -20,7 +20,7 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
-  gem.add_dependency('actionpack', '~> 6.1')
+  gem.add_dependency('actionview', '~> 6.1')
   gem.add_dependency('activesupport', '~> 6.1')
   gem.add_dependency('haml', '~> 5.0')
   gem.add_dependency('i18n', '~> 1.8')
