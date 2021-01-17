@@ -5,7 +5,6 @@ require 'git_stats/core_extensions/enumerable'
 
 require 'git_stats/version'
 require 'git_stats/i18n'
-require 'git_stats/cli'
 require 'git_stats/generator'
 require 'git_stats/command_runner'
 require 'git_stats/command_parser'
