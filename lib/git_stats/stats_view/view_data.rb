@@ -1,7 +1,6 @@
 module GitStats
   module StatsView
     class ViewData
-      include ActionView::Helpers::TagHelper
       include LazyHighCharts::LayoutHelper
       attr_reader :repo
 
