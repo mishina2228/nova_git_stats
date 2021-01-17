@@ -14,4 +14,5 @@ FactoryBot.find_definitions
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
+  config.order = :random
 end
