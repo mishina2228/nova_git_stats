@@ -1,5 +1,4 @@
 require 'git_stats/core_extensions/hash'
-require 'git_stats/core_extensions/string'
 require 'git_stats/core_extensions/symbol'
 require 'git_stats/core_extensions/enumerable'
 
