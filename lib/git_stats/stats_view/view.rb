@@ -4,7 +4,7 @@ module GitStats
       def initialize(view_data, out_path)
         @view_data = view_data
         @out_path = out_path
-        @layout = Tilt.new("../../../../templates/layout.haml".absolute_path)
+        @layout = Tilt.new(GitStats.root.join('templates/layout.haml'))
       end
 
       def render_all
@@ -36,9 +36,9 @@ module GitStats
       end
 
       def all_templates(root = '')
-        (Dir["../../../../templates/#{root}**/[^_]*.haml".absolute_path].map do |f|
+        (Dir[GitStats.root.join("templates/#{root}**/[^_]*.haml")].map do |f|
           path = Pathname.new(f)
-          path.relative_path_from(Pathname.new('../../../../templates'.absolute_path)).sub_ext('').to_s
+          path.relative_path_from(GitStats.root.join('templates')).sub_ext('').to_s
         end - %w(layout))
       end
 
@@ -62,7 +62,7 @@ module GitStats
 
       def prepare_static_content
         create_out_dir
-        FileUtils.cp_r(Dir["../../../../templates/static/*".absolute_path], @out_path)
+        FileUtils.cp_r(Dir[GitStats.root.join('templates/static/*')], @out_path)
       end
 
       def create_out_dir
@@ -70,7 +70,7 @@ module GitStats
       end
 
       def prepare_assets
-        FileUtils.cp_r('../../../../templates/assets'.absolute_path, @out_path)
+        FileUtils.cp_r(GitStats.root.join('templates/assets'), @out_path)
       end
     end
   end
