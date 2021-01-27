@@ -15,7 +15,7 @@ class Hash
     prev = 0
 
     days_with_data.first.upto(days_with_data.last) do |day|
-      if days_with_data.include? day
+      if days_with_data.include?(day)
         prev = self_with_date_keys[day]
       else
         self[day] = aggregated ? prev : 0
