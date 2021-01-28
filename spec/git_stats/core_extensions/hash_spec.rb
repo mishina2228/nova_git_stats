@@ -42,7 +42,7 @@ describe Hash do
     context 'when not all of the keys are able to convert to date' do
       it 'throws exception' do
         invalid_hash = {Date.new(2020, 11, 25) => 1, 'a' => 2}
-        expect { invalid_hash.fill_empty_days! }.to raise_error(Date::Error)
+        expect { invalid_hash.fill_empty_days! }.to raise_error('invalid date')
       end
     end
 
