@@ -119,7 +119,7 @@ module GitStats
       end
 
       def project_name
-        @project_name ||= (File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path)) + File::SEPARATOR, "") || File.basename(path))
+        @project_name ||= File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path)) + File::SEPARATOR, "")
       end
 
       def run(command)
