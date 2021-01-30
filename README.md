@@ -1,4 +1,4 @@
-# GitStats [![Build Status](https://travis-ci.org/mishina2228/git_stats.svg?branch=master)](https://travis-ci.org/mishina2228/git_stats) ![CI](https://github.com/mishina2228/git_stats/workflows/CI/badge.svg) [![Maintainability](https://api.codeclimate.com/v1/badges/118cce63cc58fef4ae47/maintainability)](https://codeclimate.com/github/mishina2228/git_stats/maintainability) [![codecov](https://codecov.io/gh/mishina2228/git_stats/branch/master/graph/badge.svg?token=532RLO5L7A)](https://codecov.io/gh/mishina2228/git_stats)
+# GitStats ![CI](https://github.com/mishina2228/git_stats/workflows/CI/badge.svg) [![Maintainability](https://api.codeclimate.com/v1/badges/118cce63cc58fef4ae47/maintainability)](https://codeclimate.com/github/mishina2228/git_stats/maintainability) [![codecov](https://codecov.io/gh/mishina2228/git_stats/branch/master/graph/badge.svg?token=532RLO5L7A)](https://codecov.io/gh/mishina2228/git_stats)
 
 GitStats is a git repository statistics generator.
 It browses the repository and outputs html page with statistics.
