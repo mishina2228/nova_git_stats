@@ -28,10 +28,10 @@ It browses the repository and outputs html page with statistics.
     $ sudo apt-get install ruby ruby-dev gcc zlib1g-dev make
     $ sudo gem install git_stats
 
-## Supported Ruby versions
+## Prerequisites
 
-Supported Ruby versions are listed in [`.travis.yml`](https://github.com/mishina2228/git_stats/blob/master/.travis.yml)
-
+- Git
+- Ruby 2.5+
 
 ## Usage
 
