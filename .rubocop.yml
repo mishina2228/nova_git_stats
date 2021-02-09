@@ -12,8 +12,15 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.5
 
+Layout/LineLength:
+  Max: 140
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+RSpec/MultipleExpectations:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

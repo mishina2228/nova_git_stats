@@ -1,8 +1,6 @@
 class Hash
   def to_key_indexed_array(min_size: 0, default: nil)
-    unless all? { |k, _v| k.is_a? Numeric }
-      raise ArgumentError, 'all the keys must be numbers to convert to key indexed array'
-    end
+    raise ArgumentError, 'all the keys must be numbers to convert to key indexed array' unless all? { |k, _v| k.is_a? Numeric }
 
     each_with_object(Array.new(min_size, default)) { |(k, v), acc| acc[k] = v }.map { |e| e || default }
   end

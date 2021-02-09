@@ -8,7 +8,9 @@ describe GitStats::GitData::Repo do
   end
 
   it 'retrieves correct file content for old file' do
-    expect(repo.commits.first! { |c| c.sha == 'c87ecf9c0bbdca29d73def8ed442cebf48178d92' }.files.first! { |f| f.filename == 'test.txt' }.content).to eq("bb
+    commit = repo.commits.first! { |c| c.sha == 'c87ecf9c0bbdca29d73def8ed442cebf48178d92' }
+    file = commit.files.first! { |f| f.filename == 'test.txt' }
+    expect(file.content).to eq("bb
 
 
 

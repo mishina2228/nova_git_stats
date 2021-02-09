@@ -27,7 +27,6 @@ describe Hash do
         expect(hash.to_key_indexed_array(default: 0)).to eq([0, 'x', 1, 0, 0, 'a'])
       end
     end
-
   end
 
   describe '#fill_empty_days!' do
