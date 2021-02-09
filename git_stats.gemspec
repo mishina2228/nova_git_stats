@@ -12,6 +12,7 @@ Gem::Specification.new do |gem|
   gem.description   = 'Git history statistics generator'
   gem.summary       = 'HTML statistics generator from git repository'
   gem.homepage      = "https://github.com/tomgi/git_stats"
+  gem.licenses      = ['MIT']
 
   gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
