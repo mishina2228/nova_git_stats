@@ -43,6 +43,10 @@ module GitStats
             [commit.date, sum]
           end
         end
+
+        define_method "#{method}2_by_date" do
+          commits.group_by { |c| c.date.to_date }.map { |arr| [arr[0], arr[1].sum { |c| c.short_stat.send(method) }] }
+        end
       end
 
       def short_stats

@@ -20,6 +20,18 @@ module GitStats
             end
           end
         end
+
+        [:insertions2, :deletions2, :changed_lines2].each do |method|
+          define_method "#{method}_by_author_by_date" do |author|
+            Chart.new do |f|
+              f.date_column_chart(
+                data: author.send("#{method}_by_date"),
+                title: :lines_by_date.t,
+                y_text: :lines.t
+              )
+            end
+          end
+        end
       end
     end
   end
