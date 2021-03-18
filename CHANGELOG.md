@@ -8,6 +8,8 @@
 
 ### Features
 * Added `git_stats version` command
+* Added graphs of changed/added/deleted lines by date for details of each author page.  
+  The existing line graph shows the cumulative number, while the added bar graph shows the daily number.
 
 ### Bugfixes
 * Fixed the following localization:

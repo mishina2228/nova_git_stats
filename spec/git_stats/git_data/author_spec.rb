@@ -24,4 +24,14 @@ describe GitStats::GitData::Author do
   it 'counts lines deleted from short stat' do
     expect(author.deletions).to eq(100)
   end
+
+  describe '#commits_sum' # TODO
+  describe '#changed_lines' # TODO
+  describe '#commits_sum_by_date' # TODO
+  describe '#total_insertions_by_date' # TODO
+  describe '#total_deletions_by_date' # TODO
+  describe '#total_changed_lines_by_date' # TODO
+  describe '#insertions_by_date' # TODO
+  describe '#deletions_by_date' # TODO
+  describe '#changed_lines_by_date' # TODO
 end

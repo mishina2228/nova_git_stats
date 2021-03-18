@@ -19,13 +19,13 @@
         = high_stock("charts.commits_sum_by_author_by_date", charts.commits_sum_by_author_by_date([author]))
 
       - when :changed_lines_by_date
-        = high_stock("charts.changed_lines_by_author_by_date", charts.changed_lines_by_author_by_date([author]))
-        = high_stock("charts.changed_lines2_by_author_by_date", charts.changed_lines2_by_author_by_date(author))
+        = high_stock("charts.total_changed_lines_by_author_by_date", charts.total_changed_lines_by_author_by_date([author]))
+        = high_stock("charts.changed_lines_by_author_by_date", charts.changed_lines_by_author_by_date(author))
 
       - when :insertions_by_date
-        = high_stock("charts.insertions_by_author_by_date", charts.insertions_by_author_by_date([author]))
-        = high_stock("charts.insertions2_by_author_by_date", charts.insertions2_by_author_by_date(author))
+        = high_stock("charts.total_insertions_by_author_by_date", charts.total_insertions_by_author_by_date([author]))
+        = high_stock("charts.insertions_by_author_by_date", charts.insertions_by_author_by_date(author))
 
       - when :deletions_by_date
-        = high_stock("charts.deletions_by_author_by_date", charts.deletions_by_author_by_date([author]))
-        = high_stock("charts.deletions2_by_author_by_date", charts.deletions2_by_author_by_date(author))
+        = high_stock("charts.total_deletions_by_author_by_date", charts.total_deletions_by_author_by_date([author]))
+        = high_stock("charts.deletions_by_author_by_date", charts.deletions_by_author_by_date(author))

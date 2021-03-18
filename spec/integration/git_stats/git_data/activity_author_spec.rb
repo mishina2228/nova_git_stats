@@ -59,18 +59,18 @@ describe GitStats::GitData::Activity do
       expect(jd.commits_sum_by_date.map { |_d, s| s }).to eq([1, 2])
     end
 
-    it 'counts insertions_by_date' do
-      expect(tg.insertions_by_date.map { |d, _s| d }).to eq(tg_commit_dates)
-      expect(tg.insertions_by_date.map { |_d, s| s }).to eq([4, 9, 14, 15, 20, 1020, 1021, 1021])
-      expect(jd.insertions_by_date.map { |d, _s| d }).to eq(jd_commit_dates)
-      expect(jd.insertions_by_date.map { |_d, s| s }).to eq([3, 103])
+    it 'counts total_insertions_by_date' do
+      expect(tg.total_insertions_by_date.map { |d, _s| d }).to eq(tg_commit_dates)
+      expect(tg.total_insertions_by_date.map { |_d, s| s }).to eq([4, 9, 14, 15, 20, 1020, 1021, 1021])
+      expect(jd.total_insertions_by_date.map { |d, _s| d }).to eq(jd_commit_dates)
+      expect(jd.total_insertions_by_date.map { |_d, s| s }).to eq([3, 103])
     end
 
-    it 'counts deletions_by_date' do
-      expect(tg.deletions_by_date.map { |d, _s| d }).to eq(tg_commit_dates)
-      expect(tg.deletions_by_date.map { |_d, s| s }).to eq([0, 0, 4, 4, 9, 9, 10, 10])
-      expect(jd.deletions_by_date.map { |d, _s| d }).to eq(jd_commit_dates)
-      expect(jd.deletions_by_date.map { |_d, s| s }).to eq([0, 0])
+    it 'counts total_deletions_by_date' do
+      expect(tg.total_deletions_by_date.map { |d, _s| d }).to eq(tg_commit_dates)
+      expect(tg.total_deletions_by_date.map { |_d, s| s }).to eq([0, 0, 4, 4, 9, 9, 10, 10])
+      expect(jd.total_deletions_by_date.map { |d, _s| d }).to eq(jd_commit_dates)
+      expect(jd.total_deletions_by_date.map { |_d, s| s }).to eq([0, 0])
     end
   end
 end

@@ -6,8 +6,9 @@ module GitStats
                  to: :repo_charts
 
         delegate :commits_sum_by_author_by_date, :changed_lines_by_author_by_date,
-                 :changed_lines2_by_author_by_date, :insertions2_by_author_by_date, :deletions2_by_author_by_date,
-                 :insertions_by_author_by_date, :deletions_by_author_by_date, to: :authors_charts
+                 :insertions_by_author_by_date, :deletions_by_author_by_date,
+                 :total_changed_lines_by_author_by_date, :total_insertions_by_author_by_date, :total_deletions_by_author_by_date,
+                 to: :authors_charts
 
         delegate :activity_by_date, :activity_by_hour, :activity_by_wday, :activity_by_month,
                  :activity_by_year, to: :activity_charts
