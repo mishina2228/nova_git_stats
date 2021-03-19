@@ -1,6 +1,6 @@
 # Changelog
 
-## Master
+## 2.0.0
 
 ### Breaking Changes
 * Dropped support for Ruby 2.4 and earlier
