@@ -1,23 +1,23 @@
 .tabbable.tabs-left
   %ul.nav.nav-tabs
-    %li{class: page == :activity_by_date ? "active" : ""}
+    %li{class: page == :activity_by_date ? "active" : "", role: "presentation"}
       %a{href: "by_date.html"}= :activity_by_date.t
-    %li{class: page == :hour_of_day ? "active" : ""}
+    %li{class: page == :hour_of_day ? "active" : "", role: "presentation"}
       %a{href: "hour_of_day.html"}= :hour_of_day.t
-    %li{class: page == :day_of_week ? "active" : ""}
+    %li{class: page == :day_of_week ? "active" : "", role: "presentation"}
       %a{href: "day_of_week.html"}= :day_of_week.t
-    %li{class: page == :hour_of_week ? "active" : ""}
+    %li{class: page == :hour_of_week ? "active" : "", role: "presentation"}
       %a{href: "hour_of_week.html"}= :hour_of_week.t
-    %li{class: page == :month_of_year ? "active" : ""}
+    %li{class: page == :month_of_year ? "active" : "", role: "presentation"}
       %a{href: "month_of_year.html"}= :month_of_year.t
-    %li{class: page == :year ? "active" : ""}
+    %li{class: page == :year ? "active" : "", role: "presentation"}
       %a{href: "year.html"}= :year.t
-    %li{class: page == :year_month ? "active" : ""}
+    %li{class: page == :year_month ? "active" : "", role: "presentation"}
       %a{href: "year_month.html"}= :year_month.t
 
   .tab-content
     .tab-pane.active
-      .page-header.pagination-centered
+      .page-header.text-center
         %h1= page.t
         %h3 #{author.respond_to?(:name) ? author.name : ""} #{author.respond_to?(:email) ? "&lt;#{author.email}&gt;" : ""}
     - case page

@@ -4,29 +4,29 @@
   %head
     %title GitStats - #{repo.project_name}
     %meta{charset: "utf-8"}
-    %link{rel: "stylesheet", href: asset_path("bootstrap/css/bootstrap.min.css", active_page), type: "text/css"}
+    %link{rel: "stylesheet", href: asset_path("bootstrap/css/bootstrap-3.3.7.min.css", active_page), type: "text/css"}
     %style
       :plain
         body { padding-top: 60px; }
-    %link{rel: "stylesheet", href: asset_path('bootstrap/css/bootstrap-responsive.min.css', active_page), type: "text/css"}
+    %link{rel: "stylesheet", href: asset_path("bootstrap/css/bootstrap-theme-3.3.7.min.css", active_page), type: "text/css"}
+    %link{rel: "stylesheet", href: asset_path("menu.css", active_page), type: "text/css"}
     %script{src: asset_path("jquery-3.6.0.min.js", active_page), type: "text/javascript"}
     %script{src: asset_path("bootstrap/js/bootstrap-3.3.7.min.js", active_page), type: "text/javascript"}
     %script{src: asset_path("highstock.js", active_page), type: "text/javascript"}
     %script{src: asset_path("exporting.js", active_page), type: "text/javascript"}
     %script{src: asset_path("export-data.js", active_page), type: "text/javascript"}
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar{'data-toggle' => "collapse", 'data-target' => ".nav-collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{href: link_to("index.html", active_page)} GitStats - #{repo.project_name}
-          .nav-collapse.collapse
-            %ul.nav
-              - links.each do |name, href|
-                %li{class: active_page[name.to_s.underscore] ? "active" : ""}
-                  %a{href: link_to(href, active_page)}= name.t
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        %button.menu-icon.navbar-toggle.collapsed{"data-toggle" => "collapse", "data-target" => "#navbar-menu", "aria-expanded" => false}
+          %svg{viewBox: "0 0 24 24"}
+            %g
+              %path{d: "M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"}
+        %a.navbar-brand{href: link_to("index.html", active_page)} GitStats - #{repo.project_name}
+        .navbar-collapse.collapse#navbar-menu
+          %ul.nav.navbar-nav
+            - links.each do |name, href|
+              %li{class: active_page[name.to_s.underscore] ? "active" : ""}
+                %a{href: link_to(href, active_page)}= name.t
     .container
       = yield

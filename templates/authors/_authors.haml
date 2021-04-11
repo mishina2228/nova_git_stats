@@ -14,7 +14,7 @@
   .tab-content
     .tab-pane.active
       .page-header
-        %h1.pagination-centered= page.t
+        %h1.text-center= page.t
 
       - case page
       - when :best_authors
@@ -27,7 +27,7 @@
             %th= :deletions.t
             %th= :first_commit.t
             %th= :last_commit.t
-            %th
+            %th{colspan: 2}
           - sorted_authors = repo.authors.sort_by { |a| -a.commits.size }
           - sorted_authors.each_with_index do |author, i|
             %tr
@@ -41,9 +41,9 @@
               - commit_last_date = author.commits.last&.date
               %td= I18n.l(commit_last_date, format: :long) if commit_last_date
               %td
-                %a.btn{href: "#{author.dirname}/activity/by_date.html"}= :activity.t
+                %a.btn.btn-default{href: "#{author.dirname}/activity/by_date.html"}= :activity.t
               %td
-                %a.btn{href: "#{author.dirname}/author_details/commits_by_date.html"}= :details.t
+                %a.btn.btn-default{href: "#{author.dirname}/author_details/commits_by_date.html"}= :details.t
 
       - when :commits_count_by_author
         -# This when clause is not be executed
