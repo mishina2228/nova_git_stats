@@ -2,6 +2,8 @@
 
 ## master
 
+## 2.1.0
+
 ### Breaking Changes
 * Dropped support for IE8 and earlier
 
