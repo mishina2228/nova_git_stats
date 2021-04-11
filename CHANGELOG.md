@@ -1,5 +1,16 @@
 # Changelog
 
+## master
+
+### Breaking Changes
+* Dropped support for IE8 and earlier
+
+### Changes
+* Updated jQuery from v1.8.2 to v3.6.0
+* Updated Bootstrap from v2.1.1 to v3.3.7
+  * Changed vertical tabs to horizontal
+  * Changed the appearance of the hamburger icon
+
 ## 2.0.0
 
 ### Breaking Changes
