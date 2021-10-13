@@ -9,6 +9,7 @@ AllCops:
   Exclude:
     - 'spec/integration/test_repo/**/*'
     - 'spec/integration/test_repo_tree/**/*'
+    - 'vendor/bundle/**/*'
   NewCops: enable
   TargetRubyVersion: 2.5
 
