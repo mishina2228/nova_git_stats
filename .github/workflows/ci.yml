@@ -14,7 +14,7 @@ jobs:
           - 2.5
           - 2.6
           - 2.7
-          - 3.0
+          - '3.0'
           - ruby-head
     steps:
       - name: Checkout code
@@ -37,7 +37,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
+          ruby-version: '3.0'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Run haml-lint
         run: bundle exec haml-lint
