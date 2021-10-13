@@ -1,5 +1,5 @@
-require "git_stats"
-require "thor"
+require 'git_stats'
+require 'thor'
 
 module GitStats
   class CLI < Thor

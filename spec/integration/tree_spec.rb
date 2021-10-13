@@ -1,7 +1,7 @@
 require 'integration/shared'
 
 describe GitStats::GitData::Tree do
-  include_context "tree"
+  include_context 'tree'
 
   it 'gathers all authors' do
     expect(repo.authors).to match_array(expected_authors)
@@ -70,7 +70,7 @@ describe GitStats::GitData::Tree do
 end
 
 describe GitStats::GitData::Tree do
-  include_context "tree_subdir_with_1_commit"
+  include_context 'tree_subdir_with_1_commit'
 
   it 'gathers all authors' do
     expect(repo.authors).to match_array(expected_authors)
@@ -134,7 +134,7 @@ describe GitStats::GitData::Tree do
 end
 
 describe GitStats::GitData::Tree do
-  include_context "tree_subdir_with_2_commit"
+  include_context 'tree_subdir_with_2_commit'
 
   it 'gathers all authors' do
     expect(repo.authors).to match_array(expected_authors)

@@ -5,21 +5,21 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'git_stats/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "git_stats"
+  gem.name          = 'git_stats'
   gem.version       = GitStats::VERSION
-  gem.authors       = ["Tomasz Gieniusz"]
-  gem.email         = ["tomasz.gieniusz@gmail.com"]
+  gem.authors       = ['Tomasz Gieniusz']
+  gem.email         = ['tomasz.gieniusz@gmail.com']
   gem.description   = 'Git history statistics generator'
   gem.summary       = 'HTML statistics generator from git repository'
-  gem.homepage      = "https://github.com/tomgi/git_stats"
+  gem.homepage      = 'https://github.com/tomgi/git_stats'
   gem.licenses      = ['MIT']
 
   gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
+  gem.require_paths = ['lib']
 
-  gem.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
+  gem.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
 
   gem.add_dependency('actionview', '~> 6.1')
   gem.add_dependency('activesupport', '~> 6.1')

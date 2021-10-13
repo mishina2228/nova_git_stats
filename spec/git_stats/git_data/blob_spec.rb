@@ -12,12 +12,12 @@ describe GitStats::GitData::Blob do
 
   it 'returns actual lines count when files is not binary' do
     expect(txt_blob).to receive(:binary?).and_return false
-    expect(repo).to receive(:run).with("git cat-file blob hash_txt | wc -l").and_return 42
+    expect(repo).to receive(:run).with('git cat-file blob hash_txt | wc -l').and_return 42
     expect(txt_blob.lines_count).to eq(42)
   end
 
   it 'invokes grep to check if file is binary' do
-    expect(repo).to receive(:run).with("git cat-file blob hash_png | grep -m 1 '^'").and_return "Binary file matches"
+    expect(repo).to receive(:run).with("git cat-file blob hash_png | grep -m 1 '^'").and_return 'Binary file matches'
     expect(png_blob).to be_binary
   end
 end

@@ -1,7 +1,7 @@
 require 'integration/shared'
 
 describe GitStats::GitData::Repo do
-  include_context "shared"
+  include_context 'shared'
 
   it 'gathers all authors' do
     expect(repo.authors).to match_array(expected_authors)

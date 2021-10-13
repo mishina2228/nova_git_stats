@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-shared_context "shared" do
+shared_context 'shared' do
   let(:repo) { build(:test_repo, last_commit_sha: '872955c') }
   let(:commit_dates) do
     [
@@ -48,13 +48,13 @@ shared_context "shared" do
 
   let(:expected_authors) do
     [
-      build(:author, repo: repo, name: "Tomasz Gieniusz", email: "tomasz.gieniusz@gmail.com"),
-      build(:author, repo: repo, name: "John Doe", email: "john.doe@gmail.com")
+      build(:author, repo: repo, name: 'Tomasz Gieniusz', email: 'tomasz.gieniusz@gmail.com'),
+      build(:author, repo: repo, name: 'John Doe', email: 'john.doe@gmail.com')
     ]
   end
 end
 
-shared_context "tree_subdir_with_1_commit" do
+shared_context 'tree_subdir_with_1_commit' do
   let(:repo) { build(:test_repo_tree, last_commit_sha: 'HEAD', tree_path: './subdir_with_1_commit') }
   let(:commit_dates) do
     [
@@ -87,12 +87,12 @@ shared_context "tree_subdir_with_1_commit" do
 
   let(:expected_authors) do
     [
-      build(:author, repo: repo, name: "Israel Revert", email: "israelrevert@gmail.com")
+      build(:author, repo: repo, name: 'Israel Revert', email: 'israelrevert@gmail.com')
     ]
   end
 end
 
-shared_context "tree_subdir_with_2_commit" do
+shared_context 'tree_subdir_with_2_commit' do
   let(:repo) { build(:test_repo_tree, last_commit_sha: 'HEAD', tree_path: './subdir_with_2_commits') }
   let(:commit_dates) do
     [
@@ -125,7 +125,7 @@ shared_context "tree_subdir_with_2_commit" do
 
   let(:expected_authors) do
     [
-      build(:author, repo: repo, name: "Israel Revert", email: "israelrevert@gmail.com")
+      build(:author, repo: repo, name: 'Israel Revert', email: 'israelrevert@gmail.com')
     ]
   end
 end
@@ -134,7 +134,7 @@ end
 # 435e0ef|1395407543|2014-03-21 14:12:23 +0100|israelrevert@gmail.com
 # 10d1814|1395407506|2014-03-21 14:11:46 +0100|israelrevert@gmail.com
 
-shared_context "tree" do
+shared_context 'tree' do
   let(:repo) { build(:test_repo_tree, last_commit_sha: 'HEAD') }
   let(:commit_dates) do
     [
@@ -167,7 +167,7 @@ shared_context "tree" do
 
   let(:expected_authors) do
     [
-      build(:author, repo: repo, name: "Israel Revert", email: "israelrevert@gmail.com")
+      build(:author, repo: repo, name: 'Israel Revert', email: 'israelrevert@gmail.com')
     ]
   end
 end

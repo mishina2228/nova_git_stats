@@ -1,7 +1,7 @@
 require 'integration/shared'
 
 describe GitStats::GitData::Activity do
-  include_context "shared"
+  include_context 'shared'
 
   let(:activity) { repo.activity }
 

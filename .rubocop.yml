@@ -49,8 +49,6 @@ Style/NumericPredicate:
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     '%w': '()'
-Style/StringLiterals:
-  Enabled: false
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 Style/SymbolArray:

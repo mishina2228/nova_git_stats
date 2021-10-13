@@ -2,7 +2,7 @@ FactoryBot.define do
   initialize_with { new(attributes) }
 
   factory :repo, class: 'GitStats::GitData::Repo' do
-    path { "repo_path" }
+    path { 'repo_path' }
     factory :test_repo do
       path { 'spec/integration/test_repo' }
     end

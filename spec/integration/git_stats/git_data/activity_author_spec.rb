@@ -1,7 +1,7 @@
 require 'integration/shared'
 
 describe GitStats::GitData::Activity do
-  include_context "shared"
+  include_context 'shared'
 
   let(:tg) { repo.authors.first! { |a| a.email == 'tomasz.gieniusz@gmail.com' } }
   let(:jd) { repo.authors.first! { |a| a.email == 'john.doe@gmail.com' } }

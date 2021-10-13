@@ -101,7 +101,7 @@ module GitStats
 
         def common_options(params)
           no_legend
-          title ""
+          title ''
           y_text params[:y_text]
           x_text params[:x_text]
         end
@@ -109,7 +109,7 @@ module GitStats
         def date_series(params, aggregated: true)
           {
             name: params[:name],
-            type: "spline",
+            type: 'spline',
             data: (params[:data]).to_h.fill_empty_days!(aggregated: aggregated)
                                  .map { |date, value| [date.to_datetime.to_i * 1000, value] }.sort_by { |d| d[0] }
           }
@@ -117,7 +117,7 @@ module GitStats
 
         def column_chart(params)
           common_options(params)
-          type "column"
+          type 'column'
           x_categories params[:data_x]
         end
       end

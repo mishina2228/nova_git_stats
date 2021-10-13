@@ -13,7 +13,7 @@ describe GitStats::GitData::ShortStat do
         {content: '', expect: [0, 0, 0]}
       ].each do |test|
         it "#{test[:content]} parsing" do
-          expect(commit.repo).to receive(:run).with("git show --shortstat --oneline --no-renames abc -- .")
+          expect(commit.repo).to receive(:run).with('git show --shortstat --oneline --no-renames abc -- .')
                                               .and_return("abc some commit\n#{test[:content]}")
 
           expect(commit.short_stat).to be_a(described_class)

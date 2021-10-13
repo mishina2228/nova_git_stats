@@ -11,7 +11,7 @@ module GitStats
       def initialize(params)
         super(params)
         @path = File.expand_path(@path)
-        @tree_path ||= "."
+        @tree_path ||= '.'
       end
 
       def path
@@ -120,7 +120,7 @@ module GitStats
       end
 
       def project_name
-        @project_name ||= File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path)) + File::SEPARATOR, "")
+        @project_name ||= File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path)) + File::SEPARATOR, '')
       end
 
       def run(command)
