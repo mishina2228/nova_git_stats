@@ -20,8 +20,12 @@ Layout/SpaceInsideHashLiteralBraces:
 Lint/AmbiguousOperatorPrecedence:
   Enabled: false
 
+Metrics/AbcSize:
+  Enabled: false
 Metrics/ClassLength:
-  Max: 130
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
 
 RSpec/ExampleLength:
   Max: 21
