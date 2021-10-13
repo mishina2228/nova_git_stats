@@ -40,8 +40,6 @@ RSpec/MultipleExpectations:
 
 Style/Documentation:
   Enabled: false
-Style/FormatString:
-  EnforcedStyle: percent
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/NumericPredicate:

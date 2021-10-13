@@ -67,7 +67,7 @@
           %tr
             %th= I18n.t('date.abbr_day_names')[day]
             - (0..23).each do |hour|
-              - color = max ? '%02x' % (255 - author.activity.by_wday_hour[day][hour] * 100 / max) : 'FF'
+              - color = max ? format('%02x', 255 - author.activity.by_wday_hour[day][hour] * 100 / max) : 'FF'
               %td{style: "background-color: ##{color}#{color}#{color};"}= author.activity.by_wday_hour[day][hour]
 
     - when :month_of_year
