@@ -17,6 +17,9 @@ Layout/LineLength:
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 
+Lint/AmbiguousOperatorPrecedence:
+  Enabled: false
+
 RSpec/MessageSpies:
   EnforcedStyle: receive
 RSpec/MultipleExpectations:
