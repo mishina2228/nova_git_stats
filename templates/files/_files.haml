@@ -1,8 +1,8 @@
 .tabbable.tabs-left
   %ul.nav.nav-tabs
-    %li{class: page == :files_by_date ? "active" : ""}
+    %li{class: page == :files_by_date ? 'active' : ''}
       %a{href: 'by_date.html'}= :files_by_date.t
-    %li{class: page == :files_by_extension ? "active" : ""}
+    %li{class: page == :files_by_extension ? 'active' : ''}
       %a{href: 'by_extension.html'}= :files_by_extension.t
 
   .tab-content
@@ -11,6 +11,6 @@
         %h1.text-center= page.t
       - case page
       - when :files_by_date
-        = high_stock("files_by_date", charts.files_by_date)
+        = high_stock('files_by_date', charts.files_by_date)
       - when :files_by_extension
-        = high_chart("files_by_extension", charts.files_by_extension)
+        = high_chart('files_by_extension', charts.files_by_extension)

@@ -1,4 +1,4 @@
-%table{class: "table table-hover table-bordered"}
+%table{class: 'table table-hover table-bordered'}
   %tr
     %td= :project_name.t
     %td= repo.project_name
@@ -16,7 +16,7 @@
     %td GitStats #{GitStats::VERSION}
   %tr
     %td= :report_period.t
-    %td= repo.commits_period.map { |d| I18n.l(d, format: :long) }.join(" .. ")
+    %td= repo.commits_period.map { |d| I18n.l(d, format: :long) }.join(' .. ')
   %tr
     %td= :total_files.t
     %td #{repo.files_count} (#{:binary.t}: #{repo.binary_files.size}, #{:text.t}: #{repo.text_files.size})

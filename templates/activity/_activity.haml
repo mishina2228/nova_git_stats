@@ -1,19 +1,19 @@
 .tabbable.tabs-left
   %ul.nav.nav-tabs
-    %li{class: page == :activity_by_date ? "active" : "", role: "presentation"}
-      %a{href: "by_date.html"}= :activity_by_date.t
-    %li{class: page == :hour_of_day ? "active" : "", role: "presentation"}
-      %a{href: "hour_of_day.html"}= :hour_of_day.t
-    %li{class: page == :day_of_week ? "active" : "", role: "presentation"}
-      %a{href: "day_of_week.html"}= :day_of_week.t
-    %li{class: page == :hour_of_week ? "active" : "", role: "presentation"}
-      %a{href: "hour_of_week.html"}= :hour_of_week.t
-    %li{class: page == :month_of_year ? "active" : "", role: "presentation"}
-      %a{href: "month_of_year.html"}= :month_of_year.t
-    %li{class: page == :year ? "active" : "", role: "presentation"}
-      %a{href: "year.html"}= :year.t
-    %li{class: page == :year_month ? "active" : "", role: "presentation"}
-      %a{href: "year_month.html"}= :year_month.t
+    %li{class: page == :activity_by_date ? 'active' : '', role: 'presentation'}
+      %a{href: 'by_date.html'}= :activity_by_date.t
+    %li{class: page == :hour_of_day ? 'active' : '', role: 'presentation'}
+      %a{href: 'hour_of_day.html'}= :hour_of_day.t
+    %li{class: page == :day_of_week ? 'active' : '', role: 'presentation'}
+      %a{href: 'day_of_week.html'}= :day_of_week.t
+    %li{class: page == :hour_of_week ? 'active' : '', role: 'presentation'}
+      %a{href: 'hour_of_week.html'}= :hour_of_week.t
+    %li{class: page == :month_of_year ? 'active' : '', role: 'presentation'}
+      %a{href: 'month_of_year.html'}= :month_of_year.t
+    %li{class: page == :year ? 'active' : '', role: 'presentation'}
+      %a{href: 'year.html'}= :year.t
+    %li{class: page == :year_month ? 'active' : '', role: 'presentation'}
+      %a{href: 'year_month.html'}= :year_month.t
 
   .tab-content
     .tab-pane.active
@@ -22,10 +22,10 @@
         %h3 #{author.respond_to?(:name) ? author.name : ""} #{author.respond_to?(:email) ? "&lt;#{author.email}&gt;" : ""}
     - case page
     - when :activity_by_date
-      = high_stock("charts.activity_by_date", charts.activity_by_date(author))
+      = high_stock('charts.activity_by_date', charts.activity_by_date(author))
 
     - when :hour_of_day
-      %table{class: "table table-bordered table-condensed"}
+      %table{class: 'table table-bordered table-condensed'}
         %tr
           %th= :hour.t
           - (0..23).each do |h|
@@ -38,10 +38,10 @@
           %th= :percentage.t
           - author.activity.by_hour_array.each do |commits|
             %td= (commits * 100.0 / author.activity.by_hour_array.sum).round(1)
-      = high_chart("charts.activity_by_hour", charts.activity_by_hour(author))
+      = high_chart('charts.activity_by_hour', charts.activity_by_hour(author))
 
     - when :day_of_week
-      %table{class: "table table-bordered table-condensed"}
+      %table{class: 'table table-bordered table-condensed'}
         %tr
           %th= :day.t
           - I18n.t('date.abbr_day_names').each do |d|
@@ -54,10 +54,10 @@
           %th= :percentage.t
           - author.activity.by_wday_array.each do |commits|
             %td= (commits * 100.0 / author.activity.by_wday_array.sum).round(1)
-      = high_chart("charts.activity_by_wday", charts.activity_by_wday(author))
+      = high_chart('charts.activity_by_wday', charts.activity_by_wday(author))
 
     - when :hour_of_week
-      %table{class: "table table-bordered table-condensed"}
+      %table{class: 'table table-bordered table-condensed'}
         %tr
           %th
           - (0..23).each do |h|
@@ -67,11 +67,11 @@
           %tr
             %th= I18n.t('date.abbr_day_names')[day]
             - (0..23).each do |hour|
-              - color = max ? "%02x" % (255 - author.activity.by_wday_hour[day][hour] * 100 / max) : "FF"
+              - color = max ? '%02x' % (255 - author.activity.by_wday_hour[day][hour] * 100 / max) : 'FF'
               %td{style: "background-color: ##{color}#{color}#{color};"}= author.activity.by_wday_hour[day][hour]
 
     - when :month_of_year
-      %table{class: "table table-bordered table-condensed"}
+      %table{class: 'table table-bordered table-condensed'}
         %tr
           %th= :month.t
           - I18n.t('date.abbr_month_names')[1..-1].each do |m|
@@ -84,13 +84,13 @@
           %th= :percentage.t
           - author.activity.by_month_array.each do |commits|
             %td= (commits * 100.0 / author.activity.by_month_array.sum).round(1)
-      = high_chart("charts.activity_by_month", charts.activity_by_month(author))
+      = high_chart('charts.activity_by_month', charts.activity_by_month(author))
 
     - when :year
-      = high_chart("charts.activity_by_year", charts.activity_by_year(author))
+      = high_chart('charts.activity_by_year', charts.activity_by_year(author))
 
     - when :year_month
-      %table{class: "table table-bordered table-condensed"}
+      %table{class: 'table table-bordered table-condensed'}
         %tr
           %th
           - I18n.t('date.abbr_month_names')[1..-1].each do |h|

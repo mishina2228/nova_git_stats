@@ -1,14 +1,14 @@
 .tabbable.tabs-left
   %ul.nav.nav-tabs
-    %li{class: page == :best_authors ? "active" : ""}
+    %li{class: page == :best_authors ? 'active' : ''}
       %a{href: 'best_authors.html'}= :best_authors.t
-    %li{class: page == :commits_sum_by_author_by_date ? "active" : ""}
+    %li{class: page == :commits_sum_by_author_by_date ? 'active' : ''}
       %a{href: 'commits_sum_by_author_by_date.html'}= :commits_sum_by_author_by_date.t
-    %li{class: page == :changed_lines_by_author_by_date ? "active" : ""}
+    %li{class: page == :changed_lines_by_author_by_date ? 'active' : ''}
       %a{href: 'changed_lines_by_author_by_date.html'}= :changed_lines_by_author_by_date.t
-    %li{class: page == :insertions_by_author_by_date ? "active" : ""}
+    %li{class: page == :insertions_by_author_by_date ? 'active' : ''}
       %a{href: 'insertions_by_author_by_date.html'}= :insertions_by_author_by_date.t
-    %li{class: page == :deletions_by_author_by_date ? "active" : ""}
+    %li{class: page == :deletions_by_author_by_date ? 'active' : ''}
       %a{href: 'deletions_by_author_by_date.html'}= :deletions_by_author_by_date.t
 
   .tab-content
@@ -18,7 +18,7 @@
 
       - case page
       - when :best_authors
-        %table{class: "table table-bordered table-condensed table-hover"}
+        %table{class: 'table table-bordered table-condensed table-hover'}
           %tr
             %th #
             %th= :author.t
@@ -47,26 +47,26 @@
 
       - when :commits_count_by_author
         -# This when clause is not be executed
-        = high_chart("charts.commits_count_by_author", charts.commits_count_by_author)
+        = high_chart('charts.commits_count_by_author', charts.commits_count_by_author)
         %small
           %center #{GitStats::StatsView::Charts::AuthorsCharts::AUTHORS_ON_CHART_LIMIT} #{:best_authors_shown.t}
 
       - when :commits_sum_by_author_by_date
-        = high_stock("charts.commits_sum_by_author_by_date", charts.commits_sum_by_author_by_date)
+        = high_stock('charts.commits_sum_by_author_by_date', charts.commits_sum_by_author_by_date)
         %small
           %center #{GitStats::StatsView::Charts::AuthorsCharts::AUTHORS_ON_CHART_LIMIT} #{:best_authors_shown.t}
 
       - when :changed_lines_by_author_by_date
-        = high_stock("charts.total_changed_lines_by_author_by_date", charts.total_changed_lines_by_author_by_date)
+        = high_stock('charts.total_changed_lines_by_author_by_date', charts.total_changed_lines_by_author_by_date)
         %small
           %center #{GitStats::StatsView::Charts::AuthorsCharts::AUTHORS_ON_CHART_LIMIT} #{:best_authors_shown.t}
 
       - when :insertions_by_author_by_date
-        = high_stock("charts.total_insertions_by_author_by_date", charts.total_insertions_by_author_by_date)
+        = high_stock('charts.total_insertions_by_author_by_date', charts.total_insertions_by_author_by_date)
         %small
           %center #{GitStats::StatsView::Charts::AuthorsCharts::AUTHORS_ON_CHART_LIMIT} #{:best_authors_shown.t}
 
       - when :deletions_by_author_by_date
-        = high_stock("charts.total_deletions_by_author_by_date", charts.total_deletions_by_author_by_date)
+        = high_stock('charts.total_deletions_by_author_by_date', charts.total_deletions_by_author_by_date)
         %small
           %center #{GitStats::StatsView::Charts::AuthorsCharts::AUTHORS_ON_CHART_LIMIT} #{:best_authors_shown.t}
