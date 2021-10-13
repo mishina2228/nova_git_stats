@@ -22,6 +22,10 @@ Lint/AmbiguousOperatorPrecedence:
 
 Metrics/AbcSize:
   Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - 'git_stats.gemspec'
+    - 'spec/**/*'
 Metrics/ClassLength:
   Enabled: false
 Metrics/MethodLength:
