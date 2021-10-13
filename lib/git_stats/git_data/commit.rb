@@ -33,11 +33,11 @@ module GitStats
       end
 
       def lines_by_extension
-        @lines_by_extension ||= Hash[files_by_extension.map do |ext, files|
+        @lines_by_extension ||= files_by_extension.map do |ext, files|
           next if (lines_count = files.sum(&:lines_count)) == 0
 
           [ext, lines_count]
-        end.compact]
+        end.compact.to_h
       end
 
       def files_count

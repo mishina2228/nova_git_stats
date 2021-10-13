@@ -41,11 +41,11 @@ describe GitStats::GitData::Repo do
   end
 
   it 'counts files by date' do
-    repo.files_count_by_date.keys == Hash[commit_dates_with_empty.zip [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]]
+    repo.files_count_by_date.keys == (commit_dates_with_empty.zip [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]).to_h
   end
 
   it 'counts lines by date' do
-    repo.files_count_by_date.values == Hash[commit_dates_with_empty.zip [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]]
+    repo.files_count_by_date.values == (commit_dates_with_empty.zip [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]).to_h
   end
 
   it 'counts all lines in repo' do

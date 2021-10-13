@@ -110,8 +110,8 @@ module GitStats
           {
             name: params[:name],
             type: "spline",
-            data: Hash[params[:data]].fill_empty_days!(aggregated: aggregated)
-                                     .map { |date, value| [date.to_datetime.to_i * 1000, value] }.sort_by { |d| d[0] }
+            data: (params[:data]).to_h.fill_empty_days!(aggregated: aggregated)
+                                 .map { |date, value| [date.to_datetime.to_i * 1000, value] }.sort_by { |d| d[0] }
           }
         end
 

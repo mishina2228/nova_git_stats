@@ -61,38 +61,38 @@ module GitStats
 
       # TODO: This method is called from nowhere
       def commits_count_by_author(limit = 4)
-        Hash[authors.map { |author| [author, author.commits.size] }.sort_by { |_author, commits| -commits }[0..limit]]
+        (authors.map { |author| [author, author.commits.size] }.sort_by { |_author, commits| -commits }[0..limit]).to_h
       end
 
       # TODO: These methods are called from nowhere
       [:insertions, :deletions, :changed_lines].each do |method|
         define_method "#{method}_by_author" do |limit = 4|
-          Hash[authors.map { |author| [author, author.send(method)] }.sort_by { |_author, lines| -lines }[0..limit]]
+          (authors.map { |author| [author, author.send(method)] }.sort_by { |_author, lines| -lines }[0..limit]).to_h
         end
       end
 
       def files_count_by_date
-        @files_count_by_date ||= Hash[commits.map do |commit|
+        @files_count_by_date ||= commits.map do |commit|
           [commit.date.to_date, commit.files_count]
-        end]
+        end.to_h
       end
 
       def lines_count_by_date
         sum = 0
-        @lines_count_by_date ||= Hash[commits.map do |commit|
+        @lines_count_by_date ||= commits.map do |commit|
           sum += commit.short_stat.insertions
           sum -= commit.short_stat.deletions
           [commit.date.to_date, sum]
-        end]
+        end.to_h
       end
 
       def comments_count_by_date
         sum = 0
-        @comments_count_by_date ||= Hash[commits.map do |commit|
+        @comments_count_by_date ||= commits.map do |commit|
           sum += commit.comment_stat.insertions
           sum -= commit.comment_stat.deletions
           [commit.date.to_date, sum]
-        end].fill_empty_days!(aggregated: true)
+        end.to_h.fill_empty_days!(aggregated: true)
       end
 
       def last_commit

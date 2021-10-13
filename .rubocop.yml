@@ -20,6 +20,9 @@ Layout/SpaceInsideHashLiteralBraces:
 Lint/AmbiguousOperatorPrecedence:
   Enabled: false
 
+Metrics/ClassLength:
+  Max: 130
+
 RSpec/ExampleLength:
   Max: 21
 RSpec/MessageSpies:
