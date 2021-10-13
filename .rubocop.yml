@@ -20,6 +20,8 @@ Layout/SpaceInsideHashLiteralBraces:
 Lint/AmbiguousOperatorPrecedence:
   Enabled: false
 
+RSpec/ExampleLength:
+  Max: 21
 RSpec/MessageSpies:
   EnforcedStyle: receive
 RSpec/MultipleExpectations:

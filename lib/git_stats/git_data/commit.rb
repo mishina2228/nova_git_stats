@@ -45,7 +45,8 @@ module GitStats
       end
 
       def lines_count
-        @lines_count ||= repo.run("git diff --shortstat --no-renames `git hash-object -t tree /dev/null` #{sha} -- #{repo.tree_path}").lines.sum do |line|
+        command = "git diff --shortstat --no-renames `git hash-object -t tree /dev/null` #{sha} -- #{repo.tree_path}"
+        @lines_count ||= repo.run(command).lines.sum do |line|
           line[/(\d+) insertions?/, 1].to_i
         end
       end

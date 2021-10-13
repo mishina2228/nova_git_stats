@@ -37,18 +37,6 @@ RSpec/ContextWording:
     - 'spec/integration/git_stats/git_data/activity_author_spec.rb'
     - 'spec/integration/shared.rb'
 
-# Offense count: 11
-# Configuration parameters: Max.
-RSpec/ExampleLength:
-  Exclude:
-    - 'spec/git_stats/git_data/commit_spec.rb'
-    - 'spec/git_stats/git_data/repo_command_observer_spec.rb'
-    - 'spec/git_stats/git_data/repo_spec.rb'
-    - 'spec/git_stats/git_data/tree_spec.rb'
-    - 'spec/integration/git_stats/git_data/activity_author_spec.rb'
-    - 'spec/integration/git_stats/git_data/repo_spec.rb'
-    - 'spec/integration/tree_spec.rb'
-
 # Offense count: 3
 RSpec/ExpectInHook:
   Exclude:
