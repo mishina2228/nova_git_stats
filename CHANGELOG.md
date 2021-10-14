@@ -1,6 +1,8 @@
 # Changelog
 
-## master
+## [master]
+
+[master]: https://github.com/mishina2228/git_stats/compare/v2.1.0...master
 
 ## [2.1.0]
 
