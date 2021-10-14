@@ -29,6 +29,8 @@ jobs:
       - name: Run tests
         run: bundle exec rake
         continue-on-error: ${{ matrix.ruby == 'ruby-head' }}
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v2
 
   haml-lint:
     runs-on: ubuntu-latest

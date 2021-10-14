@@ -3,8 +3,8 @@ SimpleCov.start do
   add_filter 'spec/'
 end
 if ENV['CI']
-  require 'codecov'
-  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+  require 'simplecov-cobertura'
+  SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 end
 
 require 'git_stats'
