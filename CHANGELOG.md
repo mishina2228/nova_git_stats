@@ -2,7 +2,9 @@
 
 ## master
 
-## 2.1.0
+## [2.1.0]
+
+[2.1.0]: https://github.com/mishina2228/git_stats/compare/v2.0.0...v2.1.0
 
 ### Breaking Changes
 * Dropped support for IE8 and earlier
