@@ -25,7 +25,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency('activesupport', '~> 6.1')
   gem.add_dependency('haml', '~> 5.0')
   gem.add_dependency('i18n', '~> 1.8')
-  gem.add_dependency('json_pure', '~> 2.1')
   gem.add_dependency('lazy_high_charts', '~> 1.6')
   gem.add_dependency('thor', '~> 1.0')
   gem.add_dependency('tilt', '~> 2.0')
