@@ -49,7 +49,7 @@ It browses the repository and outputs html page with statistics.
     Commands:
       git_stats generate        # Generates the statistics of a repository
       git_stats help [COMMAND]  # Describe available commands or one specific command
-      git_stats version         # Show Gitstats version number and quit
+      git_stats version         # Show GitStats version number and quit
 
 #### Print help of the generate command
 

@@ -26,7 +26,7 @@ module GitStats
       end.render_all
     end
 
-    desc 'version', 'Show Gitstats version number and quit'
+    desc 'version', 'Show GitStats version number and quit'
     def version
       puts "GitStats #{GitStats::VERSION}"
     end
