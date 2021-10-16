@@ -1,9 +1,14 @@
-# GitStats ![CI](https://github.com/mishina2228/git_stats/workflows/CI/badge.svg) [![Maintainability](https://api.codeclimate.com/v1/badges/118cce63cc58fef4ae47/maintainability)](https://codeclimate.com/github/mishina2228/git_stats/maintainability) [![codecov](https://codecov.io/gh/mishina2228/git_stats/branch/master/graph/badge.svg?token=532RLO5L7A)](https://codecov.io/gh/mishina2228/git_stats)
+# GitStats
+
+![CI](https://github.com/mishina2228/git_stats/workflows/CI/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/118cce63cc58fef4ae47/maintainability)](https://codeclimate.com/github/mishina2228/git_stats/maintainability)
+[![codecov](https://codecov.io/gh/mishina2228/git_stats/branch/master/graph/badge.svg?token=532RLO5L7A)](https://codecov.io/gh/mishina2228/git_stats)
 
 GitStats is a git repository statistics generator.
 It browses the repository and outputs html page with statistics.
 
 ## Examples
+
 * [Bootstrap](https://mishina2228.github.io/git_stats/bootstrap)
 * [Devise](https://mishina2228.github.io/git_stats/devise)
 * [DeviseInvitable](https://mishina2228.github.io/git_stats/devise_invitable)
@@ -18,12 +23,12 @@ It browses the repository and outputs html page with statistics.
 ### Existing ruby/gem environment
 
     $ gem install git_stats
-    
+
 ### debian stretch (9.*)
 
     # apt-get install ruby ruby-nokogiri ruby-nokogiri-diff ruby-nokogumbo
     # gem install git_stats
-    
+
 ### Ubuntu
 
     $ sudo apt-get install ruby ruby-dev gcc zlib1g-dev make
@@ -31,8 +36,8 @@ It browses the repository and outputs html page with statistics.
 
 ## Prerequisites
 
-- Git
-- Ruby 2.5+
+* Git
+* Ruby 2.5+
 
 ## Usage
 
@@ -45,6 +50,7 @@ It browses the repository and outputs html page with statistics.
       git_stats generate        # Generates the statistics of a repository
       git_stats help [COMMAND]  # Describe available commands or one specific command
       git_stats version         # Show Gitstats version number and quit
+
 #### Print help of the generate command
 
     $ git_stats help generate
@@ -69,8 +75,6 @@ It browses the repository and outputs html page with statistics.
 
     Generates the statistics of a repository
 
-
-
 #### Start generator with default settings
 
     $ git_stats generate
@@ -78,7 +82,7 @@ It browses the repository and outputs html page with statistics.
       git shortlog -se HEAD
       ...
 
-#### Start generator with some parameters in long and short form.
+#### Start generator with some parameters in long and short form
 
     $ git_stats generate -o stats --langugage de
       git rev-list --pretty=format:'%h|%at|%ai|%aE' HEAD | grep -v commit
@@ -94,7 +98,6 @@ It browses the repository and outputs html page with statistics.
     => [...]
     > commit.files
     => [...]
-
 
 ## Contributing
 

@@ -9,9 +9,11 @@
 [2.1.0]: https://github.com/mishina2228/git_stats/compare/v2.0.0...v2.1.0
 
 ### Breaking Changes
+
 * Dropped support for IE8 and earlier
 
 ### Changes
+
 * Updated jQuery from v1.8.2 to v3.6.0
 * Updated Bootstrap from v2.1.1 to v3.3.7
   * Changed vertical tabs to horizontal
@@ -20,15 +22,18 @@
 ## 2.0.0
 
 ### Breaking Changes
+
 * Dropped support for Ruby 2.4 and earlier
 * Added support for Ruby 2.5 +
 
 ### Features
+
 * Added `git_stats version` command
 * Added graphs of changed/added/deleted lines by date for details of each author page.  
   The existing line graph shows the cumulative number, while the added bar graph shows the daily number.
 
 ### Bugfixes
+
 * Fixed the following localization:
   * bg
   * de
@@ -40,6 +45,7 @@
 * Returns exit 1 when a required argument is not provided
 
 ### Enhancements
+
 * Introduced RuboCop and following extensions:
   * RuboCop Performance
   * RuboCop Rake
@@ -62,4 +68,5 @@
   * Highstock and data export modules from v5.0.10 to v5.0.14
 
 ## Earlier than 2.0.0
- * See the original project [tomgi/git_stats](https://github.com/tomgi/git_stats)
+
+* See the original project [tomgi/git_stats](https://github.com/tomgi/git_stats)
