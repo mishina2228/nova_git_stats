@@ -31,7 +31,6 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency('factory_bot', '~> 6.0')
   gem.add_development_dependency('haml_lint', '~> 0.37')
-  gem.add_development_dependency('pry', '~> 0.13')
   gem.add_development_dependency('rake', '~> 13.0')
   gem.add_development_dependency('rspec', '~> 3.10')
   gem.add_development_dependency('rubocop', '~> 1.8')
