@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['tomasz.gieniusz@gmail.com']
   gem.description   = 'Git history statistics generator'
   gem.summary       = 'HTML statistics generator from git repository'
-  gem.homepage      = 'https://github.com/tomgi/git_stats'
+  gem.homepage      = 'https://github.com/mishina2228/git_stats'
   gem.licenses      = ['MIT']
 
   gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
