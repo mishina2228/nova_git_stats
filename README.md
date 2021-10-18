@@ -47,7 +47,7 @@ It browses the repository and outputs html page with statistics.
 
     $ git_stats
     Commands:
-      git_stats generate        # Generates the statistics of a repository
+      git_stats generate        # Generates the statistics of a git repository
       git_stats help [COMMAND]  # Describe available commands or one specific command
       git_stats version         # Show GitStats version number and quit
 
@@ -58,22 +58,22 @@ It browses the repository and outputs html page with statistics.
       git_stats generate
 
     Options:
-      p, [--path=PATH]                          # Path to repository from which statistics should be generated.
-                                                # Default: .
-      o, [--out-path=OUT_PATH]                  # Output path where statistics should be written.
-                                                # Default: ./git_stats
-      l, [--language=LANGUAGE]                  # Language of written statistics.
-                                                # Default: en
-      f, [--first-commit-sha=FIRST_COMMIT_SHA]  # Commit from where statistics should start.
-      t, [--last-commit-sha=LAST_COMMIT_SHA]    # Commit where statistics should stop.
-                                                # Default: HEAD
-      s, [--silent], [--no-silent]              # Silent mode. Don't output anything.
-      d, [--tree=TREE]                          # Tree where statistics should be generated.
-                                                # Default: .
-      c, [--comment-string=COMMENT_STRING]      # The string which is used for comments.
-                                                # Default: //
+      -p, [--path=PATH]                          # Path to git repository from which statistics should be generated.
+                                                 # Default: .
+      -o, [--out-path=OUT_PATH]                  # Output path where statistics should be written.
+                                                 # Default: ./git_stats
+      -l, [--language=LANGUAGE]                  # Language of written statistics.
+                                                 # Default: en
+      -f, [--first-commit-sha=FIRST_COMMIT_SHA]  # Commit from where statistics should start.
+      -t, [--last-commit-sha=LAST_COMMIT_SHA]    # Commit where statistics should stop.
+                                                 # Default: HEAD
+      -s, [--silent], [--no-silent]              # Silent mode. Don't output anything.
+      -d, [--tree=TREE]                          # Tree where statistics should be generated.
+                                                 # Default: .
+      -c, [--comment-string=COMMENT_STRING]      # The string which is used for comments.
+                                                 # Default: //
 
-    Generates the statistics of a repository
+    Generates the statistics of a git repository
 
 #### Start generator with default settings
 
