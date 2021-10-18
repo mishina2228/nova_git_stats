@@ -4,11 +4,19 @@
 
 [master]: https://github.com/mishina2228/git_stats/compare/v2.1.0...master
 
+### Changes
+
+* Remove json_pure from dependency which is no longer needed
+* Remove pry from development dependency
+
 ### Enhancements
 
 * Introduced dependabot
 * Run RuboCop on GitHub Action
 * Fix style
+* Update documents for CLI options
+* Remove unneeded files from the gem package
+* Use Gemfile instead of Gem::Specification#add_development_dependency
 
 ## [2.1.0]
 
