@@ -14,8 +14,8 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://github.com/mishina2228/git_stats'
   gem.licenses      = ['MIT']
 
-  gem.files         = Dir['{bin,config,lib,templates}/**/*']
-  gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
+  gem.files         = Dir['{config,lib,templates}/**/*']
+  gem.executables   = ['git_stats']
   gem.require_paths = ['lib']
 
   gem.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
