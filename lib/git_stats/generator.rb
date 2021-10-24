@@ -3,10 +3,12 @@ module GitStats
     delegate :add_command_observer, to: :@repo
     delegate :render_all, to: :@view
 
-    def initialize(options)
-      validate_repo_path(options[:path])
+    attr_reader :path
 
-      @repo = GitData::Repo.new(options)
+    def initialize(options)
+      @path = validate_repo_path(options[:path])
+
+      @repo = GitData::Repo.new(options.merge(path: @path))
       view_data = StatsView::ViewData.new(@repo)
       @view = StatsView::View.new(view_data, options[:out_path])
 
@@ -16,7 +18,12 @@ module GitStats
     private
 
     def validate_repo_path(repo_path)
-      raise ArgumentError, "#{repo_path} is not a git repository" unless valid_repo_path?(repo_path)
+      raise ArgumentError, '`path` is not specified' unless repo_path
+
+      path = File.expand_path(repo_path)
+      raise ArgumentError, "'#{path}' is not a git repository" unless valid_repo_path?(path)
+
+      path
     end
 
     def valid_repo_path?(repo_path)
