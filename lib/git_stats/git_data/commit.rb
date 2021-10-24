@@ -3,7 +3,7 @@ require 'git_stats/hash_initializable'
 module GitStats
   module GitData
     class Commit
-      include HashInitializable
+      include GitStats::HashInitializable
 
       attr_reader :repo, :sha, :stamp, :date, :author
 

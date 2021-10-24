@@ -3,7 +3,7 @@ require 'git_stats/hash_initializable'
 module GitStats
   module GitData
     class Author
-      include HashInitializable
+      include GitStats::HashInitializable
 
       attr_reader :repo, :name, :email
 

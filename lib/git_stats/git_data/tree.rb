@@ -3,7 +3,7 @@ require 'git_stats/hash_initializable'
 module GitStats
   module GitData
     class Tree
-      include HashInitializable
+      include GitStats::HashInitializable
 
       attr_reader :repo, :relative_path
 

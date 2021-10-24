@@ -3,7 +3,7 @@ require 'git_stats/hash_initializable'
 module GitStats
   module GitData
     class Repo
-      include HashInitializable
+      include GitStats::HashInitializable
 
       delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension,
                :files_count, :binary_files, :text_files, :lines_count, :comments_count, to: :last_commit
