@@ -8,6 +8,12 @@ describe GitStats do
     end
   end
 
+  describe '.version' do
+    it 'returns current version of GitStats' do
+      expect(described_class.version).to eq GitStats::VERSION
+    end
+  end
+
   describe 'gemspec sanity' do
     after do
       FileUtils.rm(Dir.glob('git_stats*.gem'))
