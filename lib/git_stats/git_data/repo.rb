@@ -1,9 +1,11 @@
 require 'git_stats/hash_initializable'
+require 'git_stats/inspector'
 
 module GitStats
   module GitData
     class Repo
       include GitStats::HashInitializable
+      include GitStats::Inspector
 
       delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension,
                :files_count, :binary_files, :text_files, :lines_count, :comments_count, to: :last_commit
@@ -147,8 +149,8 @@ module GitStats
         command_observers << proc if proc
       end
 
-      def to_s
-        "#{self.class} #{@path}"
+      def ivars_to_be_displayed
+        [:@path, :@tree_path, :@last_commit_sha]
       end
 
       def ==(other)

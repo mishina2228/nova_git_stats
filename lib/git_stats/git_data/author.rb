@@ -1,9 +1,11 @@
 require 'git_stats/hash_initializable'
+require 'git_stats/inspector'
 
 module GitStats
   module GitData
     class Author
       include GitStats::HashInitializable
+      include GitStats::Inspector
 
       attr_reader :repo, :name, :email
 
@@ -59,10 +61,6 @@ module GitStats
 
       def dirname
         @name.underscore.split.join '_'
-      end
-
-      def to_s
-        "#{self.class} #{@name} <#{@email}>"
       end
 
       def ==(other)

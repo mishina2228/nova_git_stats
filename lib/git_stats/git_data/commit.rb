@@ -1,9 +1,11 @@
 require 'git_stats/hash_initializable'
+require 'git_stats/inspector'
 
 module GitStats
   module GitData
     class Commit
       include GitStats::HashInitializable
+      include GitStats::Inspector
 
       attr_reader :repo, :sha, :stamp, :date, :author
 
@@ -57,10 +59,6 @@ module GitStats
 
       def comment_stat
         @comment_stat ||= CommentStat.new(self)
-      end
-
-      def to_s
-        "#{self.class} #{@sha}"
       end
 
       def ==(other)
