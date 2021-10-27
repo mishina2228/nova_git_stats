@@ -7,14 +7,15 @@ module GitStats
     delegate :add_command_observer, to: :@repo
     delegate :render_all, to: :@view
 
-    attr_reader :path
+    attr_reader :path, :out_path
 
     def initialize(options)
       @path = validate_repo_path(options[:path])
+      @out_path = File.expand_path(options[:out_path])
 
       @repo = GitData::Repo.new(options.merge(path: @path))
       view_data = StatsView::ViewData.new(@repo)
-      @view = StatsView::View.new(view_data, options[:out_path])
+      @view = StatsView::View.new(view_data, out_path)
 
       yield self if block_given?
     end
