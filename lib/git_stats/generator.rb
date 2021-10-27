@@ -1,5 +1,9 @@
+require 'git_stats/inspector'
+
 module GitStats
   class Generator
+    include GitStats::Inspector
+
     delegate :add_command_observer, to: :@repo
     delegate :render_all, to: :@view
 

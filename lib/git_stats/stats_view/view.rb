@@ -1,6 +1,10 @@
+require 'git_stats/inspector'
+
 module GitStats
   module StatsView
     class View
+      include GitStats::Inspector
+
       def initialize(view_data, out_path)
         @view_data = view_data
         @out_path = out_path
@@ -71,6 +75,14 @@ module GitStats
 
       def prepare_assets
         FileUtils.cp_r(GitStats.root.join('templates/assets'), @out_path)
+      end
+
+      def ivars_to_be_displayed
+        [:@view_data, :@out_path]
+      end
+
+      def ivars_to_be_filtered
+        [:@layout]
       end
     end
   end
