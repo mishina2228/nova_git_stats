@@ -21,7 +21,7 @@ describe GitStats::Generator do
       end
     end
 
-    context 'when given repo path is a git repository' do
+    context 'when given repo path is a git repository and an absolute path' do
       let(:path) { valid_repo.path }
 
       it 'does not raise exception' do
@@ -29,7 +29,7 @@ describe GitStats::Generator do
       end
     end
 
-    context 'when given repo path is a git repository and includes tilde' do
+    context 'when given repo path is a git repository and a relative path including tilde' do
       let(:path) { File.join('~/../../', valid_repo.path) }
 
       it 'converts it to an absolute path' do
@@ -47,6 +47,14 @@ describe GitStats::Generator do
 
       it 'raises exception' do
         expect { generator }.to raise_error(TypeError)
+      end
+    end
+
+    context 'when given out_path is an absolute path' do
+      let(:out_path) { '/tmp' }
+
+      it 'returns the given out_path as is' do
+        expect(generator.out_path).to eq('/tmp')
       end
     end
 
