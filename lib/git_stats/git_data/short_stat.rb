@@ -12,10 +12,6 @@ module GitStats
         insertions + deletions
       end
 
-      def to_s
-        "#{self.class} #{@commit}"
-      end
-
       private
 
       def calculate_stat

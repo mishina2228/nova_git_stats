@@ -1,9 +1,11 @@
 require 'git_stats/hash_initializable'
+require 'git_stats/inspector'
 
 module GitStats
   module GitData
     class Blob
       include GitStats::HashInitializable
+      include GitStats::Inspector
 
       attr_reader :repo, :sha, :filename
 
@@ -25,12 +27,14 @@ module GitStats
             .include?('Binary file')
       end
 
-      def to_s
-        "#{self.class} #{@sha} #{@filename}"
-      end
-
       def ==(other)
         [repo, sha, filename] == [other.repo, other.sha, other.filename]
+      end
+
+      private
+
+      def ivars_to_be_displayed
+        [:@sha, :@filename]
       end
     end
   end

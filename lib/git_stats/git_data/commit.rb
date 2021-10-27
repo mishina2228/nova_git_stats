@@ -65,6 +65,12 @@ module GitStats
         [repo, sha, stamp, date, author] ==
           [other.repo, other.sha, other.stamp, other.date, other.author]
       end
+
+      private
+
+      def ivars_to_be_displayed
+        [:@sha, :@stamp, :@date, :@author]
+      end
     end
   end
 end

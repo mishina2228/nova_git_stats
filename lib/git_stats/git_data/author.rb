@@ -66,6 +66,12 @@ module GitStats
       def ==(other)
         [repo, name, email] == [other.repo, other.name, other.email]
       end
+
+      private
+
+      def ivars_to_be_displayed
+        [:@name, :@email]
+      end
     end
   end
 end

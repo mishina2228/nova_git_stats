@@ -12,10 +12,6 @@ module GitStats
         insertions + deletions
       end
 
-      def to_s
-        "#{self.class} #{@commit}"
-      end
-
       def escape_characters_in_string(string)
         pattern = %r{['".*/\\-]}
         string.gsub(pattern) { |match| "\\#{match}" }
