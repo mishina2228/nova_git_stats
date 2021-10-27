@@ -13,7 +13,7 @@ module GitStats
       @path = validate_repo_path(options[:path])
       @out_path = File.expand_path(options[:out_path])
 
-      @repo = GitData::Repo.new(options.merge(path: @path))
+      @repo = GitData::Repo.new(options.merge(path: path))
       view_data = StatsView::ViewData.new(@repo)
       @view = StatsView::View.new(view_data, out_path)
 
