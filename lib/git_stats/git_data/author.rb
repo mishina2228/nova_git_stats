@@ -60,7 +60,7 @@ module GitStats
       end
 
       def dirname
-        @name.underscore.split.join '_'
+        name.underscore.split.join '_'
       end
 
       def ==(other)
