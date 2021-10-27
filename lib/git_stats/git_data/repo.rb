@@ -149,10 +149,6 @@ module GitStats
         command_observers << proc if proc
       end
 
-      def ivars_to_be_displayed
-        [:@path, :@tree_path, :@last_commit_sha]
-      end
-
       def ==(other)
         path == other.path
       end
@@ -165,6 +161,10 @@ module GitStats
 
       def invoke_command_observers(command, result)
         command_observers.each { |o| o.call(command, result) }
+      end
+
+      def ivars_to_be_displayed
+        [:@path, :@tree_path, :@last_commit_sha]
       end
     end
   end
