@@ -7,7 +7,7 @@ module GitStats
 
       def initialize(view_data, out_path)
         @view_data = view_data
-        @out_path = out_path
+        @out_path = File.expand_path(out_path)
         @layout = Tilt.new(GitStats.root.join('templates/layout.haml'))
       end
 
