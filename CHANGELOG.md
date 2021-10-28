@@ -4,6 +4,30 @@
 
 [master]: https://github.com/mishina2228/git_stats/compare/v2.1.1...master
 
+### Features
+
+* Add `GitStats.version` method
+
+### Changes
+
+* Move `HashInitializable` under `GitStats` namespace
+
+### Bugfixes
+
+* Expand `path` and `out_path` to the absolute path
+  * Previously, when the following command was executed, the result was saved in `./~/output/`.
+
+    ```sh
+    git_stats generate -o ~/output/
+    ```
+
+    It has been fixed so that the results are saved in `~/output` now.
+
+### Enhancements
+
+* Introduce `Update GitStats::Inspector` for debugging
+  * Define `#to_s`, `#inspect` and `#pretty_print` to reduce the amount of information displayed by those methods.
+
 ## [2.1.1]
 
 [2.1.1]: https://github.com/mishina2228/git_stats/compare/v2.1.0...v2.1.1
