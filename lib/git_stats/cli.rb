@@ -1,4 +1,4 @@
-require 'git_stats'
+require_relative '../git_stats'
 require 'thor'
 
 module GitStats

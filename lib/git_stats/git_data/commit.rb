@@ -1,5 +1,5 @@
-require 'git_stats/hash_initializable'
-require 'git_stats/inspector'
+require_relative '../hash_initializable'
+require_relative '../inspector'
 
 module GitStats
   module GitData

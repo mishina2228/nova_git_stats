@@ -27,6 +27,7 @@
 
 * Introduce `Update GitStats::Inspector` for debugging
   * Define `#to_s`, `#inspect` and `#pretty_print` to reduce the amount of information displayed by those methods.
+* Replace `require` with `require_relative` if possible
 
 ## [2.1.1]
 

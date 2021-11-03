@@ -1,4 +1,4 @@
-require 'git_stats/inspector'
+require_relative '../inspector'
 
 module GitStats
   module StatsView

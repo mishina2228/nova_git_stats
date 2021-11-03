@@ -1,6 +1,4 @@
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'git_stats/version'
+require_relative 'lib/git_stats/version'
 
 Gem::Specification.new do |gem|
   gem.name          = 'git_stats'

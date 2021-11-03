@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
-lib = File.expand_path("#{File.dirname(__FILE__)}/../lib")
-$LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
 
 # start up the CLI
-require 'git_stats/cli'
+require_relative '../lib/git_stats/cli'
 
 GitStats::CLI.start(ARGV)
