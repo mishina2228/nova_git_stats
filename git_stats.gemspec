@@ -10,6 +10,10 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://github.com/mishina2228/git_stats'
   gem.licenses      = ['MIT']
 
+  gem.metadata = {
+    'rubygems_mfa_required' => 'true'
+  }
+
   gem.files         = Dir['{config,lib,templates}/**/*']
   gem.executables   = ['git_stats']
   gem.require_paths = ['lib']
