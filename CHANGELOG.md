@@ -2,7 +2,11 @@
 
 ## [master]
 
-[master]: https://github.com/mishina2228/git_stats/compare/v2.1.1...master
+[master]: https://github.com/mishina2228/git_stats/compare/v2.1.2...master
+
+## [2.1.2]
+
+[2.1.2]: https://github.com/mishina2228/git_stats/compare/v2.1.1...v2.1.2
 
 * Features
   * Add `GitStats.version` method
