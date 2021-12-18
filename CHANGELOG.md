@@ -13,6 +13,8 @@
 
 * Changes
   * Move `HashInitializable` under `GitStats` namespace
+  * Add support for actionview 7.0
+  * Add support for activesupport 7.0
 
 * Bugfixes
   * Expand `path` and `out_path` to the absolute path
