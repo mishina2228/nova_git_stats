@@ -50,7 +50,7 @@ module GitStats
 
       def write(output, write_file)
         FileUtils.mkdir_p(File.dirname(write_file))
-        File.open(write_file, 'w') { |f| f.write output }
+        File.write(write_file, output)
       end
 
       def links
