@@ -3,12 +3,12 @@ require_relative 'lib/git_stats/version'
 Gem::Specification.new do |gem|
   gem.name          = 'git_stats'
   gem.version       = GitStats::VERSION
-  gem.authors       = ['Tomasz Gieniusz']
-  gem.email         = ['tomasz.gieniusz@gmail.com']
+  gem.authors       = ['Tomasz Gieniusz', 'mishina2228']
+  gem.email         = %w(tomasz.gieniusz@gmail.com temma182008+github@gmail.com)
   gem.description   = 'Git history statistics generator'
   gem.summary       = 'HTML statistics generator from git repository'
   gem.homepage      = 'https://github.com/mishina2228/git_stats'
-  gem.licenses      = ['MIT']
+  gem.license       = 'MIT'
 
   gem.metadata = {
     'rubygems_mfa_required' => 'true'
