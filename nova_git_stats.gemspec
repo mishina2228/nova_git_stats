@@ -11,7 +11,11 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.metadata = {
-    'rubygems_mfa_required' => 'true'
+    'bug_tracker_uri' => "#{s.homepage}/issues",
+    'changelog_uri' => "#{s.homepage}/blob/master/CHANGELOG.md",
+    'homepage_uri' => s.homepage,
+    'rubygems_mfa_required' => 'true',
+    'source_code_uri' => "#{s.homepage}/tree/v#{s.version}"
   }
 
   s.files         = Dir['{config,lib,templates}/**/*']
