@@ -1,6 +1,6 @@
 # NovaGitStats
 
-![CI](https://github.com/mishina2228/git_stats/workflows/CI/badge.svg)
+![CI](https://github.com/mishina2228/nova_git_stats/workflows/CI/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/118cce63cc58fef4ae47/maintainability)](https://codeclimate.com/github/mishina2228/git_stats/maintainability)
 [![codecov](https://codecov.io/gh/mishina2228/git_stats/branch/master/graph/badge.svg?token=532RLO5L7A)](https://codecov.io/gh/mishina2228/git_stats)
 
