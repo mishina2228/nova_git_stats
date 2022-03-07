@@ -2,11 +2,14 @@
 
 ## [master]
 
-[master]: https://github.com/mishina2228/git_stats/compare/v2.1.2...master
+[master]: https://github.com/mishina2228/nova_git_stats/compare/v2.1.2...master
+
+* Features
+  * Renamed to NovaGitStats(nova_git_stats) from GitStats(git_stats)
 
 ## [2.1.2]
 
-[2.1.2]: https://github.com/mishina2228/git_stats/compare/v2.1.1...v2.1.2
+[2.1.2]: https://github.com/mishina2228/nova_git_stats/compare/v2.1.1...v2.1.2
 
 * Features
   * Add `GitStats.version` method
@@ -33,7 +36,7 @@
 
 ## [2.1.1]
 
-[2.1.1]: https://github.com/mishina2228/git_stats/compare/v2.1.0...v2.1.1
+[2.1.1]: https://github.com/mishina2228/nova_git_stats/compare/v2.1.0...v2.1.1
 
 * Changes
   * Remove json_pure from dependency which is no longer needed
@@ -49,7 +52,7 @@
 
 ## [2.1.0]
 
-[2.1.0]: https://github.com/mishina2228/git_stats/compare/v2.0.0...v2.1.0
+[2.1.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.0.0...v2.1.0
 
 * Breaking Changes
   * Dropped support for IE8 and earlier

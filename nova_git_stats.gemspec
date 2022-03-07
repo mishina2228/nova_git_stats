@@ -1,7 +1,7 @@
 require_relative 'lib/git_stats/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = 'git_stats'
+  gem.name          = 'nova_git_stats'
   gem.version       = GitStats::VERSION
   gem.authors       = ['Tomasz Gieniusz', 'mishina2228']
   gem.email         = %w(tomasz.gieniusz@gmail.com temma182008+github@gmail.com)

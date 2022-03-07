@@ -16,12 +16,12 @@ describe GitStats do
 
   describe 'gemspec sanity' do
     after do
-      FileUtils.rm(Dir.glob('git_stats*.gem'))
+      FileUtils.rm(Dir.glob('nova_git_stats*.gem'))
     end
 
     let(:build) do
       Bundler.with_original_env do
-        Open3.capture3('gem build git_stats.gemspec')
+        Open3.capture3('gem build nova_git_stats.gemspec')
       end
     end
 
