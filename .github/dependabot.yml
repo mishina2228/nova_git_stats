@@ -11,3 +11,11 @@ updates:
     allow:
       - dependency-type: direct
       - dependency-type: indirect
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "20:00"
+    open-pull-requests-limit: 10
+    assignees:
+      - mishina2228
