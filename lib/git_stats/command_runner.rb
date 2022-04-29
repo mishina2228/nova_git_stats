@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module GitStats
   class CommandRunner
     def run(path, command)
-      execute(command, path).encode!('UTF-8', 'UTF-8', invalid: :replace)
+      execute(command, path).encode('UTF-8', 'UTF-8', invalid: :replace)
     end
 
     private
