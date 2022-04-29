@@ -4,6 +4,9 @@
 
 [master]: https://github.com/mishina2228/nova_git_stats/compare/v2.2.0...master
 
+* Changes
+  * Enable `frozen_string_literal` by adding the magic comment to all files
+
 ## [2.2.0]
 
 [2.2.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.1.2...2.2.0
