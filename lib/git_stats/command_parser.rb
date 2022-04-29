@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GitStats
   class CommandParser
     def parse(command, result)

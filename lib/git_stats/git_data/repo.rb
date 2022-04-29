@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../hash_initializable'
 require_relative '../inspector'
 

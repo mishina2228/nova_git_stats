@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Hash
   def to_key_indexed_array(min_size: 0, default: nil)
     raise ArgumentError, 'all the keys must be numbers to convert to key indexed array' unless all? { |k, _v| k.is_a? Numeric }

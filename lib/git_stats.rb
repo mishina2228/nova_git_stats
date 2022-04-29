@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GitStats
   def self.root
     Pathname.new(File.dirname(File.dirname(__FILE__)))

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'integration/shared'
 
 describe GitStats::GitData::Repo do

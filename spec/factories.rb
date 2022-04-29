@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   initialize_with { new(attributes) }
 

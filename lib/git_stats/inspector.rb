@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GitStats
   module Inspector
     def to_s

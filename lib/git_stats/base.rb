@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'core_extensions/hash'
 require_relative 'core_extensions/symbol'
 require_relative 'core_extensions/enumerable'
