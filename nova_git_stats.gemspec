@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
     'source_code_uri' => "#{s.homepage}/tree/v#{s.version}"
   }
 
-  s.files         = Dir['{config,lib,templates}/**/*']
+  s.files         = Dir['{config,lib,templates}/**/*', 'CHANGELOG.md', 'LICENSE.txt', 'README.md']
   s.executables   = ['git_stats']
   s.require_paths = ['lib']
 
