@@ -26,7 +26,7 @@
         .navbar-collapse.collapse#navbar-menu
           %ul.nav.navbar-nav
             - links.each do |name, href|
-              %li{class: active_page[name.to_s.underscore] ? 'active' : ''}
+              %li{class: active_page.start_with?(name.to_s.underscore) ? 'active' : ''}
                 %a{href: link_to(href, active_page)}= name.t
     .container
       = yield
