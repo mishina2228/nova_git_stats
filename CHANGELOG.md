@@ -7,6 +7,9 @@
 * Changes
   * Enable `frozen_string_literal` by adding the magic comment to all files
 
+* Enhancements
+  * Include documents and license in the package
+
 ## [2.2.0]
 
 [2.2.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.1.2...2.2.0
