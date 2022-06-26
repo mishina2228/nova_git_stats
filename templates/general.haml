@@ -13,7 +13,7 @@
     %td= I18n.l(DateTime.now, format: :long)
   %tr
     %td= :generator.t
-    %td GitStats #{GitStats::VERSION}
+    %td NovaGitStats #{GitStats::VERSION}
   %tr
     %td= :report_period.t
     %td= repo.commits_period.map { |d| I18n.l(d, format: :long) }.join(' .. ')
