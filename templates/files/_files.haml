@@ -1,9 +1,9 @@
 .tabbable.tabs-left
   %ul.nav.nav-tabs
-    %li{class: page == :files_by_date ? 'active' : ''}
-      %a{href: 'by_date.html'}= :files_by_date.t
-    %li{class: page == :files_by_extension ? 'active' : ''}
-      %a{href: 'by_extension.html'}= :files_by_extension.t
+    %li.nav-item
+      %a.nav-link{class: page == :files_by_date ? 'active' : '', href: 'by_date.html'}= :files_by_date.t
+    %li.nav-item
+      %a.nav-link{class: page == :files_by_extension ? 'active' : '', href: 'by_extension.html'}= :files_by_extension.t
 
   .tab-content
     .tab-pane.active

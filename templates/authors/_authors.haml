@@ -1,15 +1,15 @@
 .tabbable.tabs-left
   %ul.nav.nav-tabs
-    %li{class: page == :best_authors ? 'active' : ''}
-      %a{href: 'best_authors.html'}= :best_authors.t
-    %li{class: page == :commits_sum_by_author_by_date ? 'active' : ''}
-      %a{href: 'commits_sum_by_author_by_date.html'}= :commits_sum_by_author_by_date.t
-    %li{class: page == :changed_lines_by_author_by_date ? 'active' : ''}
-      %a{href: 'changed_lines_by_author_by_date.html'}= :changed_lines_by_author_by_date.t
-    %li{class: page == :insertions_by_author_by_date ? 'active' : ''}
-      %a{href: 'insertions_by_author_by_date.html'}= :insertions_by_author_by_date.t
-    %li{class: page == :deletions_by_author_by_date ? 'active' : ''}
-      %a{href: 'deletions_by_author_by_date.html'}= :deletions_by_author_by_date.t
+    %li.nav-item
+      %a.nav-link{class: page == :best_authors ? 'active' : '', href: 'best_authors.html'}= :best_authors.t
+    %li.nav-item
+      %a.nav-link{class: page == :commits_sum_by_author_by_date ? 'active' : '', href: 'commits_sum_by_author_by_date.html'}= :commits_sum_by_author_by_date.t
+    %li.nav-item
+      %a.nav-link{class: page == :changed_lines_by_author_by_date ? 'active' : '', href: 'changed_lines_by_author_by_date.html'}= :changed_lines_by_author_by_date.t
+    %li.nav-item
+      %a.nav-link{class: page == :insertions_by_author_by_date ? 'active' : '', href: 'insertions_by_author_by_date.html'}= :insertions_by_author_by_date.t
+    %li.nav-item
+      %a.nav-link{class: page == :deletions_by_author_by_date ? 'active' : '', href: 'deletions_by_author_by_date.html'}= :deletions_by_author_by_date.t
 
   .tab-content
     .tab-pane.active
@@ -41,9 +41,9 @@
               - commit_last_date = author.commits.last&.date
               %td= I18n.l(commit_last_date, format: :long) if commit_last_date
               %td
-                %a.btn.btn-default{href: "#{author.dirname}/activity/by_date.html"}= :activity.t
+                %a.btn.btn-outline-secondary{href: "#{author.dirname}/activity/by_date.html"}= :activity.t
               %td
-                %a.btn.btn-default{href: "#{author.dirname}/author_details/commits_by_date.html"}= :details.t
+                %a.btn.btn-outline-secondary{href: "#{author.dirname}/author_details/commits_by_date.html"}= :details.t
 
       - when :commits_count_by_author
         -# This when clause is not be executed

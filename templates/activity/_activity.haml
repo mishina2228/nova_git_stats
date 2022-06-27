@@ -1,19 +1,19 @@
 .tabbable.tabs-left
   %ul.nav.nav-tabs
-    %li{class: page == :activity_by_date ? 'active' : '', role: 'presentation'}
-      %a{href: 'by_date.html'}= :activity_by_date.t
-    %li{class: page == :hour_of_day ? 'active' : '', role: 'presentation'}
-      %a{href: 'hour_of_day.html'}= :hour_of_day.t
-    %li{class: page == :day_of_week ? 'active' : '', role: 'presentation'}
-      %a{href: 'day_of_week.html'}= :day_of_week.t
-    %li{class: page == :hour_of_week ? 'active' : '', role: 'presentation'}
-      %a{href: 'hour_of_week.html'}= :hour_of_week.t
-    %li{class: page == :month_of_year ? 'active' : '', role: 'presentation'}
-      %a{href: 'month_of_year.html'}= :month_of_year.t
-    %li{class: page == :year ? 'active' : '', role: 'presentation'}
-      %a{href: 'year.html'}= :year.t
-    %li{class: page == :year_month ? 'active' : '', role: 'presentation'}
-      %a{href: 'year_month.html'}= :year_month.t
+    %li.nav-item{role: 'presentation'}
+      %a.nav-link{class: page == :activity_by_date ? 'active' : '', href: 'by_date.html'}= :activity_by_date.t
+    %li.nav-item{role: 'presentation'}
+      %a.nav-link{class: page == :hour_of_day ? 'active' : '', href: 'hour_of_day.html'}= :hour_of_day.t
+    %li.nav-item{role: 'presentation'}
+      %a.nav-link{class: page == :day_of_week ? 'active' : '', href: 'day_of_week.html'}= :day_of_week.t
+    %li.nav-item{role: 'presentation'}
+      %a.nav-link{class: page == :hour_of_week ? 'active' : '', href: 'hour_of_week.html'}= :hour_of_week.t
+    %li.nav-item{role: 'presentation'}
+      %a.nav-link{class: page == :month_of_year ? 'active' : '', href: 'month_of_year.html'}= :month_of_year.t
+    %li.nav-item{role: 'presentation'}
+      %a.nav-link{class: page == :year ? 'active' : '', href: 'year.html'}= :year.t
+    %li.nav-item{role: 'presentation'}
+      %a.nav-link{class: page == :year_month ? 'active' : '', href: 'year_month.html'}= :year_month.t
 
   .tab-content
     .tab-pane.active

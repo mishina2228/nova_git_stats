@@ -4,29 +4,30 @@
   %head
     %title NovaGitStats - #{repo.project_name}
     %meta{charset: 'utf-8'}
-    %link{rel: 'stylesheet', href: asset_path('bootstrap/css/bootstrap-3.3.7.min.css', active_page), type: 'text/css'}
     %style
       :plain
         body { padding-top: 60px; }
-    %link{rel: 'stylesheet', href: asset_path('bootstrap/css/bootstrap-theme-3.3.7.min.css', active_page), type: 'text/css'}
+    %link{rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css', integrity: 'sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn', crossorigin: 'anonymous'}
     %link{rel: 'stylesheet', href: asset_path('menu.css', active_page), type: 'text/css'}
-    %script{src: asset_path('jquery-3.6.0.min.js', active_page), type: 'text/javascript'}
-    %script{src: asset_path('bootstrap/js/bootstrap-3.3.7.min.js', active_page), type: 'text/javascript'}
+    %script{src: 'https://code.jquery.com/jquery-3.6.0.min.js',
+            integrity: 'sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=',
+            crossorigin: 'anonymous'}
+    %script{src: 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js', integrity: 'sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2', crossorigin: 'anonymous'}
     %script{src: asset_path('highstock.js', active_page), type: 'text/javascript'}
     %script{src: asset_path('exporting.js', active_page), type: 'text/javascript'}
     %script{src: asset_path('export-data.js', active_page), type: 'text/javascript'}
   %body
-    %nav.navbar.navbar-default.navbar-fixed-top
+    %nav.navbar.navbar-light.fixed-top.navbar-expand-md.bg-light
       .container
-        %button.menu-icon.navbar-toggle.collapsed{'data-toggle' => 'collapse', 'data-target' => '#navbar-menu', 'aria-expanded' => false}
+        %a.navbar-brand{href: link_to('index.html', active_page)} NovaGitStats - #{repo.project_name}
+        %button.menu-icon.navbar-toggler.collapsed{'data-toggle' => 'collapse', 'data-target' => '#navbar-menu', 'aria-expanded' => false}
           %svg{viewBox: '0 0 24 24'}
             %g
               %path{d: 'M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'}
-        %a.navbar-brand{href: link_to('index.html', active_page)} NovaGitStats - #{repo.project_name}
         .navbar-collapse.collapse#navbar-menu
           %ul.nav.navbar-nav
             - links.each do |name, href|
-              %li{class: active_page.start_with?(name.to_s.underscore) ? 'active' : ''}
-                %a{href: link_to(href, active_page)}= name.t
+              %li.nav-item{class: active_page.start_with?(name.to_s.underscore) ? 'active' : ''}
+                %a.nav-link{href: link_to(href, active_page)}= name.t
     .container
       = yield
