@@ -3,13 +3,17 @@
     %li.nav-item
       %a.nav-link{class: page == :best_authors ? 'active' : '', href: 'best_authors.html'}= :best_authors.t
     %li.nav-item
-      %a.nav-link{class: page == :commits_sum_by_author_by_date ? 'active' : '', href: 'commits_sum_by_author_by_date.html'}= :commits_sum_by_author_by_date.t
+      %a.nav-link{class: page == :commits_sum_by_author_by_date ? 'active' : '',
+                  href: 'commits_sum_by_author_by_date.html'}= :commits_sum_by_author_by_date.t
     %li.nav-item
-      %a.nav-link{class: page == :changed_lines_by_author_by_date ? 'active' : '', href: 'changed_lines_by_author_by_date.html'}= :changed_lines_by_author_by_date.t
+      %a.nav-link{class: page == :changed_lines_by_author_by_date ? 'active' : '',
+                  href: 'changed_lines_by_author_by_date.html'}= :changed_lines_by_author_by_date.t
     %li.nav-item
-      %a.nav-link{class: page == :insertions_by_author_by_date ? 'active' : '', href: 'insertions_by_author_by_date.html'}= :insertions_by_author_by_date.t
+      %a.nav-link{class: page == :insertions_by_author_by_date ? 'active' : '',
+                  href: 'insertions_by_author_by_date.html'}= :insertions_by_author_by_date.t
     %li.nav-item
-      %a.nav-link{class: page == :deletions_by_author_by_date ? 'active' : '', href: 'deletions_by_author_by_date.html'}= :deletions_by_author_by_date.t
+      %a.nav-link{class: page == :deletions_by_author_by_date ? 'active' : '',
+                  href: 'deletions_by_author_by_date.html'}= :deletions_by_author_by_date.t
 
   .tab-content
     .tab-pane.active
