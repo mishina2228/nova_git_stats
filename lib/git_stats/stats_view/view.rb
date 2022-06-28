@@ -72,7 +72,7 @@ module GitStats
       end
 
       def create_out_dir
-        FileUtils.mkdir_p(@out_path) unless Dir.exist?(@out_path)
+        FileUtils.mkdir_p(@out_path)
       end
 
       def prepare_assets
