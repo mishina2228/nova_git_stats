@@ -1,3 +1,7 @@
+* {
+    font-size: 14px;
+}
+
 .menu-icon {
     width: 42px;
     height: 35px;
@@ -26,8 +30,4 @@
 
 .tab-content {
     overflow: auto;
-}
-
-.tabbable > .nav > .nav-item > .nav-link {
-    font-size: 14px;
 }
