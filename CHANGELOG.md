@@ -6,7 +6,7 @@
 
 ## [2.3.0]
 
-[2.3.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.2.0...2.3.0
+[2.3.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.2.0...v2.3.0
 
 * Breaking Changes
   * Stop bundling jQuery and Bootstrap assets
@@ -25,7 +25,7 @@
 
 ## [2.2.0]
 
-[2.2.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.1.2...2.2.0
+[2.2.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.1.2...v2.2.0
 
 * Features
   * Renamed to NovaGitStats(nova_git_stats) from GitStats(git_stats)
