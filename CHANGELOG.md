@@ -2,7 +2,11 @@
 
 ## [master]
 
-[master]: https://github.com/mishina2228/nova_git_stats/compare/v2.2.0...master
+[master]: https://github.com/mishina2228/nova_git_stats/compare/v2.3.0...master
+
+## [2.3.0]
+
+[2.3.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.2.0...2.3.0
 
 * Breaking Changes
   * Stop bundling jQuery and Bootstrap assets
