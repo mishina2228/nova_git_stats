@@ -4,11 +4,20 @@
 
 [master]: https://github.com/mishina2228/nova_git_stats/compare/v2.2.0...master
 
+* Breaking Changes
+  * Stop bundling jQuery and Bootstrap assets
+    * Those libraries are delivered by CDN, so an Internet connection is required now.
+
 * Changes
   * Enable `frozen_string_literal` by adding the magic comment to all files
+  * Updated Bootstrap from v3.3.7 to v5.0.2
 
 * Enhancements
   * Include documents and license in the package
+  * Replace the project name with new one in the visible part
+
+* Bugfixes
+  * Fixed highlighting of active tabs
 
 ## [2.2.0]
 
