@@ -16,7 +16,7 @@ module GitStats
       end
 
       def ==(other)
-        ((repo == other.repo) && (relative_path == other.relative_path))
+        repo == other.repo && relative_path == other.relative_path
       end
     end
   end
