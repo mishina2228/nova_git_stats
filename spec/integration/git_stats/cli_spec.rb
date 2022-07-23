@@ -37,7 +37,7 @@ describe GitStats::CLI do
         expect { described_class.start(default_option + ['--tree-path=invalid_path']) }
           .to output(/git shortlog -se HEAD invalid_path/).to_stdout
           .and output(/fatal: ambiguous argument 'invalid_path'/).to_stderr_from_any_process
-          .and raise_error(Module::DelegationError)
+          .and raise_error(StandardError)
       end
     end
 
