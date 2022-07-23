@@ -9,7 +9,7 @@ describe GitStats::StatsView::View do
     context 'when out_path is not passed' do
       let(:out_path) { nil }
 
-      it 'raises exception' do
+      it 'raises an exception' do
         expect { view }.to raise_error(TypeError)
       end
     end

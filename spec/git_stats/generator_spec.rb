@@ -10,7 +10,7 @@ describe GitStats::Generator do
     context 'when repo path is not passed' do
       let(:path) { nil }
 
-      it 'raises exception' do
+      it 'raises an exception' do
         expect { generator }.to raise_error('`path` is not specified')
       end
     end
@@ -18,7 +18,7 @@ describe GitStats::Generator do
     context 'when given repo path is not a git repository' do
       let(:path) { 'invalid_repo_path' }
 
-      it 'raises exception' do
+      it 'raises an exception' do
         expect { generator }.to raise_error("'#{File.expand_path('invalid_repo_path')}' is not a git repository")
       end
     end
@@ -47,7 +47,7 @@ describe GitStats::Generator do
     context 'when out_path is not passed' do
       let(:out_path) { nil }
 
-      it 'raises exception' do
+      it 'raises an exception' do
         expect { generator }.to raise_error(TypeError)
       end
     end
