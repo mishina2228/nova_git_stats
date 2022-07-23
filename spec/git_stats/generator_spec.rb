@@ -3,6 +3,28 @@
 require 'spec_helper'
 
 describe GitStats::Generator do
+  describe '#initialize' do
+    let(:generator) { described_class.new({path: build(:test_repo_tree).path, out_path: '.', tree_path: tree_path}) }
+
+    context 'when tree_path is not passed' do
+      let(:tree_path) { nil }
+
+      it 'sets "." for `tree_path` as a default value' do
+        repo = generator.instance_variable_get(:@repo)
+        expect(repo.tree_path).to eq '.'
+      end
+    end
+
+    context 'when tree_path is passed' do
+      let(:tree_path) { 'subdir_with_1_commit' }
+
+      it 'sets "subdir_with_1_commit" for `tree_path` as a default value' do
+        repo = generator.instance_variable_get(:@repo)
+        expect(repo.tree_path).to eq 'subdir_with_1_commit'
+      end
+    end
+  end
+
   describe '#validate_repo_path' do
     let(:generator) { described_class.new({path: path, out_path: '.'}) }
     let(:valid_repo) { build(:test_repo) }

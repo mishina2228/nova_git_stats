@@ -4,6 +4,13 @@
 
 [master]: https://github.com/mishina2228/nova_git_stats/compare/v2.3.0...master
 
+* Bugfixes
+  * Renamed CLI option name `--tree` to `--tree-path`
+    * **This is a potentially breaking change.**
+    * `--tree` and `-d` did not work before.  
+      The CLI option name was `--tree`, but an internal variable name was `tree-path`, and there was a mismatch.  
+      So we changed the CLI option name `--tree` to `--tree-path`.  
+
 ## [2.3.0]
 
 [2.3.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.2.0...v2.3.0
