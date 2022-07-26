@@ -6,8 +6,6 @@ updates:
       interval: daily
       time: "20:00"
     open-pull-requests-limit: 10
-    assignees:
-      - mishina2228
     allow:
       - dependency-type: direct
       - dependency-type: indirect
@@ -17,5 +15,3 @@ updates:
       interval: daily
       time: "20:00"
     open-pull-requests-limit: 10
-    assignees:
-      - mishina2228
