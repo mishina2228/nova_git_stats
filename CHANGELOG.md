@@ -4,6 +4,9 @@
 
 [master]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.0...master
 
+* Changes
+  * Relax activesupport version from `>= 6.1` to `>= 5.2`
+
 ## [2.4.0]
 
 [2.4.0]: https://github.com/mishina2228/nova_git_stats/compare/v2.3.0...v2.4.0
