@@ -20,6 +20,13 @@ jobs:
           - '3.0'
           - 3.1
           - ruby-head
+        active_support_version:
+          - ~> 5.2.8
+          - ~> 6.0.5
+          - ~> 6.1.6
+          - master
+    env:
+      ACTIVE_SUPPORT_VERSION: ${{ matrix.active_support_version }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
