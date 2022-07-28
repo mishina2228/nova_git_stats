@@ -26,8 +26,8 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
 
-  s.add_dependency('actionview', '>= 6.1', '< 8.0')
-  s.add_dependency('activesupport', '>= 6.1', '< 8.0')
+  s.add_dependency('actionview', '>= 5.2', '< 8.0')
+  s.add_dependency('activesupport', '>= 5.2', '< 8.0')
   s.add_dependency('haml', '~> 5.0')
   s.add_dependency('i18n', '~> 1.8')
   s.add_dependency('lazy_high_charts', '~> 1.6')
