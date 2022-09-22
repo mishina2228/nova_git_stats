@@ -6,6 +6,7 @@
 
 * Changes
   * Relax activesupport version from `>= 6.1` to `>= 5.2`
+  * Replace deprecated DateTime with Time
 
 ## [2.4.0]
 
