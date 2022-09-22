@@ -34,7 +34,7 @@ describe GitStats::GitData::Tree do
           .and_return('10d1814|1395407506|2014-03-21 14:11:46 +0100|israelrevert@gmail.com')
         expect(repo_tree.commits).to eq(
           [GitStats::GitData::Commit.new(repo: repo, sha: '10d1814', stamp: '1395407506',
-                                         date: DateTime.parse('2014-03-21 14:11:46 +0100'),
+                                         date: Time.parse('2014-03-21 14:11:46 +0100'),
                                          author: repo.authors.first! { |a| a.email == 'israelrevert@gmail.com' })]
         )
       end

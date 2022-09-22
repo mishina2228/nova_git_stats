@@ -10,8 +10,8 @@ describe GitStats::GitData::Tree do
   end
 
   it 'calculates correct commits period' do
-    expect(repo.commits_period).to eq([DateTime.parse('2014-03-21 14:11:46 +0100'),
-                                       DateTime.parse('2014-03-21 14:12:47 +0100')])
+    expect(repo.commits_period).to eq([Time.parse('2014-03-21 14:11:46 +0100'),
+                                       Time.parse('2014-03-21 14:12:47 +0100')])
   end
 
   it 'gathers all commits sorted by date in ascending order' do
@@ -81,8 +81,8 @@ describe GitStats::GitData::Tree do
   end
 
   it 'calculates correct commits period' do
-    expect(repo.commits_period).to eq([DateTime.parse('2014-03-21 14:11:46 +0100'),
-                                       DateTime.parse('2014-03-21 14:11:46 +0100')])
+    expect(repo.commits_period).to eq([Time.parse('2014-03-21 14:11:46 +0100'),
+                                       Time.parse('2014-03-21 14:11:46 +0100')])
   end
 
   it 'gathers all commits sorted by date in ascending order' do
@@ -147,8 +147,8 @@ describe GitStats::GitData::Tree do
   end
 
   it 'calculates correct commits period' do
-    expect(repo.commits_period).to eq([DateTime.parse('2014-03-21 14:12:23 +0100'),
-                                       DateTime.parse('2014-03-21 14:12:47 +0100')])
+    expect(repo.commits_period).to eq([Time.parse('2014-03-21 14:12:23 +0100'),
+                                       Time.parse('2014-03-21 14:12:47 +0100')])
   end
 
   it 'gathers all commits sorted by date in ascending order' do

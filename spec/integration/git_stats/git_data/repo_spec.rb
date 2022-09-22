@@ -10,8 +10,8 @@ describe GitStats::GitData::Repo do
   end
 
   it 'calculates correct commits period' do
-    expect(repo.commits_period).to eq([DateTime.parse('2012-10-19 10:44:34 +0200'),
-                                       DateTime.parse('2012-10-26 17:05:25 +0200')])
+    expect(repo.commits_period).to eq([Time.parse('2012-10-19 10:44:34 +0200'),
+                                       Time.parse('2012-10-26 17:05:25 +0200')])
   end
 
   it 'gathers all commits sorted by date in ascending order' do
