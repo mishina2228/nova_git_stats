@@ -18,17 +18,6 @@ shared_context 'shared' do
       DateTime.parse('2012-10-26 17:05:25 +0200')
     ]
   end
-  let(:commit_dates_with_empty) do
-    [
-      Date.new(2012, 10, 19),
-      Date.new(2012, 10, 20),
-      Date.new(2012, 10, 21),
-      Date.new(2012, 10, 22),
-      Date.new(2012, 10, 23),
-      Date.new(2012, 10, 24),
-      Date.new(2012, 10, 25)
-    ]
-  end
   let(:tg_commit_dates) do
     [
       DateTime.parse('2012-10-19 10:44:34 +0200'),
@@ -65,13 +54,6 @@ shared_context 'tree_subdir_with_1_commit' do
       DateTime.parse('2014-03-21 14:12:47 +0100')
     ]
   end
-  let(:commit_dates_with_empty) do
-    [
-      Date.new(2014, 3, 21),
-      Date.new(2014, 3, 21),
-      Date.new(2014, 3, 21)
-    ]
-  end
   let(:tg_commit_dates) do
     [
       DateTime.parse('2014-03-21 14:11:46 +0100'),
@@ -101,13 +83,6 @@ shared_context 'tree_subdir_with_2_commit' do
       DateTime.parse('2014-03-21 14:11:46 +0100'),
       DateTime.parse('2014-03-21 14:12:23 +0100'),
       DateTime.parse('2014-03-21 14:12:47 +0100')
-    ]
-  end
-  let(:commit_dates_with_empty) do
-    [
-      Date.new(2014, 3, 21),
-      Date.new(2014, 3, 21),
-      Date.new(2014, 3, 21)
     ]
   end
   let(:tg_commit_dates) do
@@ -143,13 +118,6 @@ shared_context 'tree' do
       DateTime.parse('2014-03-21 14:11:46 +0100'),
       DateTime.parse('2014-03-21 14:12:23 +0100'),
       DateTime.parse('2014-03-21 14:12:47 +0100')
-    ]
-  end
-  let(:commit_dates_with_empty) do
-    [
-      Date.new(2014, 3, 21),
-      Date.new(2014, 3, 21),
-      Date.new(2014, 3, 21)
     ]
   end
   let(:tg_commit_dates) do

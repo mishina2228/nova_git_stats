@@ -14,13 +14,13 @@ describe GitStats::GitData::Tree do
                                        DateTime.parse('2014-03-21 14:12:47 +0100')])
   end
 
-  it 'gathers all commits sorted by date' do
+  it 'gathers all commits sorted by date in ascending order' do
     expected = %w(
       10d1814b1c4acf1496ba76d40ee4954a2e3908fb
       435e0ef41e7c4917e4ba635bb44c7d36c5c7b7ad
       5fd0f5ea90e0ef34a0214ec9c170728913525ff4
     )
-    expect(repo.commits.map(&:sha)).to match_array(expected)
+    expect(repo.commits.map(&:sha)).to eq(expected)
   end
 
   it 'returns project name from dir' do
@@ -36,11 +36,13 @@ describe GitStats::GitData::Tree do
   end
 
   it 'counts files by date' do
-    repo.files_count_by_date.keys == (commit_dates_with_empty.zip [2, 3, 4]).to_h
+    uniq_commit_dates = commit_dates.map(&:to_date).uniq
+    expect(repo.files_count_by_date).to eq((uniq_commit_dates.zip [4]).to_h)
   end
 
   it 'counts lines by date' do
-    repo.files_count_by_date.values == (commit_dates_with_empty.zip [1, 2, 2]).to_h
+    uniq_commit_dates = commit_dates.map(&:to_date).uniq
+    expect(repo.lines_count_by_date).to eq((uniq_commit_dates.zip [0]).to_h)
   end
 
   it 'counts all lines in repo' do
@@ -83,8 +85,8 @@ describe GitStats::GitData::Tree do
                                        DateTime.parse('2014-03-21 14:11:46 +0100')])
   end
 
-  it 'gathers all commits sorted by date' do
-    expect(repo.commits.map(&:sha)).to match_array(%w(10d1814b1c4acf1496ba76d40ee4954a2e3908fb))
+  it 'gathers all commits sorted by date in ascending order' do
+    expect(repo.commits.map(&:sha)).to eq(%w(10d1814b1c4acf1496ba76d40ee4954a2e3908fb))
   end
 
   it 'returns project name from dir' do
@@ -100,11 +102,13 @@ describe GitStats::GitData::Tree do
   end
 
   it 'counts files by date' do
-    repo.files_count_by_date.keys == (commit_dates_with_empty.zip [2]).to_h
+    uniq_commit_dates = commit_dates.map(&:to_date).uniq
+    expect(repo.files_count_by_date).to eq((uniq_commit_dates.zip [2]).to_h)
   end
 
   it 'counts lines by date' do
-    repo.files_count_by_date.values == (commit_dates_with_empty.zip [1]).to_h
+    uniq_commit_dates = commit_dates.map(&:to_date).uniq
+    expect(repo.lines_count_by_date).to eq((uniq_commit_dates.zip [0]).to_h)
   end
 
   it 'counts all lines in repo' do
@@ -147,12 +151,12 @@ describe GitStats::GitData::Tree do
                                        DateTime.parse('2014-03-21 14:12:47 +0100')])
   end
 
-  it 'gathers all commits sorted by date' do
+  it 'gathers all commits sorted by date in ascending order' do
     expected = %w(
       435e0ef41e7c4917e4ba635bb44c7d36c5c7b7ad
       5fd0f5ea90e0ef34a0214ec9c170728913525ff4
     )
-    expect(repo.commits.map(&:sha)).to match_array(expected)
+    expect(repo.commits.map(&:sha)).to eq(expected)
   end
 
   it 'returns project name from dir' do
@@ -168,11 +172,13 @@ describe GitStats::GitData::Tree do
   end
 
   it 'counts files by date' do
-    repo.files_count_by_date.keys == (commit_dates_with_empty.zip [1, 2]).to_h
+    uniq_commit_dates = commit_dates.map(&:to_date).uniq
+    expect(repo.files_count_by_date).to eq((uniq_commit_dates.zip [2]).to_h)
   end
 
   it 'counts lines by date' do
-    repo.files_count_by_date.values == (commit_dates_with_empty.zip [2, 2]).to_h
+    uniq_commit_dates = commit_dates.map(&:to_date).uniq
+    expect(repo.lines_count_by_date).to eq((uniq_commit_dates.zip [0]).to_h)
   end
 
   it 'counts all lines in repo' do
