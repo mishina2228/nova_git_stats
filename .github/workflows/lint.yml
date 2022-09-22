@@ -3,6 +3,8 @@ name: Lint
 on:
   push:
   pull_request:
+  schedule:
+    - cron: '10 21 * * 0'
 
 permissions:
   contents: read
