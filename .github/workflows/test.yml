@@ -1,4 +1,4 @@
-name: CI
+name: Test
 
 on: 
   - push
@@ -46,29 +46,3 @@ jobs:
         continue-on-error: ${{ matrix.ruby == 'ruby-head' }}
       - name: Upload coverage report
         uses: codecov/codecov-action@v3
-
-  haml-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.1
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Run haml-lint
-        run: bundle exec haml-lint
-
-  rubocop:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.1
-          bundler-cache: true
-      - name: Run RuboCop
-        run: bundle exec rubocop
