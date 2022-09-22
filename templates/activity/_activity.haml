@@ -28,7 +28,7 @@
       %table{class: 'table table-bordered table-condensed'}
         %tr
           %th= :hour.t
-          - (0..23).each do |h|
+          - 24.times do |h|
             %th= h
         %tr
           %th= :commits.t
@@ -60,13 +60,13 @@
       %table{class: 'table table-bordered table-condensed'}
         %tr
           %th
-          - (0..23).each do |h|
+          - 24.times do |h|
             %th= h
         - max = author.activity.by_wday_hour.values.map { |h| h.values.empty? ? 0 : h.values.max }.max
-        - (0..6).each do |day|
+        - 7.times do |day|
           %tr
             %th= I18n.t('date.abbr_day_names')[day]
-            - (0..23).each do |hour|
+            - 24.times do |hour|
               - color = max ? format('%02x', 255 - author.activity.by_wday_hour[day][hour] * 100 / max) : 'FF'
               %td{style: "background-color: ##{color}#{color}#{color};"}= author.activity.by_wday_hour[day][hour]
 
