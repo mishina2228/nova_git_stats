@@ -15,8 +15,8 @@ gem 'rubocop-rspec', '~> 2.1'
 gem 'simplecov', '~> 0.21'
 gem 'simplecov-cobertura', '~> 2.0'
 
-case active_support_version = ENV.fetch('ACTIVE_SUPPORT_VERSION', 'master')
-when 'master'
+case active_support_version = ENV.fetch('ACTIVE_SUPPORT_VERSION', 'latest')
+when 'latest'
   gem 'actionview'
   gem 'activesupport'
 else

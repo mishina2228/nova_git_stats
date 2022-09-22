@@ -21,10 +21,14 @@ jobs:
           - 3.1
           - ruby-head
         active_support_version:
-          - ~> 5.2.8
-          - ~> 6.0.5
-          - ~> 6.1.6
-          - master
+          - latest
+        include:
+          - ruby: 3.1
+            active_support_version: ~> 5.2.8
+          - ruby: 3.1
+            active_support_version: ~> 6.0.5
+          - ruby: 3.1
+            active_support_version: ~> 6.1.6
     env:
       ACTIVE_SUPPORT_VERSION: ${{ matrix.active_support_version }}
     steps:
