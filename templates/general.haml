@@ -10,7 +10,7 @@
     %td= repo.tree_path
   %tr
     %td= :generated_at.t
-    %td= I18n.l(DateTime.now, format: :long)
+    %td= I18n.l(Time.now, format: :long)
   %tr
     %td= :generator.t
     %td NovaGitStats #{GitStats::VERSION}

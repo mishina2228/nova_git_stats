@@ -53,7 +53,7 @@ module GitStats
             repo: self,
             sha: commit_line[:sha],
             stamp: commit_line[:stamp],
-            date: DateTime.parse(commit_line[:date]),
+            date: Time.parse(commit_line[:date]),
             author: authors.first! { |a| a.email == commit_line[:author_email] }
           )
         end.sort_by!(&:date)
