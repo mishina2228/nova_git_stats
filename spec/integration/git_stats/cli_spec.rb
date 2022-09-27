@@ -53,4 +53,27 @@ describe GitStats::CLI do
       end
     end
   end
+
+  describe '#version' do
+    context 'when version is passed' do
+      it 'shows the version of this library' do
+        expect { described_class.start(['version']) }
+          .to output("NovaGitStats #{GitStats::VERSION}\n").to_stdout
+      end
+    end
+
+    context 'when --version is passed' do
+      it 'shows the version of this library' do
+        expect { described_class.start(['--version']) }
+          .to output("NovaGitStats #{GitStats::VERSION}\n").to_stdout
+      end
+    end
+
+    context 'when -v is passed' do
+      it 'shows the version of this library' do
+        expect { described_class.start(['-v']) }
+          .to output("NovaGitStats #{GitStats::VERSION}\n").to_stdout
+      end
+    end
+  end
 end
