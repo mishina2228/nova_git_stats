@@ -2,11 +2,16 @@
 
 ## [master]
 
-[master]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.0...master
+[master]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.1...master
+
+## [2.4.1]
+
+[2.4.1]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.0...v2.4.1
 
 * Changes
   * Relax activesupport version from `>= 6.1` to `>= 5.2`
   * Replace deprecated DateTime with Time
+  * Support Haml 6
 
 ## [2.4.0]
 
