@@ -8,6 +8,7 @@ end
 
 require 'active_support/all'
 require 'fileutils'
+require 'haml'
 require 'tilt'
 require 'pathname'
 require 'lazy_high_charts'
