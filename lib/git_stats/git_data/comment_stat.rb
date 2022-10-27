@@ -25,7 +25,7 @@ module GitStats
         escaped_string = escape_characters_in_string(commit.repo.comment_string)
         command = "git show #{commit.sha} | " \
                   "awk 'BEGIN {adds=0; dels=0} " \
-                  "{if ($0 ~ /^\\+#{escaped_string}/) adds++; if ($0 ~ /^\-#{escaped_string}/) dels++} " \
+                  "{if ($0 ~ /^\\+#{escaped_string}/) adds++; if ($0 ~ /^-#{escaped_string}/) dels++} " \
                   "END {print adds \" insertions \" dels \" deletes\"}'"
         stat_line = commit.repo.run(command).lines.to_a[0]
         if stat_line.blank?
