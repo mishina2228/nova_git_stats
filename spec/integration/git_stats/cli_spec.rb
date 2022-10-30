@@ -41,6 +41,15 @@ describe GitStats::CLI do
       end
     end
 
+    context 'when -d is passed with invalid tree' do
+      it 'raises an exception' do
+        expect { described_class.start(default_option + %w(-d invalid_path)) }
+          .to output(/git shortlog -se HEAD invalid_path/).to_stdout
+          .and output(/fatal: ambiguous argument 'invalid_path'/).to_stderr_from_any_process
+          .and raise_error(StandardError)
+      end
+    end
+
     context 'when --silent is passed' do
       it 'does not output anything' do
         expect { described_class.start(default_option + ['--silent']) }.to output('').to_stdout
