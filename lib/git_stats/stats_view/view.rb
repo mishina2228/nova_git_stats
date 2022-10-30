@@ -42,7 +42,7 @@ module GitStats
       end
 
       def all_templates(root = '')
-        (Dir[GitStats.root.join("templates/#{root}**/[^_]*.haml")].map do |f|
+        (Dir[GitStats.root.join("templates/#{root}**/[^_]*.haml")].sort.map do |f|
           path = Pathname.new(f)
           path.relative_path_from(GitStats.root.join('templates')).sub_ext('').to_s
         end - %w(layout))
