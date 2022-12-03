@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email         = %w(tomasz.gieniusz@gmail.com temma182008+github@gmail.com)
   s.description   = 'Git history statistics generator'
   s.summary       = 'HTML statistics generator from git repository'
-  s.homepage      = 'https://github.com/mishina2228/git_stats'
+  s.homepage      = 'https://github.com/mishina2228/nova_git_stats'
   s.license       = 'MIT'
 
   s.metadata = {
