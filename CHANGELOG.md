@@ -4,6 +4,14 @@
 
 [master]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.1...master
 
+* Bugfixes
+  * Now templates are returned in alphabetical order
+    * `GitStats::StatsView::View#all_templates` should return all templates in alphabetical order.
+    * `Dir.[]` returns sorted results by default from Ruby 3.0, but earlier than 2.7 does not.
+    * refs: 
+      * https://ruby-doc.org/core-2.7.6/Dir.html#method-c-5B-5D
+      * https://ruby-doc.org/core-3.0.4/Dir.html#method-c-5B-5D
+
 ## [2.4.1]
 
 [2.4.1]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.0...v2.4.1
