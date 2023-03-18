@@ -83,7 +83,7 @@ describe GitStats::Inspector do
       dummy.instance_variable_set(:@name, 'John Doe')
       dummy.instance_variable_set(:@count, 1)
       dummy.instance_variable_set(:@created_at, Time.parse('2014-03-21 14:11:46 +0100'))
-      expect(dummy.__send__(:ivars_to_be_displayed)).to match_array [:@name, :@count, :@created_at]
+      expect(dummy.__send__(:ivars_to_be_displayed)).to contain_exactly(:@name, :@count, :@created_at)
     end
   end
 end
