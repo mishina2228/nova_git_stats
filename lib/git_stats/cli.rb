@@ -24,7 +24,7 @@ module GitStats
     def generate
       I18n.locale = options[:language]
       GitStats::Generator.new(options) do |g|
-        g.add_command_observer { |command, _result| puts command.to_s } unless options[:silent]
+        g.add_command_observer { |command, _result| puts command } unless options[:silent]
       end.render_all
     end
 
