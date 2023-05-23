@@ -13,6 +13,9 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.5
 
+FactoryBot/AssociationStyle:
+  EnforcedStyle: explicit
+
 Layout/LineLength:
   Max: 140
 Layout/SpaceInsideHashLiteralBraces:
