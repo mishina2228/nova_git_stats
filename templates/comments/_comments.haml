@@ -7,5 +7,4 @@
     .tab-pane.active
       .page-header
         %h1.text-center= page.t
-      - if page == :comments_by_date
-        = high_stock('comments_by_date', charts.comments_by_date)
+      = high_stock('comments_by_date', charts.comments_by_date) if page == :comments_by_date
