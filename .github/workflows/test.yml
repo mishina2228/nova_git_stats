@@ -34,7 +34,7 @@ jobs:
       ACTIVE_SUPPORT_VERSION: ${{ matrix.active_support_version }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Checkout git submodules
         run: git submodule update --init --recursive
       - name: Set up Ruby
