@@ -13,14 +13,14 @@ It browses the repository and outputs html page with statistics.
 
 ## Examples
 
-* [Bootstrap](https://mishina2228.github.io/git_stats/bootstrap)
-* [Devise](https://mishina2228.github.io/git_stats/devise)
-* [DeviseInvitable](https://mishina2228.github.io/git_stats/devise_invitable)
-* [John](https://mishina2228.github.io/git_stats/john)
-* [jQuery](https://mishina2228.github.io/git_stats/jquery)
-* [Rails](https://mishina2228.github.io/git_stats/rails)
-* [React](https://mishina2228.github.io/git_stats/react)
-* [Vue](https://mishina2228.github.io/git_stats/vue)
+* [Bootstrap](https://mishina2228.github.io/nova_git_stats_sample/bootstrap/)
+* [Devise](https://mishina2228.github.io/nova_git_stats_sample/devise/)
+* [DeviseInvitable](https://mishina2228.github.io/nova_git_stats_sample/devise_invitable/)
+* [John](https://mishina2228.github.io/nova_git_stats_sample/john/)
+* [jQuery](https://mishina2228.github.io/nova_git_stats_sample/jquery/)
+* [Rails](https://mishina2228.github.io/nova_git_stats_sample/rails/)
+* [React](https://mishina2228.github.io/nova_git_stats_sample/react/)
+* [Vue](https://mishina2228.github.io/nova_git_stats_sample/vue/)
 
 ## Installation
 
