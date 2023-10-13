@@ -26,17 +26,17 @@ It browses the repository and outputs html page with statistics.
 
 ### Existing ruby/gem environment
 
-    $ gem install git_stats
+    $ gem install nova_git_stats
 
 ### debian stretch (9.*)
 
     # apt-get install ruby ruby-nokogiri ruby-nokogiri-diff ruby-nokogumbo
-    # gem install git_stats
+    # gem install nova_git_stats
 
 ### Ubuntu
 
     $ sudo apt-get install ruby ruby-dev gcc zlib1g-dev make
-    $ sudo gem install git_stats
+    $ sudo gem install nova_git_stats
 
 ## Prerequisites
 
