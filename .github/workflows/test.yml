@@ -25,12 +25,10 @@ jobs:
         active_support_version:
           - latest
         include:
-          - ruby: 3.1
-            active_support_version: ~> 5.2.8
-          - ruby: 3.1
-            active_support_version: ~> 6.0.5
-          - ruby: 3.1
-            active_support_version: ~> 6.1.6
+          - ruby: 3.3
+            active_support_version: ~> 6.1.x
+          - ruby: 3.3
+            active_support_version: ~> 7.0.x
     env:
       ACTIVE_SUPPORT_VERSION: ${{ matrix.active_support_version }}
     steps:
