@@ -5,7 +5,7 @@ module GitStats
     def parse(command, result)
       cmd, params = command.scan(/git (.*) (.*)/).first.map(&:split).flatten
       # TODO: params is not needed?
-      send("parse_#{cmd.underscore}", result, params)
+      send(:"parse_#{cmd.underscore}", result, params)
     end
 
     def parse_shortlog(result, _params)

@@ -40,7 +40,7 @@ module GitStats
       end
 
       [:insertions, :deletions, :changed_lines].each do |method|
-        define_method "total_#{method}_by_date" do
+        define_method :"total_#{method}_by_date" do
           sum = 0
           commits.map do |commit|
             sum += commit.short_stat.send(method)
@@ -48,7 +48,7 @@ module GitStats
           end
         end
 
-        define_method "#{method}_by_date" do
+        define_method :"#{method}_by_date" do
           commits.group_by { |c| c.date.to_date }.map { |arr| [arr[0], arr[1].sum { |c| c.short_stat.send(method) }] }
         end
       end

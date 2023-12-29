@@ -70,7 +70,7 @@ module GitStats
 
       # TODO: These methods are called from nowhere
       [:insertions, :deletions, :changed_lines].each do |method|
-        define_method "#{method}_by_author" do |limit = 4|
+        define_method :"#{method}_by_author" do |limit = 4|
           (authors.map { |author| [author, author.send(method)] }.sort_by { |_author, lines| -lines }[0..limit]).to_h
         end
       end
