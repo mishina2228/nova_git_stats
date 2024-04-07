@@ -31,6 +31,7 @@ jobs:
             active_support_version: ~> 7.0.x
     env:
       ACTIVE_SUPPORT_VERSION: ${{ matrix.active_support_version }}
+      RUBYOPT: ${{ matrix.ruby_version == 'ruby-head' && '-W:deprecated' || '' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
