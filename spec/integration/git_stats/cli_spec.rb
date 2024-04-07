@@ -52,13 +52,13 @@ describe GitStats::CLI do
 
     context 'when --silent is passed' do
       it 'does not output anything' do
-        expect { described_class.start(default_option + ['--silent']) }.to output('').to_stdout
+        expect { described_class.start(default_option + ['--silent']) }.not_to output.to_stdout
       end
     end
 
     context 'when -s is passed' do
       it 'does not output anything' do
-        expect { described_class.start(default_option + ['-s']) }.to output('').to_stdout
+        expect { described_class.start(default_option + ['-s']) }.not_to output.to_stdout
       end
     end
   end
