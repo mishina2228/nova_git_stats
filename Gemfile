@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'factory_bot', '~> 6.4', '!= 6.4.5'
+gem 'factory_bot', '~> 6.4'
 gem 'haml_lint', '~> 0.37'
 gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.10'
