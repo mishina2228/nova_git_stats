@@ -13,7 +13,7 @@ module GitStats
                :files_count, :binary_files, :text_files, :lines_count, :comments_count, to: :last_commit
 
       def initialize(params)
-        super(params)
+        super
         @path = File.expand_path(@path)
         @tree_path ||= '.'
       end
