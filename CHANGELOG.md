@@ -2,7 +2,11 @@
 
 ## [master]
 
-[master]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.1...master
+[master]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.2...master
+
+## [2.4.2]
+
+[2.4.2]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.1...v2.4.2
 
 * Changes
   * Add support for actionview 8
