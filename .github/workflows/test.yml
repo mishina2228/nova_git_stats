@@ -27,9 +27,11 @@ jobs:
           - latest
         include:
           - ruby: 3.3
-            active_support_version: ~> 6.1.x
-          - ruby: 3.3
             active_support_version: ~> 7.0.x
+          - ruby: 3.3
+            active_support_version: ~> 7.1.x
+          - ruby: 3.3
+            active_support_version: ~> 7.2.x
     env:
       ACTIVE_SUPPORT_VERSION: ${{ matrix.active_support_version }}
       RUBYOPT: ${{ matrix.ruby_version == 'ruby-head' && '-W:deprecated' || '' }}
