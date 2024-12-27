@@ -4,6 +4,9 @@
 
 [master]: https://github.com/mishina2228/nova_git_stats/compare/v2.4.1...master
 
+* Changes
+  * Add support for actionview 8
+  * Add support for activesupport 8
 * Bugfixes
   * Now templates are returned in alphabetical order
     * `GitStats::StatsView::View#all_templates` should return all templates in alphabetical order.
