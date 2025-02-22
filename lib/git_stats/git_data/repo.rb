@@ -65,13 +65,13 @@ module GitStats
 
       # TODO: This method is called from nowhere
       def commits_count_by_author(limit = 4)
-        (authors.map { |author| [author, author.commits.size] }.sort_by { |_author, commits| -commits }[0..limit]).to_h
+        authors.map { |author| [author, author.commits.size] }.sort_by { |_author, commits| -commits }[0..limit].to_h
       end
 
       # TODO: These methods are called from nowhere
       [:insertions, :deletions, :changed_lines].each do |method|
         define_method :"#{method}_by_author" do |limit = 4|
-          (authors.map { |author| [author, author.send(method)] }.sort_by { |_author, lines| -lines }[0..limit]).to_h
+          authors.map { |author| [author, author.send(method)] }.sort_by { |_author, lines| -lines }[0..limit].to_h
         end
       end
 
