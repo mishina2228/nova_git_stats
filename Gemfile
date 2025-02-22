@@ -10,6 +10,10 @@ gem 'rspec', '~> 3.10'
 gem 'simplecov', '~> 0.21'
 gem 'simplecov-cobertura', '~> 2.0'
 
+# Crashes with a combination of Rails 7.0 or earlier and concurrent-ruby 1.3.5+.
+# https://github.com/rails/rails/issues/54260
+gem 'concurrent-ruby', '< 1.3.5' if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.7.0')
+
 case active_support_version = ENV.fetch('ACTIVE_SUPPORT_VERSION', 'latest')
 when 'latest'
   gem 'actionview'
