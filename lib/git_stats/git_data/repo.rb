@@ -47,7 +47,7 @@ module GitStats
       end
 
       def commits
-        command = "git rev-list --pretty=format:'%H|%at|%ai|%aE' #{commit_range} #{tree_path} | grep -v commit"
+        command = "git rev-list --pretty=format:\"%H|%at|%ai|%aE\" #{commit_range} #{tree_path}"
         @commits ||= run_and_parse(command).map do |commit_line|
           Commit.new(
             repo: self,
