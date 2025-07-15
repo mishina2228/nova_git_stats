@@ -8,7 +8,7 @@ gem 'factory_bot', '~> 6.4', '!= 6.4.5'
 gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.10'
 gem 'simplecov', '~> 0.21'
-gem 'simplecov-cobertura', '~> 2.0'
+gem 'simplecov-cobertura', '~> 3.0'
 
 # Crashes with a combination of Rails 7.0 or earlier and concurrent-ruby 1.3.5+.
 # https://github.com/rails/rails/issues/54260
