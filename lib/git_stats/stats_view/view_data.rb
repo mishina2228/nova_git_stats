@@ -4,6 +4,7 @@ module GitStats
   module StatsView
     class ViewData
       include LazyHighCharts::LayoutHelper
+
       attr_reader :repo
 
       def initialize(repo)
