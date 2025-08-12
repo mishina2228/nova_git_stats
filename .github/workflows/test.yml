@@ -38,7 +38,7 @@ jobs:
       RUBYOPT: ${{ matrix.ruby_version == 'ruby-head' && '-W:deprecated' || '' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Checkout git submodules
         run: git submodule update --init --recursive
       - name: Set up Ruby
