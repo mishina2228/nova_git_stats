@@ -23,16 +23,17 @@ jobs:
           - 3.2
           - 3.3
           - 3.4
+          - '4.0'
           - ruby-head
         active_support_version:
           - latest
         include:
-          - ruby: 3.4
-            active_support_version: ~> 7.0.x
-          - ruby: 3.4
+          - ruby: '4.0'
             active_support_version: ~> 7.1.x
-          - ruby: 3.4
+          - ruby: '4.0'
             active_support_version: ~> 7.2.x
+          - ruby: '4.0'
+            active_support_version: ~> 8.0.x
     env:
       ACTIVE_SUPPORT_VERSION: ${{ matrix.active_support_version }}
       RUBYOPT: ${{ matrix.ruby_version == 'ruby-head' && '-W:deprecated' || '' }}
