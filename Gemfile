@@ -13,6 +13,9 @@ gem 'simplecov-cobertura', '~> 3.0'
 # Crashes with a combination of Rails 7.0 or earlier and concurrent-ruby 1.3.5+.
 # https://github.com/rails/rails/issues/54260
 gem 'concurrent-ruby', '< 1.3.5' if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.7.0')
+# Workaround for Ruby 3.1 with i18n v1.5.0
+# https://github.com/ruby-i18n/i18n/pull/736
+gem 'i18n', '< 1.15' if RUBY_VERSION < '3.2'
 
 case active_support_version = ENV.fetch('ACTIVE_SUPPORT_VERSION', 'latest')
 when 'latest'
