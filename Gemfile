@@ -17,14 +17,11 @@ gem 'concurrent-ruby', '< 1.3.5' if Gem::Version.new(RUBY_VERSION) < Gem::Versio
 # https://github.com/ruby-i18n/i18n/pull/736
 gem 'i18n', '< 1.15' if RUBY_VERSION < '3.2'
 
-case active_support_version = ENV.fetch('ACTIVE_SUPPORT_VERSION', 'latest')
-when 'latest'
-  gem 'actionview'
-  gem 'activesupport'
-else
-  gem 'actionview', active_support_version
-  gem 'activesupport', active_support_version
-end
+gem 'actionview'
+gem 'activesupport'
+
+# Fix incompatibility between activesupport 7 and json 3.0
+gem 'json', '< 3.0' if RUBY_VERSION < '3.2'
 
 if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.7')
   group :lint do
