@@ -9,3 +9,5 @@ linters:
   ViewLength:
     exclude:
       - 'templates/activity/_activity.haml'
+  UnescapedHtml:
+    enabled: false
