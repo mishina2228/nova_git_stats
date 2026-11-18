@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/nova_git_stats.svg)](https://badge.fury.io/rb/nova_git_stats)
 [![Test](https://github.com/mishina2228/nova_git_stats/actions/workflows/test.yml/badge.svg)](https://github.com/mishina2228/nova_git_stats/actions/workflows/test.yml)
 [![Documentation](https://img.shields.io/badge/docs-rubydoc.info-blue.svg)](https://rubydoc.info/gems/nova_git_stats)
-[![Maintainability](https://api.codeclimate.com/v1/badges/118cce63cc58fef4ae47/maintainability)](https://codeclimate.com/github/mishina2228/git_stats/maintainability)
+[![Maintainability](https://qlty.sh/gh/mishina2228/projects/nova_git_stats/maintainability.svg)](https://qlty.sh/gh/mishina2228/projects/nova_git_stats)
 [![codecov](https://codecov.io/gh/mishina2228/nova_git_stats/branch/master/graph/badge.svg?token=532RLO5L7A)](https://codecov.io/gh/mishina2228/nova_git_stats)
 
 **This project is forked from original [tomgi/git-stats](https://github.com/tomgi/git_stats).**
